@@ -1,4 +1,7 @@
-# lfchapel
+# LFChapel
+
+## Description
+This is the official repository for the lfchapel.com website application, being rebuilt with Vue from its previous wordpress application.
 
 ## Project setup
 ```
