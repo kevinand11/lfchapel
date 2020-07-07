@@ -11,28 +11,28 @@
 					<router-link class="nav-link" to="">HOME</router-link>
 				</li>
 				<li class="nav-item">
-					<router-link class="nav-link" to="/about-us/">ABOUT</router-link>
+					<router-link class="nav-link" to="/about-us">ABOUT</router-link>
 				</li>
 				<li class="nav-item">
-					<router-link class="nav-link" to="/events/">EVENTS</router-link>
+					<router-link class="nav-link" to="/events">EVENTS</router-link>
 				</li>
 				<li class="nav-item">
-					<router-link class="nav-link" to="/announcements/">ANNOUNCEMENTS</router-link>
+					<router-link class="nav-link" to="/announcement">ANNOUNCEMENTS</router-link>
 				</li>
 				<li class="nav-item">
-					<router-link class="nav-link" to="/media/">MEDIA</router-link>
+					<router-link class="nav-link" to="/media">MEDIA</router-link>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="https://rccglfc.vomoz.net/rccglfc/vxregister/">GIVE</a>
+					<a class="nav-link" href="https://rccglfc.vomoz.net/rccglfc/vxregister">GIVE</a>
 				</li>
 				<li class="nav-item">
-					<router-link class="nav-link" to="/online-forms/">ONLINE FORMS</router-link>
+					<router-link class="nav-link" to="/online-forms">ONLINE FORMS</router-link>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="https://rccglfc.vomoz.net/rccglfc/vxh/">GIVE</a>
+					<a class="nav-link" href="https://rccglfc.vomoz.net/rccglfc/vxh">GIVE</a>
 				</li>
 				<li class="nav-item">
-					<router-link class="nav-link" to="/contact-us/">CONTACT</router-link>
+					<router-link class="nav-link" to="/contact-us">CONTACT</router-link>
 				</li>
 			</ul>
 		</div>

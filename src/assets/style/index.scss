@@ -1,7 +1,14 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
+@import '~@fortawesome/fontawesome-free/css/all.min.css';
 
 $red: #D00F25;
+$white: #FEFEFE;
+$black: #111111;
 
 body{
-	font-family: Helvetica, sans-serif;
+	font-family: Roboto, sans-serif;
+}
+
+a{
+	text-decoration: none;
 }
