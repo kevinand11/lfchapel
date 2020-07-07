@@ -1,0 +1,49 @@
+<template>
+	<nav class="navbar navbar-expand-lg navbar-light container d-flex align-content-center justify-content-between">
+		<router-link class="navbar-brand" to="/">LFChapel</router-link>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse font-weight-bold" id="navbar">
+			<ul class="navbar-nav mr-auto mt-2 ml-auto text-center">
+				<li class="nav-item">
+					<router-link class="nav-link" to="">HOME</router-link>
+				</li>
+				<li class="nav-item">
+					<router-link class="nav-link" to="/about-us/">ABOUT</router-link>
+				</li>
+				<li class="nav-item">
+					<router-link class="nav-link" to="/events/">EVENTS</router-link>
+				</li>
+				<li class="nav-item">
+					<router-link class="nav-link" to="/announcements/">ANNOUNCEMENTS</router-link>
+				</li>
+				<li class="nav-item">
+					<router-link class="nav-link" to="/media/">MEDIA</router-link>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="https://rccglfc.vomoz.net/rccglfc/vxregister/">GIVE</a>
+				</li>
+				<li class="nav-item">
+					<router-link class="nav-link" to="/online-forms/">ONLINE FORMS</router-link>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="https://rccglfc.vomoz.net/rccglfc/vxh/">GIVE</a>
+				</li>
+				<li class="nav-item">
+					<router-link class="nav-link" to="/contact-us/">CONTACT</router-link>
+				</li>
+			</ul>
+		</div>
+	</nav>
+</template>
+
+<style lang="scss" scoped>
+	@import '~@/assets/style/index.scss';
+	.nav-link{
+		color: $red !important;
+		padding-top: 1rem;
+		padding-bottom: 1rem;
+	}
+</style>
