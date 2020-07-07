@@ -23,7 +23,7 @@
 		</div>
 		<hr class="bordered my-5">
 		<div class="row links">
-			<div class="col-md-3 col-sm-6">
+			<div class="col-md-3 col-6">
 				<h4>MAIN LINKS</h4>
 				<ul class="list-group">
 					<li class="list-group-item">
@@ -46,7 +46,7 @@
 					</li>
 				</ul>
 			</div>
-			<div class="col-md-3 col-sm-6">
+			<div class="col-md-3 col-6">
 				<h4>WHO WE ARE</h4>
 				<ul class="list-group">
 					<li class="list-group-item">
@@ -63,7 +63,7 @@
 					</li>
 				</ul>
 			</div>
-			<div class="col-md-3 col-sm-6">
+			<div class="col-md-3 col-6">
 				<h4>FOLLOW US</h4>
 				<ul class="list-group">
 					<li class="list-group-item d-flex">
@@ -92,7 +92,7 @@
 					</li>
 				</ul>
 			</div>
-			<div class="col-md-3 col-sm-6">
+			<div class="col-md-3 col-6">
 				<h4>NEWSLETTER</h4>
 				<form>
 					<ul class="list-group">
@@ -151,7 +151,7 @@
 		}
 		.list-group-item{
 			border: none;
-			padding: 0.75rem 0;
+			padding: 0.5rem 0;
 			a{
 				color: $black;
 			}
