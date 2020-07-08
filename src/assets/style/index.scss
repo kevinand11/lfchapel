@@ -1,9 +1,14 @@
-@import "~bootstrap/dist/css/bootstrap.min.css";
-@import '~@fortawesome/fontawesome-free/css/all.min.css';
-
 $red: #D00F25;
+$blue: #062a54;
 $white: #FEFEFE;
 $black: #111111;
+
+$theme-colors: (
+	'primary': $blue
+);
+
+@import "~bootstrap/scss/bootstrap.scss";
+@import '~@fortawesome/fontawesome-free/css/all.min.css';
 
 body{
 	font-family: Montserrat, sans-serif;
@@ -20,4 +25,11 @@ a{
 .red{
 	color: $red;
 	font-weight: bold;
+}
+
+button[class*="btn-outline"]{
+	border-width: 3px !important;
+	font-weight: bold;
+	padding-left: 2rem;
+	padding-right: 2rem;
 }
