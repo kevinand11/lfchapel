@@ -26,21 +26,21 @@
 		</section>
 		<section>
 			<h4 class="red">WE ARE COMMITTED TO</h4>
-			<ul>
+			<ol>
 				<li>Worship as a dynamic experience of the presence of God through Word, Music and Christian tenets.</li>
 				<li>We are committed to rely on prayer for direction, conception, planning and execution of ministries and activities of the church.</li>
 				<li>We are committed to equipping Christians through biblical preaching, teaching of God’s words.</li>
 				<li>We are committed to helping people discover their spiritual gifts that they might use them in the edification of the body of Christ.</li>
 				<li>We are committed to maintain a high standard of excellence in all ministries. This will be achieved when every person is exercising his or her God-given spiritual gifts to the best of his or her ability by the power of the holy spirit</li>
-			</ul>
+			</ol>
 		</section>
 		<section>
 			<h4 class="red">THE CHURCH EXISTS THAT ALL PEOPLE MAY</h4>
-			<ul>
+			<ol>
 				<li>Know the love of God in Jesus Christ</li>
 				<li>Grow as disciples of Jesus Christ</li>
 				<li>Go and share the love of God in Jesus Christ to the world.</li>
-			</ul>
+			</ol>
 		</section>
 	</div>
 </template>
