@@ -14,6 +14,11 @@ export default [
 				name: 'Our Church',
 				component: () => import(/* webpackChunkName: "our-church" */ '../views/about-us/our-church.vue'),
 			},
+			{
+				path: '/about-us/rccg-the-church',
+				name: 'RCCG - The Church',
+				component: () => import(/* webpackChunkName: "rccg-the-church" */ '../views/about-us/rccg-the-church.vue'),
+			},
 		]
 	},
 	{

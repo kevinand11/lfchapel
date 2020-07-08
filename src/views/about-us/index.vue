@@ -7,10 +7,10 @@
 		</div>
 		<div class="container py-5">
 			<div class="row">
-				<div class="col-md-3">
+				<div class="col-md-3 mb-3">
 					<SideNavigation />
 				</div>
-				<div class="col-md-9">
+				<div class="col-md-9 mb-3">
 					<router-view />
 				</div>
 			</div>

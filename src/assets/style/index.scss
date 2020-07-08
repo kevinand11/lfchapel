@@ -16,3 +16,8 @@ a{
 .bordered{
 	border-bottom: 3px dashed $red !important;
 }
+
+.red{
+	color: $red;
+	font-weight: bold;
+}

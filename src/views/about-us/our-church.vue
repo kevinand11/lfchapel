@@ -46,11 +46,6 @@
 </template>
 
 <style lang="scss" scoped>
-	@import '~@/assets/style/index.scss';
-	.red{
-		color: $red;
-		font-weight: bold;
-	}
 	section{
 		margin: 0 0 2.5rem;
 	}
