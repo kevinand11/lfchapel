@@ -109,6 +109,28 @@ export default [
 		]
 	},
 	{
+		path: '/media',
+		name: 'Media',
+		component: () => import(/* webpackChunkName: 'media' */ '../views/media/index.vue'),
+		children: [
+			{
+				path: '/media/lfc-tv',
+				name: 'LFC TV',
+				component: () => import(/* webpackChunkName: 'lfc-tv' */ '../views/media/lfc-tv.vue'),
+			},
+			{
+				path: '/media/audio-sermons',
+				name: 'Audio Sermons',
+				component: () => import(/* webpackChunkName: 'audio-sermons' */ '../views/media/audio-sermons.vue'),
+			},
+			{
+				path: '/media/photo-gallery',
+				name: 'Photo Gallery',
+				component: () => import(/* webpackChunkName: 'photo-gallery' */ '../views/media/photo-gallery.vue'),
+			},
+		]
+	},
+	{
 		path: '/*',
 		name: 'Not Found',
 		component: () => import(/* webpackChunkName: 'not-found' */ '../views/not-found.vue'),

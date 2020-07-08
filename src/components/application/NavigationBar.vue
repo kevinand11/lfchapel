@@ -17,7 +17,7 @@
 					<router-link class="nav-link" to="/announcement">ANNOUNCEMENT</router-link>
 				</li>
 				<li class="nav-item">
-					<router-link class="nav-link" to="/media">MEDIA</router-link>
+					<router-link class="nav-link" to="/media/lfc-tv">MEDIA</router-link>
 				</li>
 				<li class="nav-item">
 					<router-link class="nav-link" to="/give">GIVE</router-link>
