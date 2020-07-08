@@ -1,11 +1,7 @@
 <template>
 	<div>
-		<div id="background">
-			<div class="container text-white">
-				<h1>{{ $route.name }}</h1>
-			</div>
-		</div>
-		<div class="container py-5">
+		<RouteName />
+		<div class="container">
 			<div class="row">
 				<div class="col-md-3 mb-3">
 					<SideNavigation />
@@ -18,17 +14,12 @@
 	</div>
 </template>
 
-<style>
-	#background{
-		background: url('../../assets/images/background.jpg');
-		padding: 4rem 0;
-	}
-</style>
-
 <script>
+import RouteName from '@/components/application/RouteName.vue'
 import SideNavigation from '@/components/about-us/SideNavigation.vue'
 export default {
 	components: {
+		RouteName,
 		SideNavigation
 	}
 }

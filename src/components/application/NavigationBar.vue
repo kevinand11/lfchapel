@@ -20,13 +20,13 @@
 					<router-link class="nav-link" to="/media">MEDIA</router-link>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" target="_blank" href="https://rccglfc.vomoz.net/rccglfc/vxregister">GIVE</a>
+					<router-link class="nav-link" to="/give">GIVE</router-link>
 				</li>
 				<li class="nav-item">
 					<router-link class="nav-link" to="/online-forms">ONLINE FORMS</router-link>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" target="_blank" href="https://rccglfc.vomoz.net/rccglfc/vxh">GIVE</a>
+					<a class="nav-link" target="_blank" href="https://rccglfc.vomoz.net/rccglfc/vxh">MEMBER'S PORTAL</a>
 				</li>
 				<li class="nav-item">
 					<router-link class="nav-link" to="/contact-us">CONTACT</router-link>

@@ -1,6 +1,6 @@
 <template>
 	<form @submit.prevent="() => {}">
-		<h3 class="mb-4">Leave us a message</h3>
+		<h3 class="mb-4 red">Leave us a message</h3>
 		<div class="form-group">
 			<label for="name">Your Name</label>
 			<input type="text" id="name" class="form-control" placeholder="Eg. John Doe">

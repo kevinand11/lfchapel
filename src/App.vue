@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<NavigationBar />
-		<router-view/>
+		<router-view class="pb-5"/>
 		<BottomNavigation />
 	</div>
 </template>

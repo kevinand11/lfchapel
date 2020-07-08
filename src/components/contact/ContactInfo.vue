@@ -32,12 +32,12 @@
 		padding: 1rem;
 		text-align: center;
 		i{
-			font-size: 4rem;
+			font-size: 2rem;
 			color: $red;
 		}
 		h4{
 			color: $red;
-			margin: 2rem 0;
+			margin: 1rem 0;
 			font-size: 1.125rem;
 		}
 		.hidden{
@@ -47,7 +47,12 @@
 	.hover:hover {
 		border: 2px solid $red;
 		border-radius: 8px;
-		i{ font-size: 6rem; }
+		i{ font-size: 4rem; }
 		.hidden{ display: block; }
+	}
+	@media (min-width: 768px){
+		.hover i { font-size: 4rem; }
+		.hover h4 { margin: 2rem 0; }
+		.hover:hover i{ font-size: 6rem; }
 	}
 </style>
