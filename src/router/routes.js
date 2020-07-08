@@ -58,8 +58,13 @@ export default [
 	},
 	{
 		path: '/give',
-		name: 'Giver',
+		name: 'Give',
 		component: () => import(/* webpackChunkName: 'give' */ '../views/give.vue'),
+	},
+	{
+		path: '/announcement',
+		name: 'Announcement',
+		component: () => import(/* webpackChunkName: 'announcement' */ '../views/announcement.vue'),
 	},
 	{
 		path: '/online-forms',
