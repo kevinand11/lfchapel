@@ -19,6 +19,11 @@ export default [
 				name: 'RCCG - The Church',
 				component: () => import(/* webpackChunkName: "rccg-the-church" */ '../views/about-us/rccg-the-church.vue'),
 			},
+			{
+				path: '/about-us/the-general-overseer',
+				name: 'The General Overseer',
+				component: () => import(/* webpackChunkName: "the-general-overseer" */ '../views/about-us/the-general-overseer.vue'),
+			},
 		]
 	},
 	{
