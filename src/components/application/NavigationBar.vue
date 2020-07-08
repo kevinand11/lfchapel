@@ -8,9 +8,6 @@
 		<div class="collapse navbar-collapse font-weight-bold" id="navbar">
 			<ul class="navbar-nav mr-auto mt-2 ml-auto text-center">
 				<li class="nav-item">
-					<router-link class="nav-link" to="">HOME</router-link>
-				</li>
-				<li class="nav-item">
 					<router-link class="nav-link" to="/about-us">ABOUT</router-link>
 				</li>
 				<li class="nav-item">
@@ -43,7 +40,6 @@
 	@import '~@/assets/style/index.scss';
 	.nav-link{
 		color: $red !important;
-		padding-top: 1rem;
-		padding-bottom: 1rem;
+		padding: 0.5rem 0;
 	}
 </style>
