@@ -56,4 +56,9 @@ export default [
 		name: 'Contact Us',
 		component: () => import(/* webpackChunkName: "contact-us" */ '../views/contact-us.vue'),
 	},
+	{
+		path: '/*',
+		name: 'Not Found',
+		component: () => import(/* webpackChunkName: "not-found" */ '../views/not-found.vue'),
+	},
 ]
