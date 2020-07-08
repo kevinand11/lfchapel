@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import routes from './routes'
+import { closeNavbar } from '@/config'
 
 Vue.use(VueRouter)
 
@@ -10,4 +11,8 @@ const router = new VueRouter({
 	routes,
 })
 
+router.afterEach(() => {
+	document.getElementsByTagName('body')[0].scrollIntoView()
+	closeNavbar()
+})
 export default router

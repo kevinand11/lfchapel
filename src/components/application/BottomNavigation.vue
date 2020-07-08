@@ -60,7 +60,7 @@
 						<router-link to="/announcement">Announcement</router-link>
 					</li>
 					<li class="list-group-item">
-						<router-link to="/online-forms/prayer-requests">Mission and Vision</router-link>
+						<router-link to="/online-forms/prayer-requests">Prayer Requests</router-link>
 					</li>
 				</ul>
 			</div>
