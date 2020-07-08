@@ -7,7 +7,7 @@ export default [
 	{
 		path: '/about-us',
 		name: 'About Us',
-		component: () => import(/* webpackChunkName: 'about' */ '../views/about-us/index.vue'),
+		component: () => import(/* webpackChunkName: 'about-us' */ '../views/about-us/index.vue'),
 		children: [
 			{
 				path: '/about-us/our-church',
@@ -60,6 +60,48 @@ export default [
 		path: '/give',
 		name: 'Giver',
 		component: () => import(/* webpackChunkName: 'give' */ '../views/give.vue'),
+	},
+	{
+		path: '/online-forms',
+		name: 'Online Forms',
+		component: () => import(/* webpackChunkName: 'online-forms' */ '../views/online-forms/index.vue'),
+		children: [
+			{
+				path: '/online-forms/ask-our-pastor',
+				name: 'Ask Our Pastor',
+				component: () => import(/* webpackChunkName: 'ask-our-pastor' */ '../views/online-forms/ask-our-pastor.vue'),
+			},
+			{
+				path: '/online-forms/membership',
+				name: 'Membership',
+				component: () => import(/* webpackChunkName: 'membership' */ '../views/online-forms/membership.vue'),
+			},
+			{
+				path: '/online-forms/prayer-requests',
+				name: 'Prayer Requests',
+				component: () => import(/* webpackChunkName: 'prayer-requests' */ '../views/online-forms/prayer-requests.vue'),
+			},
+			{
+				path: '/online-forms/testimonies',
+				name: 'Testimonies',
+				component: () => import(/* webpackChunkName: 'testimonies' */ '../views/online-forms/testimonies.vue'),
+			},
+			{
+				path: '/online-forms/need-a-ride',
+				name: 'Need A Ride',
+				component: () => import(/* webpackChunkName: 'need-a-ride' */ '../views/online-forms/need-a-ride.vue'),
+			},
+			{
+				path: '/online-forms/invite-a-friend',
+				name: 'Invite A Friend',
+				component: () => import(/* webpackChunkName: 'invite-a-friend' */ '../views/online-forms/invite-a-friend.vue'),
+			},
+			{
+				path: '/online-forms/feedback',
+				name: 'Feedback',
+				component: () => import(/* webpackChunkName: 'feedback' */ '../views/online-forms/feedback.vue'),
+			},
+		]
 	},
 	{
 		path: '/*',
