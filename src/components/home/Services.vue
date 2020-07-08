@@ -1,5 +1,5 @@
 <template>
-	<div class="container">
+	<div class="container py-5">
 		<div>
 			<hr class="bordered">
 			<h2 class="text-center my-4">Living Faith Chapel</h2>

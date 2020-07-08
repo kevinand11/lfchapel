@@ -1,6 +1,6 @@
 <template>
-	<div class="container">
-		<div class="row">
+	<div class="container pt-5">
+		<div class="row align-items-center">
 			<div class="col-md-4 my-3">
 				<h1>LFChapel</h1>
 			</div>
