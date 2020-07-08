@@ -24,6 +24,11 @@ export default [
 				name: 'The General Overseer',
 				component: () => import(/* webpackChunkName: "the-general-overseer" */ '../views/about-us/the-general-overseer.vue'),
 			},
+			{
+				path: '/about-us/mission-and-vision',
+				name: 'Mission and Vision',
+				component: () => import(/* webpackChunkName: "mission-and-vision" */ '../views/about-us/mission-and-vision.vue'),
+			},
 		]
 	},
 	{
