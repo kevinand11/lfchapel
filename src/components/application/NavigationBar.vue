@@ -23,7 +23,7 @@
 					<router-link class="nav-link" to="/give">GIVE</router-link>
 				</li>
 				<li class="nav-item">
-					<router-link class="nav-link" to="/online-forms">ONLINE FORMS</router-link>
+					<router-link class="nav-link" to="/online-forms">FORMS</router-link>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" target="_blank" href="https://rccglfc.vomoz.net/rccglfc/vxh">MEMBER'S PORTAL</a>
