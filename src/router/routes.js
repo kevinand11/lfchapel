@@ -67,6 +67,11 @@ export default [
 		component: () => import(/* webpackChunkName: 'announcement' */ '../views/announcement.vue'),
 	},
 	{
+		path: '/events',
+		name: 'Events',
+		component: () => import(/* webpackChunkName: 'events' */ '../views/events.vue'),
+	},
+	{
 		path: '/online-forms',
 		name: 'Online Forms',
 		component: () => import(/* webpackChunkName: 'online-forms' */ '../views/online-forms/index.vue'),
