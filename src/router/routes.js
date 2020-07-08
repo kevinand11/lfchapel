@@ -29,6 +29,26 @@ export default [
 				name: 'Mission and Vision',
 				component: () => import(/* webpackChunkName: "mission-and-vision" */ '../views/about-us/mission-and-vision.vue'),
 			},
+			{
+				path: '/about-us/our-pastor',
+				name: 'Our Pastor',
+				component: () => import(/* webpackChunkName: "our-pastor" */ '../views/about-us/our-pastor.vue'),
+			},
+			{
+				path: '/about-us/leadership',
+				name: 'Leadership',
+				component: () => import(/* webpackChunkName: "leadership" */ '../views/about-us/leadership.vue'),
+			},
+			{
+				path: '/about-us/pastors-message',
+				name: 'Pastor\'s message',
+				component: () => import(/* webpackChunkName: "pastors-message" */ '../views/about-us/pastors-message.vue'),
+			},
+			{
+				path: '/about-us/service-times',
+				name: 'Service Times',
+				component: () => import(/* webpackChunkName: "service-times" */ '../views/about-us/service-times.vue'),
+			},
 		]
 	},
 	{
