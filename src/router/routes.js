@@ -58,7 +58,7 @@ export default [
 	},
 	{
 		path: '/give',
-		name: 'Give',
+		name: 'Giver',
 		component: () => import(/* webpackChunkName: 'give' */ '../views/give.vue'),
 	},
 	{
