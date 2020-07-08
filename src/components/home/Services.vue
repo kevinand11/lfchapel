@@ -4,12 +4,12 @@
 		<div class="d-flex flex-md-row flex-column text-white flex-grow-1">
 			<div class="mb-3 service mr-2 p-3" id="service1">
 				<h4 class="mb-1">Join us</h4>
-				<p class="font-weight-bold">SERVICE TIMES</p>
+				<p class="font-weight-bold">Service Times</p>
 				<p>Sundays @ 10AM <br>Wednesday @ 7PM</p>
 			</div>
 			<div class="mb-3 service p-3" id="service2">
 				<h4 class="mb-1">Our Pastor</h4>
-				<p class="font-weight-bold">GBENGA OBATUASE</p>
+				<p class="font-weight-bold">Gbenga Obatuase</p>
 				<p>The life of Pastor Gbenga Obatuase is a fulfillment of the scriptures in Zechariah 4: 10 which declare, “despise not the days of small beginnings”.</p>
 			</div>
 		</div>
