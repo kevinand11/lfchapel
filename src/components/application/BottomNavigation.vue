@@ -1,5 +1,6 @@
 <template>
 	<div class="container pt-5">
+		<hr class="bordered mb-4">
 		<div class="row align-items-center">
 			<div class="col-md-4 my-3">
 				<h1>LFChapel</h1>
@@ -100,7 +101,7 @@
 							<input type="email" class="form-control" placeholder="Enter email">
 						</li>
 						<li class="list-group-item">
-							<button class="btn-outline-primary bg-light px-4 py-2" type="submit">Submit</button>
+							<button class="btn btn-outline-primary" type="submit">Submit</button>
 						</li>
 					</ul>
 				</form>
