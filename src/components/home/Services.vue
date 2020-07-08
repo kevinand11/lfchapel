@@ -1,6 +1,10 @@
 <template>
 	<div class="container">
-		<h2 class="text-center">Living Faith Chapel</h2>
+		<div>
+			<hr class="bordered">
+			<h2 class="text-center my-4">Living Faith Chapel</h2>
+			<hr class="bordered">
+		</div>
 		<div class="d-flex flex-md-row flex-column text-white flex-grow-1">
 			<div class="mb-3 service mr-2 p-3" id="service1">
 				<h4 class="mb-1">Join us</h4>
@@ -20,6 +24,8 @@
 	@import "~@/assets/style/index.scss";
 	.service{
 		min-width: calc(50% - 4px);
+		min-height: 250px;
+		background-size: cover !important;
 		&#service1{
 			background: url('../../assets/images/home/service-1.png');
 		}

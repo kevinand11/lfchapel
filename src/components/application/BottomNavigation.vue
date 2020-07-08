@@ -94,7 +94,7 @@
 			</div>
 			<div class="col-md-3 col-6">
 				<h4>NEWSLETTER</h4>
-				<form>
+				<form @submit.prevent="() => {}">
 					<ul class="list-group">
 						<li class="list-group-item">
 							<input type="email" class="form-control" placeholder="Enter email">
@@ -136,9 +136,6 @@
 		a{
 			color: $black !important;
 		}
-	}
-	.bordered{
-		border-bottom: 3px dashed $red !important;
 	}
 	.links{
 		div{
