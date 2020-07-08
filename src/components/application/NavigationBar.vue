@@ -8,7 +8,7 @@
 		<div class="collapse navbar-collapse font-weight-bold" id="navbar">
 			<ul class="navbar-nav mr-auto mt-2 ml-auto text-center">
 				<li class="nav-item">
-					<router-link class="nav-link" to="/about-us">ABOUT</router-link>
+					<router-link class="nav-link" to="/about-us/our-church">ABOUT</router-link>
 				</li>
 				<li class="nav-item">
 					<router-link class="nav-link" to="/events">EVENTS</router-link>
