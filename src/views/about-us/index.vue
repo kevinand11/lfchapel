@@ -21,6 +21,15 @@ export default {
 	components: {
 		RouteName,
 		SideNavigation
+	},
+	meta(){
+		return {
+			title: 'About Us - Living Faith Chapel',
+			meta: [
+				{ vmid: 'description', name: 'description', content: '' },
+				{ vmid: 'keywords', name: 'keywords', content: '' },
+			]
+		}
 	}
 }
 </script>

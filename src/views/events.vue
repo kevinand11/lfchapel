@@ -12,6 +12,15 @@ import RouteName from '@/components/application/RouteName.vue'
 export default {
 	components: {
 		RouteName,
+	},
+	meta(){
+		return {
+			title: 'Events - Living Faith Chapel',
+			meta: [
+				{ vmid: 'description', name: 'description', content: '' },
+				{ vmid: 'keywords', name: 'keywords', content: '' },
+			]
+		}
 	}
 }
 </script>

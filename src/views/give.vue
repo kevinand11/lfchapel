@@ -17,6 +17,15 @@ export default {
 	components: {
 		RouteName,
 		DonateForm
+	},
+	meta(){
+		return {
+			title: 'Make a donation - Living Faith Chapel',
+			meta: [
+				{ vmid: 'description', name: 'description', content: '' },
+				{ vmid: 'keywords', name: 'keywords', content: '' },
+			]
+		}
 	}
 }
 </script>

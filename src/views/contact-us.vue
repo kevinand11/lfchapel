@@ -26,6 +26,15 @@ export default {
 		GoogleMap,
 		ContactForm,
 		ContactInfo
+	},
+	meta(){
+		return {
+			title: 'Contact Us - Living Faith Chapel',
+			meta: [
+				{ vmid: 'description', name: 'description', content: '' },
+				{ vmid: 'keywords', name: 'keywords', content: '' },
+			]
+		}
 	}
 }
 </script>

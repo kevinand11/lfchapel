@@ -53,3 +53,17 @@
 		font-size: 1.25rem;
 	}
 </style>
+
+<script>
+export default {
+	meta(){
+		return {
+			title: 'Our Church - Living Faith Chapel',
+			meta: [
+				{ vmid: 'description', name: 'description', content: '' },
+				{ vmid: 'keywords', name: 'keywords', content: '' },
+			]
+		}
+	}
+}
+</script>

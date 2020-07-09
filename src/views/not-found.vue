@@ -7,3 +7,17 @@
 		</div>
 	</div>
 </template>
+
+<script>
+export default {
+	meta(){
+		return {
+			title: 'Page Not Found - Living Faith Chapel',
+			meta: [
+				{ vmid: 'description', name: 'description', content: '' },
+				{ vmid: 'keywords', name: 'keywords', content: '' },
+			]
+		}
+	}
+}
+</script>

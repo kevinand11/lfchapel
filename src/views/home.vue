@@ -23,5 +23,14 @@ export default {
 		VisitUs,
 		Mission
 	},
+	meta(){
+		return {
+			title: 'Living Faith Chapel',
+			meta: [
+				{ vmid: 'description', name: 'description', content: '' },
+				{ vmid: 'keywords', name: 'keywords', content: '' },
+			]
+		}
+	}
 }
 </script>

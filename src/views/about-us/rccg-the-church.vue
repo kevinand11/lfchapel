@@ -18,3 +18,17 @@
 		margin: 0 15px 5px 0;
 	}
 </style>
+
+<script>
+export default {
+	meta(){
+		return {
+			title: 'RCCG The Church - Living Faith Chapel',
+			meta: [
+				{ vmid: 'description', name: 'description', content: '' },
+				{ vmid: 'keywords', name: 'keywords', content: '' },
+			]
+		}
+	}
+}
+</script>
