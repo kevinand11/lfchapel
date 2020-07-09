@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.13.1",
+    "@fullcalendar/bootstrap": "^5.1.0",
     "@fullcalendar/daygrid": "^5.1.0",
     "@fullcalendar/interaction": "^5.1.0",
     "@fullcalendar/vue": "^5.1.0",
