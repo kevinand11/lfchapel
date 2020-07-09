@@ -35,8 +35,8 @@ export default () => {
 		try{
 			const { start, end } = info
 			/* call algorithm that fetches event from server or firebase */
-			await new Promise(resolve => setTimeout(resolve, 3000))
-			const eventsFiltered = events.filter(event => event.date >= start && event.date <= end)
+			await new Promise((resolve) => setTimeout(resolve, 3000))
+			const eventsFiltered = events.filter((event) => event.date >= start && event.date <= end)
 			/* end algorithm  */
 			success(eventsFiltered)
 		}catch(err){ failure(err) }
