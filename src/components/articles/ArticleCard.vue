@@ -4,27 +4,22 @@
 		<div class="card-body">
 			<p class="small">Published {{ article.date }}</p>
 			<router-link :to="`/articles/${article.id}`" class="d-block mb-3 h4 black card-title text-capitalize">{{ article.title }}</router-link>
-			<p class="card-text">{{ trimmedDescription }}</p>
+			<p class="card-text">{{ article.trimmedDescription }}</p>
 			<p>
-				<img :src="article.user.image" alt="" class="mr-2 border border-dark rounded-circle" width="40" height="40">
-				<span class="bolder">by {{ article.user.name }}</span>
+				<img :src="article.userImage" alt="" class="mr-2 border border-dark rounded-circle" width="40" height="40">
+				<span class="bolder">by {{ article.userName }}</span>
 			</p>
 		</div>
 	</div>
 </template>
 
 <script>
-import  useTrimmer from '@/usecases/global/useTrimmer'
 export default {
 	props: {
 		article: {
 			type: Object,
 			required: true
 		}
-	},
-	setup(props){
-		const { trimmed } = useTrimmer(props, 'article', 'description')
-		return { trimmedDescription: trimmed }
 	}
 }
 </script>
