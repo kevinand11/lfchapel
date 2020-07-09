@@ -1,0 +1,38 @@
+<template>
+	<FullCalendar :options="calendarOptions" />
+</template>
+
+<script>
+import FullCalendar from '@fullcalendar/vue'
+import dayGridPlugin from '@fullcalendar/daygrid'
+import interactionPlugin from '@fullcalendar/interaction'
+export default {
+	components: {
+		FullCalendar
+	},
+	data(){
+		return {
+			calendarOptions: {
+				plugins: [dayGridPlugin,interactionPlugin],
+				initialView: 'dayGridMonth',
+				dateClick: this.handleDateClick,
+				events: [
+					{
+						title: 'event 1',
+						date: '2020-07-08'
+					},
+					{
+						title: 'event 2',
+						date: '2020-07-09'
+					}
+				]
+			}
+		}
+	},
+	methods: {
+		handleDateClick: function(arg) {
+			alert('date click! ' + arg.dateStr)
+		}
+	}
+}
+</script>
