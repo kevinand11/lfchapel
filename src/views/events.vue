@@ -13,7 +13,7 @@ import Calendar from '@/components/events/Calendar.vue'
 export default {
 	components: {
 		RouteName,
-<<<<<<< HEAD
+		Calendar,
 	},
 	meta(){
 		return {
@@ -23,9 +23,6 @@ export default {
 				{ vmid: 'keywords', name: 'keywords', content: '' },
 			]
 		}
-=======
-		Calendar,
->>>>>>> fullcalendar
 	}
 }
 </script>
