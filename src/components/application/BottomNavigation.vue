@@ -57,7 +57,7 @@
 						<router-link to="/about-us/service-times">Service Times</router-link>
 					</li>
 					<li class="list-group-item">
-						<router-link to="/announcement">Announcement</router-link>
+						<router-link to="/articles">Blog</router-link>
 					</li>
 					<li class="list-group-item">
 						<router-link to="/online-forms/prayer-requests">Prayer Requests</router-link>

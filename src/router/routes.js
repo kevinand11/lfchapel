@@ -62,19 +62,14 @@ export default [
 		component: () => import(/* webpackChunkName: 'give' */ '../views/give.vue'),
 	},
 	{
-		path: '/announcement',
-		name: 'Announcement',
-		component: () => import(/* webpackChunkName: 'announcement' */ '../views/announcement.vue'),
+		path: '/articles',
+		name: 'Articles',
+		component: () => import(/* webpackChunkName: 'articles' */ '../views/articles/index.vue'),
 	},
 	{
 		path: '/events',
 		name: 'Events',
 		component: () => import(/* webpackChunkName: 'events' */ '../views/events.vue'),
-	},
-	{
-		path: '/blog',
-		name: 'Blog',
-		component: () => import(/* webpackChunkName: 'events' */ '../views/blog.vue'),
 	},
 	{
 		path: '/online-forms',

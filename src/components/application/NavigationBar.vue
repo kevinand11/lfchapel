@@ -14,7 +14,7 @@
 					<router-link class="nav-link" to="/events">EVENTS</router-link>
 				</li>
 				<li class="nav-item">
-					<router-link class="nav-link" to="/announcement">ANNOUNCEMENT</router-link>
+					<router-link class="nav-link" to="/articles">BLOG</router-link>
 				</li>
 				<li class="nav-item">
 					<router-link class="nav-link" to="/media/lfc-tv">MEDIA</router-link>
