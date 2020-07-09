@@ -3,7 +3,7 @@
 		<RouteName />
 		<div class="container">
 			<div class="card-columns">
-				<ArticleCard v-for="(article, index) in articles" :article="article" :key="index" />
+				<ArticleCard v-for="article in articles" :article="article" :key="article.id" />
 			</div>
 		</div>
 	</div>
@@ -11,6 +11,7 @@
 
 <script>
 import ArticleCard from '@/components/articles/ArticleCard'
+import useArticles from '@/usecases/useArticles'
 export default {
 	components: {
 		ArticleCard
@@ -24,33 +25,9 @@ export default {
 			]
 		}
 	},
-	data(){
-		const description = 'Heresies never really go away, do they? They just get repackaged, repurposed, and recycled for every generation. And the Church must always stay on guard, always ready to defend the faith once delivered against new affronts by old ideas.\n' +
-				'\n' +
-				'Around Christmas time each year, for instance, we get to see the new variations on the historical understanding of the birth of Christ (just as every Easter we get to re-experience the annual attacks on the historicity of the resurrection). Just last week, I responded to this question by someone on Twitter: “If you’re a Christian, do you believe in the virgin birth?”\n' +
-				'\n' +
-				'I replied that the question itself would have been viewed as odd by our theological forefathers. The virgin birth is one of the cornerstones of Christian belief. Without it, you don’t have Christianity. The original questioner accused me of “gatekeeping.” She said, “You don’t get to decide who’s in and who’s out.” And she’s right. I don’t. We don’t make orthodoxy. As Chesterton said, “It is making us!”\n' +
-				'\n' +
-				'So you and I have the option, of course, of believing or disbelieving in the virgin birth. But if we disbelieve, we don’t get to call our tailor-made theology “Christianity.” Orthodoxy is not a buffet. The virgin birth is an essential tenet of Christianity — a first-order doctrine — and here is why:\n' +
-				'\n' +
-				'The Scriptures are not ambiguous about Christ’s birth.\n' +
-				'\n' +
-				'Sometimes we hear theologians say the “virgin” referred to in Isaiah’s messianic prophecy (7:14) is simply a “young woman of marriage-able age.” The word of course does include that semantic possibility, but in the light of the new covenant, we see with a lot more clarity what “kind” of virgin the Christ child is born to — not simply a young woman of marriage-able age, but a woman who had never experienced sexual intercourse.\n' +
-				'\n' +
-				'“Now the birth of Jesus Christ took place in this way. When his mother Mary had been betrothed to Joseph, before they came together she was found to be with child from the Holy Spirit.” \n' +
-				'\n' +
-				'Matthew 1:18\n' +
-				'“Before they came together” is a reference to sexual intercourse. Before Joseph and Mary had been married or engaged in any procreative activity, she was found to be with child. And if that reference isn’t clear enough, Matthew tells us that the child is “from the Holy Spirit.” Then, in verse 25, Matthew mentions that Joseph did not “know” Mary (in the sexual sense) until after she’d given birth to this son.'
-		return {
-			articles: [
-				{ description},
-				{ description},
-				{ description},
-				{ description},
-				{ description},
-				{ description},
-			]
-		}
+	setup(){
+		const { articles } = useArticles()
+		return { articles }
 	}
 }
 </script>
