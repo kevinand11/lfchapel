@@ -1,11 +1,11 @@
 const { cacheableResponse, expiration, precaching, routing, strategies } = self.workbox
 
-self.addEventListener('message', event => {
+self.addEventListener('message', (event) => {
 	if(event.data && event.data.type === 'SKIP_WAITING'){
 		event.currentTarget.skipWaiting()
 	}
 })
-self.addEventListener('install', async event => {
+self.addEventListener('install', async (event) => {
 	const cache = await caches.open('src')
 	event.waitUntil(cache.addAll(['/']))
 })
