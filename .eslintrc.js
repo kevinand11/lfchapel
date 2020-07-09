@@ -18,6 +18,7 @@ module.exports = {
 		'semi': ['error', 'never'],
 		'quotes': ['error', 'single'],
 		'no-mixed-spaces-and-tabs': ['error', 'smart-tabs'],
-		'prefer-const': ['error']
+		'prefer-const': ['error'],
+		'arrow-parens': ['error', 'always']
 	},
 }
