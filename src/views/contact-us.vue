@@ -16,13 +16,11 @@
 </template>
 
 <script>
-import RouteName from '@/components/application/RouteName.vue'
 import GoogleMap from '@/components/application/GoogleMap.vue'
 import ContactForm from '@/components/contact/ContactForm.vue'
 import ContactInfo from '@/components/contact/ContactInfo.vue'
 export default {
 	components: {
-		RouteName,
 		GoogleMap,
 		ContactForm,
 		ContactInfo

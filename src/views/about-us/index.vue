@@ -15,11 +15,9 @@
 </template>
 
 <script>
-import RouteName from '@/components/application/RouteName.vue'
 import SideNavigation from '@/components/about-us/SideNavigation.vue'
 export default {
 	components: {
-		RouteName,
 		SideNavigation
 	},
 	meta(){

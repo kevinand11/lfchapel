@@ -6,8 +6,12 @@ import '@/config/registerServiceWorker'
 import 'bootstrap'
 import '@/assets/style/index.scss'
 
+import RouteName from '@/components/application/RouteName'
+
 Vue.use(VueMeta, { keyName: 'meta', refreshOnceOnNavigation: true })
 Vue.use(CompositionApi)
+
+Vue.component('RouteName', RouteName)
 
 export const closeNavbar = () => {
 	const collapse = document.getElementById('navbar')

@@ -11,11 +11,9 @@
 </template>
 
 <script>
-import RouteName from '@/components/application/RouteName.vue'
 import DonateForm from '@/components/give/DonateForm.vue'
 export default {
 	components: {
-		RouteName,
 		DonateForm
 	},
 	meta(){
