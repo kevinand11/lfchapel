@@ -17,12 +17,12 @@ const description = 'Heresies never really go away, do they? They just get repac
 
 
 const articles = [
-	{ id: 1, description },
-	{ id: 2, description },
-	{ id: 3, description },
-	{ id: 4, description },
-	{ id: 5, description },
-	{ id: 6, description },
+	{ id: 1, description, date: '29th April 2020', title: 'Love After Marriage', user: { image: '/img/mock/users/boy2.jpg', name: 'Joe Hernandez' }, image: '/img/mock/articles/article (1).jpg'},
+	{ id: 2, description, date: '3rd March 2020', title: 'The Theoretical Educator as Sherpa', user: { image: '/img/mock/users/official.jpg', name: 'Bill Hathaway' }, image: '/img/mock/articles/article (2).jpg' },
+	{ id: 3, description, date: '15th February 2020', title: 'Definitions: Gospel and Persuade', user: { image: '/img/mock/users/girl.png', name: 'Mary Martials' }, image: '/img/mock/articles/article (3).jpg' },
+	{ id: 4, description, date: '1st January 2020', title: 'When your spouse won\'t succeed', user: { image: '/img/mock/users/girl.png', name: 'Mary Martials' }, image: '/img/mock/articles/article (4).jpg' },
+	{ id: 5, description, date: '29th December 2019', title: 'Laziness, our responsible sin', user: { image: '/img/mock/users/boy2.jpg', name: 'Joe Hernandez' }, image: '/img/mock/articles/article (5).jpg' },
+	{ id: 6, description, date: '12th August 2019', title: 'You won\'t "Let" God do anything', user: { image: '/img/mock/users/official.jpg', name: 'Bill Hathaway' }, image: '/img/mock/articles/article (6).jpg' },
 ]
 
 export default () => {

@@ -24,6 +24,10 @@ a{
 	font-weight: bold;
 }
 
+.black{
+	color: $black;
+}
+
 button[class*="btn-outline"]{
 	border-width: 3px !important;
 	font-weight: bold;
