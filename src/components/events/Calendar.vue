@@ -20,3 +20,10 @@ export default {
 	}
 }
 </script>
+
+<style lang="scss">
+	a.fc-daygrid-event{
+		cursor: pointer !important;
+		div.fc-event-time{ display: none !important; }
+	}
+</style>
