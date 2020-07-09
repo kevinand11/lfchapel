@@ -19,7 +19,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-	@import "~@/assets/style/index.scss";
 	h2{
 		font-size: 1.4rem;
 		font-weight: 400;

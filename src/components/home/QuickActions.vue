@@ -38,7 +38,6 @@
 </template>
 
 <style lang="scss" scoped>
-	@import "~@/assets/style/index.scss";
 	.col-sm-6, .col-lg-3{
 		color: $white;
 		background: $red;

@@ -25,7 +25,6 @@
 </template>
 
 <style lang="scss" scoped>
-	@import "~@/assets/style/index.scss";
 	a{
 		color: $black;
 	}

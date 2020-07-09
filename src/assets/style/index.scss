@@ -1,13 +1,10 @@
-$red: #D00F25;
-$blue: #062a54;
-$white: #FEFEFE;
-$black: #111111;
+@import '~@/assets/style/variables.scss';
 
 $theme-colors: (
 	'primary': $blue
 );
 
-@import "~bootstrap/scss/bootstrap.scss";
+@import '~bootstrap/scss/bootstrap.scss';
 @import '~@fortawesome/fontawesome-free/css/all.min.css';
 
 body{

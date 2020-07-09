@@ -27,7 +27,6 @@
 </template>
 
 <style lang="scss" scoped>
-	@import "~@/assets/style/index.scss";
 	.hover{
 		padding: 1rem;
 		text-align: center;

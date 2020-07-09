@@ -21,7 +21,6 @@
 </template>
 
 <style lang="scss" scoped>
-	@import "~@/assets/style/index.scss";
 	.service{
 		min-width: calc(50% - 4px);
 		min-height: 250px;

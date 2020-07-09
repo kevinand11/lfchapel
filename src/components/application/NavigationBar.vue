@@ -37,7 +37,6 @@
 </template>
 
 <style lang="scss" scoped>
-	@import '~@/assets/style/index.scss';
 	.nav-link{
 		color: $red !important;
 		padding: 0.5rem 0;
