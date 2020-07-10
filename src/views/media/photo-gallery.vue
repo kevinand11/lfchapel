@@ -1,14 +1,26 @@
 <template>
 	<div>
-		<h4>Coming soon</h4>
+		<Loading v-if="loading" />
+		<div class="card-columns" v-else>
+			<GalleryPhotoCard v-for="photo in photos" :photo="photo" :key="photo.id" />
+		</div>
 	</div>
 </template>
 
 <script>
+import { usePhotosList } from '@/usecases/usePhotos'
+import GalleryPhotoCard from '@/components/media/GalleryPhotoCard'
 export default {
+	components: {
+		GalleryPhotoCard
+	},
+	setup(){
+		const { photos, fetchPhotos, loading } = usePhotosList()
+		return { photos, fetchPhotos, loading }
+	},
 	meta(){
 		return {
-			title: 'Photo Gallery - Living Faith Chapel',
+			title: 'Gallery - Living Faith Chapel',
 			meta: [
 				{ vmid: 'description', name: 'description', content: '' },
 				{ vmid: 'keywords', name: 'keywords', content: '' },
@@ -17,3 +29,13 @@ export default {
 	}
 }
 </script>
+
+<style lang="scss" scoped>
+	.card-columns{ column-count: 1; }
+	@media (min-width: $sm) {
+		.card-columns{ column-count: 2; }
+	}
+	@media (min-width: $lg) {
+		.card-columns{ column-count: 3; }
+	}
+</style>

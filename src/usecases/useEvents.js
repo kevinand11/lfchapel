@@ -17,7 +17,7 @@ const options = {
 	eventDisplay: 'list-item'
 }
 
-export default () => {
+export const useEventList = () => {
 	const isLoading = ref(true)
 	options.loading = (loading) => isLoading.value = loading
 	options.dateClick  = (arg) => {

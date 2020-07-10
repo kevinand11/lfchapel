@@ -7,13 +7,13 @@
 
 <script>
 import FullCalendar from '@fullcalendar/vue'
-import useEvents from '@/usecases/useEvents'
+import { useEventList } from '@/usecases/useEvents'
 export default {
 	components: {
 		FullCalendar
 	},
 	setup(){
-		const { options, loading } = useEvents()
+		const { options, loading } = useEventList()
 		return { options, loading }
 	}
 }
