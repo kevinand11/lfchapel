@@ -13,3 +13,15 @@ export const usePhotosList = () => {
 
 	return { photos: computed(() => state.photos), fetchPhotos, loading }
 }
+
+export const usePhotoGalleryModal = (photos, current) => {
+	const length = photos.length
+	let currentIndex = photos.findIndex((photo) => photo.id.toString() === current.toString())
+	currentIndex = currentIndex < 0 ? 0 : currentIndex
+	const index = ref(currentIndex)
+
+	const next = () => index.value < photos.length - 1 ? index.value++ : index.value = 0
+	const previous = () => index.value > 0 ? index.value-- : index.value = length - 1
+
+	return { index, next, previous, length }
+}

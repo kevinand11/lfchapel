@@ -1,6 +1,6 @@
 <template>
 	<div class="card mb-4">
-		<img :src="photo.link" class="card-img-top" alt="" @click="onClicked">
+		<img :src="photo.link" class="card-img-top" alt="" @click="onClicked(photo.id)">
 	</div>
 </template>
 

@@ -18,7 +18,7 @@ export default {
 	setup(props, { root}){
 		const { photos, fetchPhotos, loading } = usePhotosList()
 		const { showGalleryModal } = useModalInstance(root.$modal)
-		const showModal = () => showGalleryModal({ photos: photos.value })
+		const showModal = (id) => showGalleryModal({ photos: photos.value, current: id })
 		return { photos, fetchPhotos, loading, showModal }
 	},
 	meta(){

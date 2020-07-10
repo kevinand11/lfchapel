@@ -12,7 +12,7 @@ import Loading from '@/components/application/Loading'
 
 Vue.use(VueMeta, { keyName: 'meta', refreshOnceOnNavigation: true })
 Vue.use(CompositionApi)
-Vue.use(VueJsModal, { dialog: true, dynamic: true })
+Vue.use(VueJsModal, { dialog: true, dynamicDefaults: { dynamic: true } })
 
 Vue.component('RouteName', RouteName)
 Vue.component('Loading', Loading)
