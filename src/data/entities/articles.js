@@ -1,8 +1,9 @@
 export default class Article {
-	constructor(id, { title, description, image, user: { name: userName, image: userImage }, createdAt }){
+	constructor(id, { title, description, tags, image, user: { name: userName, image: userImage }, createdAt }){
 		this._id = id
 		this._title = title
 		this._description = description
+		this._tags = tags
 		this._image = image
 		this._userName = userName
 		this._userImage = userImage
@@ -11,6 +12,7 @@ export default class Article {
 	get id(){ return this._id }
 	get title(){ return this._title }
 	get description(){ return this._description }
+	get tags(){ return this._tags || ['Article','Class'] }
 	get image(){ return this._image }
 	get userName(){ return this._userName }
 	get userImage(){ return this._userImage }

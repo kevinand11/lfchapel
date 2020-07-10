@@ -17,14 +17,15 @@ const description = 'Heresies never really go away, do they? They just get repac
 	'Matthew 1:18\n' +
 	'“Before they came together” is a reference to sexual intercourse. Before Joseph and Mary had been married or engaged in any procreative activity, she was found to be with child. And if that reference isn’t clear enough, Matthew tells us that the child is “from the Holy Spirit.” Then, in verse 25, Matthew mentions that Joseph did not “know” Mary (in the sexual sense) until after she’d given birth to this son.'
 
+const tags = ['Morning Mass', 'Holy Trinity', 'Roman Empire', 'Blessed Sacrament']
 
 const articlesRaw = [
-	{ id: 1, description, createdAt: '29th April 2020', title: 'Love After Marriage', user: { image: '/img/mock/users/boy2.jpg', name: 'Joe Hernandez' }, image: '/img/mock/articles/article (1).jpg'},
-	{ id: 2, description, createdAt: '3rd March 2020', title: 'The Theoretical Educator as Sherpa', user: { image: '/img/mock/users/official.jpg', name: 'Bill Hathaway' }, image: '/img/mock/articles/article (2).jpg' },
-	{ id: 3, description, createdAt: '15th February 2020', title: 'Definitions: Gospel and Persuade', user: { image: '/img/mock/users/girl.png', name: 'Mary Martials' }, image: '/img/mock/articles/article (3).jpg' },
-	{ id: 4, description, createdAt: '1st January 2020', title: 'When your spouse won\'t succeed', user: { image: '/img/mock/users/girl.png', name: 'Mary Martials' }, image: '/img/mock/articles/article (4).jpg' },
-	{ id: 5, description, createdAt: '29th December 2019', title: 'Laziness, our responsible sin', user: { image: '/img/mock/users/boy2.jpg', name: 'Joe Hernandez' }, image: '/img/mock/articles/article (5).jpg' },
-	{ id: 6, description, createdAt: '12th August 2019', title: 'You won\'t "Let" God do anything', user: { image: '/img/mock/users/official.jpg', name: 'Bill Hathaway' }, image: '/img/mock/articles/article (6).jpg' },
+	{ id: 1, description, tags, createdAt: '29th April 2020', title: 'Love After Marriage', user: { image: '/img/mock/users/boy2.jpg', name: 'Joe Hernandez' }, image: '/img/mock/articles/article (1).jpg'},
+	{ id: 2, description, tags, createdAt: '3rd March 2020', title: 'The Theoretical Educator as Sherpa', user: { image: '/img/mock/users/official.jpg', name: 'Bill Hathaway' }, image: '/img/mock/articles/article (2).jpg' },
+	{ id: 3, description, tags, createdAt: '15th February 2020', title: 'Definitions: Gospel and Persuade', user: { image: '/img/mock/users/girl.png', name: 'Mary Martials' }, image: '/img/mock/articles/article (3).jpg' },
+	{ id: 4, description, tags, createdAt: '1st January 2020', title: 'When your spouse won\'t succeed', user: { image: '/img/mock/users/girl.png', name: 'Mary Martials' }, image: '/img/mock/articles/article (4).jpg' },
+	{ id: 5, description, tags, createdAt: '29th December 2019', title: 'Laziness, our responsible sin', user: { image: '/img/mock/users/boy2.jpg', name: 'Joe Hernandez' }, image: '/img/mock/articles/article (5).jpg' },
+	{ id: 6, description, tags, createdAt: '12th August 2019', title: 'You won\'t "Let" God do anything', user: { image: '/img/mock/users/official.jpg', name: 'Bill Hathaway' }, image: '/img/mock/articles/article (6).jpg' },
 ]
 
 export default class ArticleRepository {

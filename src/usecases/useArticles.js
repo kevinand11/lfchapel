@@ -7,7 +7,6 @@ export const useArticleList = () => {
 	const state = reactive({ articles: [] })
 	const fetchArticles = async () => {
 		loading.value = true
-		/* TODO Delete on implementation of data source */await new Promise((resolve) => setTimeout(resolve, 1000))
 		state.articles = await ArticleRepository.getArticles()
 		loading.value = false
 	}
@@ -22,7 +21,6 @@ export const useArticle = (id) => {
 	const state = reactive({ article: {} })
 	const fetchArticle = async () => {
 		loading.value = true
-		/* TODO Delete on implementation of data source */await new Promise((resolve) => setTimeout(resolve, 1000))
 		const article = await ArticleRepository.find(id)
 		article ? state.article = article : router.push('/articles')
 		loading.value = false
