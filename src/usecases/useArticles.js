@@ -21,7 +21,7 @@ export const useArticle = (id) => {
 	const state = reactive({ article: {} })
 	const fetchArticle = async () => {
 		loading.value = true
-		const article = await ArticleRepository.find(id)
+		const article = await ArticleRepository.findArticleById(id)
 		article ? state.article = article : router.push('/articles')
 		loading.value = false
 	}

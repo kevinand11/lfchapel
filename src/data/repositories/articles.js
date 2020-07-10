@@ -34,7 +34,7 @@ export default class ArticleRepository {
 	static async getArticles(){
 		return articles
 	}
-	static async find(id){
+	static async findArticleById(id){
 		return articles.find((article) => article.id.toString() === id.toString())
 	}
 }

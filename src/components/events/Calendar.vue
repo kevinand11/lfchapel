@@ -20,8 +20,6 @@ export default {
 </script>
 
 <style lang="scss">
-	a.fc-daygrid-event{
-		cursor: pointer !important;
-		div.fc-event-time{ display: none !important; }
-	}
+	div.fc-event-time{ /*display: none !important;*/ }
+	td.fc-daygrid-day{ cursor: pointer !important; }
 </style>
