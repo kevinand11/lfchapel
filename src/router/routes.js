@@ -67,6 +67,11 @@ export default [
 		component: () => import(/* webpackChunkName: 'articles' */ '../views/articles/index.vue'),
 	},
 	{
+		path: '/articles/:id',
+		name: 'Article',
+		component: () => import(/* webpackChunkName: 'article' */ '../views/articles/_id.vue'),
+	},
+	{
 		path: '/events',
 		name: 'Events',
 		component: () => import(/* webpackChunkName: 'events' */ '../views/events.vue'),

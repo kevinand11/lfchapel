@@ -16,9 +16,7 @@ export default class Article {
 	get userImage(){ return this._userImage }
 	get createdAt(){ return this._createdAt }
 
-	get route(){
-		const kebabed = this._title.replace(new RegExp(' ', 'g'), '-')
-		return `/articles/${kebabed.toLowerCase()}_${this._id}` }
+	get route(){ return `/articles/${this._id}` }
 	get trimmedDescription(){
 		if(this._description.length < 200){ return this._description }
 		const index = this._description.indexOf(' ', 200)

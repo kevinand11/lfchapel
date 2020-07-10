@@ -2,7 +2,8 @@
 	<div>
 		<RouteName />
 		<div class="container">
-			<div class="card-columns">
+			<Loading v-if="loading" />
+			<div class="card-columns" v-else>
 				<ArticleCard v-for="article in articles" :article="article" :key="article.id" />
 			</div>
 		</div>
@@ -11,7 +12,7 @@
 
 <script>
 import ArticleCard from '@/components/articles/ArticleCard'
-import useArticles from '@/usecases/useArticles'
+import { useArticleList } from '@/usecases/useArticles'
 export default {
 	components: {
 		ArticleCard
@@ -26,8 +27,8 @@ export default {
 		}
 	},
 	setup(){
-		const { articles } = useArticles()
-		return { articles }
+		const { articles, fetchArticles, loading } = useArticleList()
+		return { articles, fetchArticles, loading }
 	}
 }
 </script>
