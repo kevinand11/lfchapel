@@ -1,22 +1,20 @@
 <template>
 	<div>
 		<FullCalendar :options="options" />
-		<Loading v-if="isLoading" />
+		<Loading v-if="loading" />
 	</div>
 </template>
 
 <script>
 import FullCalendar from '@fullcalendar/vue'
-import Loading from '@/components/application/Loading'
-import useCalendar from '@/usecases/useCalendar'
+import useEvents from '@/usecases/useEvents'
 export default {
 	components: {
-		FullCalendar,
-		Loading
+		FullCalendar
 	},
 	setup(){
-		const { options, isLoading } = useCalendar()
-		return { options, isLoading }
+		const { options, loading } = useEvents()
+		return { options, loading }
 	}
 }
 </script>

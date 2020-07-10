@@ -28,12 +28,13 @@ const articlesRaw = [
 	{ id: 6, description, tags, createdAt: '12th August 2019', title: 'You won\'t "Let" God do anything', user: { image: '/img/mock/users/official.jpg', name: 'Bill Hathaway' }, image: '/img/mock/articles/article (6).jpg' },
 ]
 
+const articles = articlesRaw.map((article) => new Article(article.id, article))
+
 export default class ArticleRepository {
 	static async getArticles(){
-		return articlesRaw.map((article) => new Article(article.id, article))
+		return articles
 	}
 	static async find(id){
-		const rawArticle = articlesRaw.find((article) => parseInt(article.id) === parseInt(id))
-		return rawArticle ? new Article(id, rawArticle) : null
+		return articles.find((article) => article.id.toString() === id.toString())
 	}
 }
