@@ -3,6 +3,7 @@ import interactionPlugin from '@fullcalendar/interaction'
 import bootstrapPlugin from '@fullcalendar/bootstrap'
 import { ref } from '@vue/composition-api'
 import EventRepository from '@/data/repositories/events'
+import { useModal } from '@/usecases/useModal'
 
 const options = {
 	plugins: [ dayGridPlugin, interactionPlugin, bootstrapPlugin ],
@@ -17,12 +18,12 @@ const options = {
 	eventDisplay: 'list-item'
 }
 
-export const useEventList = () => {
+export const useEventList = (modal) => {
+	const { showDailyEventModal } = useModal(modal)
 	const isLoading = ref(true)
 	options.loading = (loading) => isLoading.value = loading
-	options.dateClick  = (arg) => {
-		alert('date click! ' + arg.dateStr)
-	}
+	options.dateClick  = ({ date }) => showDailyEventModal({ date })
+
 	options.events = async (info, success, failure) => {
 		try{
 			const { start, end } = info

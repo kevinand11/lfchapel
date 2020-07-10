@@ -10,14 +10,14 @@
 <script>
 import { usePhotosList } from '@/usecases/usePhotos'
 import GalleryPhotoCard from '@/components/media/GalleryPhotoCard'
-import { useModalInstance } from '@/usecases/useModal'
+import { useModal } from '@/usecases/useModal'
 export default {
 	components: {
 		GalleryPhotoCard
 	},
 	setup(props, { root}){
 		const { photos, fetchPhotos, loading } = usePhotosList()
-		const { showGalleryModal } = useModalInstance(root.$modal)
+		const { showGalleryModal } = useModal(root.$modal)
 		const showModal = (id) => showGalleryModal({ photos: photos.value, current: id })
 		return { photos, fetchPhotos, loading, showModal }
 	},

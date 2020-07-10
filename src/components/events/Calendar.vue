@@ -12,8 +12,8 @@ export default {
 	components: {
 		FullCalendar
 	},
-	setup(){
-		const { options, loading } = useEventList()
+	setup(props, { root }){
+		const { options, loading } = useEventList(root.$modal)
 		return { options, loading }
 	}
 }
