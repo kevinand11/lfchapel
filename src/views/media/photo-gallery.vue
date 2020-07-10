@@ -2,7 +2,7 @@
 	<div>
 		<Loading v-if="loading" />
 		<div class="card-columns" v-else>
-			<GalleryPhotoCard @click="showModal(photo)" v-for="photo in photos" :photo="photo" :key="photo.id" />
+			<GalleryPhotoCard v-for="photo in photos" :photo="photo" :onClicked="showModal" :key="photo.id" />
 		</div>
 	</div>
 </template>
@@ -10,14 +10,16 @@
 <script>
 import { usePhotosList } from '@/usecases/usePhotos'
 import GalleryPhotoCard from '@/components/media/GalleryPhotoCard'
-import GalleryPhotoModal from '@/components/modals/media/Gallery'
+import { useModalInstance } from '@/usecases/useModal'
 export default {
 	components: {
 		GalleryPhotoCard
 	},
-	setup(){
+	setup(props, { root}){
 		const { photos, fetchPhotos, loading } = usePhotosList()
-		return { photos, fetchPhotos, loading }
+		const { showGalleryModal } = useModalInstance(root.$modal)
+		const showModal = () => showGalleryModal({ photos: photos.value })
+		return { photos, fetchPhotos, loading, showModal }
 	},
 	meta(){
 		return {
@@ -27,14 +29,6 @@ export default {
 				{ vmid: 'keywords', name: 'keywords', content: '' },
 			]
 		}
-	},
-	methods: {
-		showModal(){
-			this.$modal.show(GalleryPhotoModal,{photo: { name: 'John' }})
-		}
-	},
-	mounted(){
-		this.showModal()
 	}
 }
 </script>

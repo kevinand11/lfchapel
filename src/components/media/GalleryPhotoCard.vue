@@ -1,6 +1,6 @@
 <template>
 	<div class="card mb-4">
-		<img :src="photo.link" class="card-img-top" alt="">
+		<img :src="photo.link" class="card-img-top" alt="" @click="onClicked">
 	</div>
 </template>
 
@@ -9,6 +9,10 @@ export default {
 	props: {
 		photo: {
 			type: Object,
+			required: true
+		},
+		onClicked: {
+			type: Function,
 			required: true
 		}
 	}

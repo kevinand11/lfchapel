@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import { provideStore, provideRouter } from '@/usecases/usePlugins'
+import { provideAllPlugins } from '@/usecases/usePlugins'
 import NavigationBar from '@/components/application/NavigationBar.vue'
 import BottomNavigation from '@/components/application/BottomNavigation.vue'
 export default {
@@ -16,8 +16,7 @@ export default {
 		BottomNavigation
 	},
 	setup(){
-		provideStore()
-		provideRouter()
+		provideAllPlugins()
 	}
 }
 </script>
