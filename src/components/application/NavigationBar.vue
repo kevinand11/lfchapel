@@ -17,13 +17,13 @@
 					<router-link class="nav-link" to="/articles">BLOG</router-link>
 				</li>
 				<li class="nav-item">
-					<router-link class="nav-link" to="/media/lfc-tv">MEDIA</router-link>
+					<router-link class="nav-link" to="/media/photo-gallery">MEDIA</router-link>
 				</li>
 				<li class="nav-item">
 					<router-link class="nav-link" to="/give">GIVE</router-link>
 				</li>
 				<li class="nav-item">
-					<router-link class="nav-link" to="/online-forms">FORMS</router-link>
+					<router-link class="nav-link" to="/forms/ask-our-pastor">FORMS</router-link>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" target="_blank" href="https://rccglfc.vomoz.net/rccglfc/vxh">MEMBER'S PORTAL</a>

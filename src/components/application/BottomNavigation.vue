@@ -18,7 +18,7 @@
 				<div class="info">
 					<div class="email"><a href="mailto:info@lfchapel.com">info@lfchapel.com</a></div>
 					<div class="phone"><a href="tel:443-273-3563">443-273-3563</a></div><div class="email"><a href="mailto:pastor@lfchapel.com">pastor@lfchapel.com</a></div>
-					<div class="email"><a href="mailto:Lauretta@lfchapel.com">Lauretta@lfchapel.com</a></div>
+					<div class="email"><a href="mailto:Lauretta@lfchapel.com">lauretta@lfchapel.com</a></div>
 				</div>
 			</div>
 		</div>
@@ -34,7 +34,7 @@
 						<router-link to="/about-us/our-church">Our Church</router-link>
 					</li>
 					<li class="list-group-item">
-						<router-link to="/media">Media</router-link>
+						<router-link to="/media/photo-gallery">Media</router-link>
 					</li>
 					<li class="list-group-item">
 						<router-link to="/give">Give</router-link>
@@ -60,7 +60,7 @@
 						<router-link to="/articles">Blog</router-link>
 					</li>
 					<li class="list-group-item">
-						<router-link to="/online-forms/prayer-requests">Prayer Requests</router-link>
+						<router-link to="/forms/prayer-requests">Prayer Requests</router-link>
 					</li>
 				</ul>
 			</div>

@@ -28,7 +28,7 @@
 			<div class="col-lg-3 col-sm-6">
 				<h4>Prayer</h4>
 				<h3>Requests</h3>
-				<router-link class="mt-3" to="/online-forms/prayer-request">
+				<router-link class="mt-3" to="/forms/prayer-request">
 					<span class="content"><i class="fas fa-angle-right"></i></span>
 					<span>submit request</span>
 				</router-link>
