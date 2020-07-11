@@ -6,7 +6,7 @@ export const useAudiosList = () => {
 	const state = reactive({ audios: [] })
 	const fetchAudios = async () => {
 		loading.value = true
-		state.photos = await AudioRepository.getAudios()
+		state.audios = await AudioRepository.getAudios()
 		loading.value = false
 	}
 	fetchAudios()
