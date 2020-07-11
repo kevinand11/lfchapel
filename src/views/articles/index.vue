@@ -27,8 +27,8 @@ export default {
 		}
 	},
 	setup(){
-		const { articles, fetchArticles, loading } = useArticleList()
-		return { articles, fetchArticles, loading }
+		const { articles, loading } = useArticleList()
+		return { articles, loading }
 	}
 }
 </script>

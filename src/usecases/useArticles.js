@@ -12,7 +12,7 @@ export const useArticleList = () => {
 	}
 	fetchArticles()
 
-	return { articles: computed(() => state.articles), fetchArticles, loading }
+	return { articles: computed(() => state.articles), loading }
 }
 
 export const useArticle = (id) => {
@@ -27,5 +27,5 @@ export const useArticle = (id) => {
 	}
 	fetchArticle()
 
-	return { article: computed(() => state.article), fetchArticle, loading }
+	return { article: computed(() => state.article), loading }
 }

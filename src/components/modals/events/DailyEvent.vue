@@ -23,8 +23,7 @@ export default {
 		}
 	},
 	setup(props){
-		const { loading, events, fetchEvents, formatDate, formatRange } = useEventsForDate(props.date)
-		fetchEvents()
+		const { loading, events, formatDate, formatRange } = useEventsForDate(props.date)
 		return { loading, events, formatDate, formatRange }
 	}
 }

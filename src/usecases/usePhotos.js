@@ -11,7 +11,7 @@ export const usePhotosList = () => {
 	}
 	fetchPhotos()
 
-	return { photos: computed(() => state.photos), fetchPhotos, loading }
+	return { photos: computed(() => state.photos), loading }
 }
 
 export const usePhotoGalleryModal = (photos, current) => {

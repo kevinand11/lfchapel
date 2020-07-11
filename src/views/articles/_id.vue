@@ -19,8 +19,8 @@ export default {
 	},
 	setup(props, { root }){
 		const { id } = root.$route.params
-		const { article, fetchArticle, loading } = useArticle(id)
-		return { article, fetchArticle, loading }
+		const { article, loading } = useArticle(id)
+		return { article, loading }
 	},
 	meta(){
 		return {

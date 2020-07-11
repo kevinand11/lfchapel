@@ -50,8 +50,9 @@ export const useEventsForDate = (date) => {
 		state.events = await EventRepository.findEventsByDate(date)
 		loading.value = false
 	}
+	fetchEvents()
 	return {
-		loading, fetchEvents, formatDate: dateFormat, formatRange: rangeFormat, formatDateTime: dateTimeFormat,
+		loading, formatDate: dateFormat, formatRange: rangeFormat, formatDateTime: dateTimeFormat,
 		events: computed(() => state.events)
 	}
 }
