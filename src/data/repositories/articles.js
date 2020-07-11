@@ -20,12 +20,12 @@ const description = 'Heresies never really go away, do they? They just get repac
 const tags = ['Morning Mass', 'Holy Trinity', 'Roman Empire', 'Blessed Sacrament']
 
 const articlesRaw = [
-	{ id: 1, description, tags, createdAt: '29th April 2020', title: 'Love After Marriage', user: { image: '/mock/users/boy2.jpg', name: 'Joe Hernandez' }, image: '/img/mock/articles/article (1).jpg'},
-	{ id: 2, description, tags, createdAt: '3rd March 2020', title: 'The Theoretical Educator as Sherpa', user: { image: '/mock/users/official.jpg', name: 'Bill Hathaway' }, image: '/img/mock/articles/article (2).jpg' },
-	{ id: 3, description, tags, createdAt: '15th February 2020', title: 'Definitions: Gospel and Persuade', user: { image: '/mock/users/girl.png', name: 'Mary Martials' }, image: '/img/mock/articles/article (3).jpg' },
-	{ id: 4, description, tags, createdAt: '1st January 2020', title: 'When your spouse won\'t succeed', user: { image: '/mock/users/girl.png', name: 'Mary Martials' }, image: '/img/mock/articles/article (4).jpg' },
-	{ id: 5, description, tags, createdAt: '29th December 2019', title: 'Laziness, our responsible sin', user: { image: '/mock/users/boy2.jpg', name: 'Joe Hernandez' }, image: '/img/mock/articles/article (5).jpg' },
-	{ id: 6, description, tags, createdAt: '12th August 2019', title: 'You won\'t "Let" God do anything', user: { image: '/mock/users/official.jpg', name: 'Bill Hathaway' }, image: '/img/mock/articles/article (6).jpg' },
+	{ id: 1, description, tags, createdAt: '29th April 2020', title: 'Love After Marriage', user: { image: '/mock/users/boy2.jpg', name: 'Joe Hernandez' }, image: '/mock/articles/article (1).jpg'},
+	{ id: 2, description, tags, createdAt: '3rd March 2020', title: 'The Theoretical Educator as Sherpa', user: { image: '/mock/users/official.jpg', name: 'Bill Hathaway' }, image: '/mock/articles/article (2).jpg' },
+	{ id: 3, description, tags, createdAt: '15th February 2020', title: 'Definitions: Gospel and Persuade', user: { image: '/mock/users/girl.png', name: 'Mary Martials' }, image: '/mock/articles/article (3).jpg' },
+	{ id: 4, description, tags, createdAt: '1st January 2020', title: 'When your spouse won\'t succeed', user: { image: '/mock/users/girl.png', name: 'Mary Martials' }, image: '/mock/articles/article (4).jpg' },
+	{ id: 5, description, tags, createdAt: '29th December 2019', title: 'Laziness, our responsible sin', user: { image: '/mock/users/boy2.jpg', name: 'Joe Hernandez' }, image: '/mock/articles/article (5).jpg' },
+	{ id: 6, description, tags, createdAt: '12th August 2019', title: 'You won\'t "Let" God do anything', user: { image: '/mock/users/official.jpg', name: 'Bill Hathaway' }, image: '/mock/articles/article (6).jpg' },
 ]
 
 const articles = articlesRaw.map((article) => new Article(article.id, article))

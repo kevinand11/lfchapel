@@ -1,27 +1,35 @@
 export default class Article {
+	#id
+	#title
+	#description
+	#tags
+	#image
+	#userName
+	#userImage
+	#createdAt
 	constructor(id, { title, description, tags, image, user: { name: userName, image: userImage }, createdAt }){
-		this._id = id
-		this._title = title
-		this._description = description
-		this._tags = tags
-		this._image = image
-		this._userName = userName
-		this._userImage = userImage
-		this._createdAt = createdAt
+		this.#id = id
+		this.#title = title
+		this.#description = description
+		this.#tags = tags
+		this.#image = image
+		this.#userName = userName
+		this.#userImage = userImage
+		this.#createdAt = createdAt
 	}
-	get id(){ return this._id }
-	get title(){ return this._title }
-	get description(){ return this._description }
-	get tags(){ return this._tags || ['Article','Class'] }
-	get image(){ return this._image }
-	get userName(){ return this._userName }
-	get userImage(){ return this._userImage }
-	get createdAt(){ return this._createdAt }
+	get id(){ return this.#id }
+	get title(){ return this.#title }
+	get description(){ return this.#description }
+	get tags(){ return this.#tags || [] }
+	get image(){ return this.#image }
+	get userName(){ return this.#userName }
+	get userImage(){ return this.#userImage }
+	get createdAt(){ return this.#createdAt }
 
-	get route(){ return `/articles/${this._id}` }
+	get route(){ return `/articles/${this.#id}` }
 	get trimmedDescription(){
-		if(this._description.length < 200){ return this._description }
-		const index = this._description.indexOf(' ', 200)
-		return `${this._description.slice(0, index)}...`
+		if(this.#description.length < 200){ return this.#description }
+		const index = this.#description.indexOf(' ', 200)
+		return `${this.#description.slice(0, index)}...`
 	}
 }

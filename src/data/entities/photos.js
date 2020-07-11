@@ -1,13 +1,17 @@
 export default class Photo {
+	#id
+	#title
+	#description
+	#link
 	constructor(id, { title, description, link }){
-		this._id = id
-		this._title = title
-		this._description = description
-		this._link = link
+		this.#id = id
+		this.#title = title
+		this.#description = description
+		this.#link = link
 	}
 
-	get id(){ return this._id }
-	get title(){ return this._title }
-	get description(){ return this._description }
-	get link(){ return this._link }
+	get id(){ return this.#id }
+	get title(){ return this.#title }
+	get description(){ return this.#description }
+	get link(){ return this.#link }
 }
