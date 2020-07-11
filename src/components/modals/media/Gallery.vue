@@ -5,6 +5,9 @@
 			<div class="carousel-inner">
 				<div class="carousel-item" v-for="(photo, i) in photos" :key="photo.id" :class="{'active': i === index}">
 					<img :src="photo.link" class="d-block w-100" alt="">
+					<div class="carousel-caption">
+						<h5>{{ index + 1 }} of {{ length }}</h5>
+					</div>
 				</div>
 			</div>
 			<a class="carousel-control-prev" @click="previous" role="button" data-slide="prev">
@@ -16,7 +19,6 @@
 				<span class="sr-only">Next</span>
 			</a>
 		</div>
-		<h5 class="text-center mt-3">{{ index + 1 }} of {{ length }}</h5>
 	</div>
 </template>
 
@@ -40,3 +42,13 @@ export default {
 	}
 }
 </script>
+
+<style lang="scss" scoped>
+	.carousel-caption{
+		background: $blackTransparent;
+		width: 100%;
+		left: 0;
+		bottom: 0;
+		padding: 0.5rem 0;
+	}
+</style>
