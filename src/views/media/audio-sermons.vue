@@ -1,13 +1,16 @@
 <template>
 	<div>
-		<h4>{{ audios }}</h4>
+		<Loading v-if="loading" />
+		<div v-else>
+			{{audios}}
+		</div>
 	</div>
 </template>
 
 <script>
 import { useAudiosList } from '@/usecases/useAudios'
 export default {
-	setup(/*props, { root }*/){
+	setup(){
 		const { audios, loading } = useAudiosList()
 		return { audios, loading }
 	},
