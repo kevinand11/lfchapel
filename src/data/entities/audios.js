@@ -14,4 +14,10 @@ export default class Audio {
 	get title(){ return this.#title }
 	get description(){ return this.#description }
 	get link(){ return this.#link }
+
+	get trimmedDescription(){
+		if(this.#description.length < 200){ return this.#description }
+		const index = this.#description.indexOf(' ', 200)
+		return `${this.#description.slice(0, index)}...`
+	}
 }
