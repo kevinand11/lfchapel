@@ -40,9 +40,6 @@
 						<router-link to="/give">Give</router-link>
 					</li>
 					<li class="list-group-item">
-						<router-link to="/serve">Serve</router-link>
-					</li>
-					<li class="list-group-item">
 						<router-link to="/contact-us">Contact Us</router-link>
 					</li>
 				</ul>
