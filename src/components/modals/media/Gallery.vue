@@ -6,7 +6,10 @@
 				<div class="carousel-item" v-for="(photo, i) in photos" :key="photo.id" :class="{'active': i === index}">
 					<img :src="photo.link" class="d-block w-100" alt="">
 					<div class="carousel-caption">
-						<h5>{{ index + 1 }} of {{ length }}</h5>
+						<h5>
+							<span>{{ index + 1 }} of {{ length }}</span>
+							<a :href="photo.link" download class="ml-3 text-info">Download</a>
+						</h5>
 					</div>
 				</div>
 			</div>
