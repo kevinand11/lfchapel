@@ -1,11 +1,23 @@
 <template>
 	<div>
-		<h4>Coming soon</h4>
+		<Loading v-if="loading" />
+		<div class="card-columns" v-else>
+			<VideoCard v-for="video in videos" :video="video" :key="video.id" />
+		</div>
 	</div>
 </template>
 
 <script>
+import VideoCard from '@/components/media/VideoCard'
+import { useVideosList } from '@/usecases/useVideos'
 export default {
+	components: {
+		VideoCard
+	},
+	setup(){
+		const { videos, loading } = useVideosList()
+		return { videos, loading }
+	},
 	meta(){
 		return {
 			title: 'LFC TV - Living Faith Chapel',
@@ -17,3 +29,13 @@ export default {
 	}
 }
 </script>
+
+<style lang="scss" scoped>
+	.card-columns{ column-count: 1; }
+	@media (min-width: $md) {
+		.card-columns{ column-count: 2; }
+	}
+	@media (min-width: $xl) {
+		.card-columns{ column-count: 3; }
+	}
+</style>
