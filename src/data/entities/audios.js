@@ -1,4 +1,4 @@
-export default class Photo {
+export default class Audio {
 	constructor(id, { title, description, link }){
 		this._id = id
 		this._title = title

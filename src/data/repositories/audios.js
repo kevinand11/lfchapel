@@ -1,6 +1,6 @@
-import Photo from '@/data/entities/photos'
+import Audio from '@/data/entities/audios'
 
-const photosRaw = [
+const audiosRaw = [
 	{ id: 1, link: '/mock/articles/article (1).jpg'},
 	{ id: 2, link: '/mock/articles/article (2).jpg' },
 	{ id: 3, link: '/mock/articles/article (3).jpg' },
@@ -9,10 +9,10 @@ const photosRaw = [
 	{ id: 6, link: '/mock/articles/article (6).jpg' },
 ]
 
-const photos = photosRaw.map((photo) => new Photo(photo.id, photo))
+const audios = audiosRaw.map((audio) => new Audio(audio.id, audio))
 
-export default class PhotoRepository {
-	static async getPhotos(){
-		return photos
+export default class AudioRepository {
+	static async getAudios(){
+		return audios
 	}
 }
