@@ -54,13 +54,20 @@ export const useAudioPlayer = (id, link) => {
 	}
 	const pause = () => audio.pause()
 	const togglePlay = () => state.playing ? pause() : play()
+	const setTime = (t) => audio.currentTime = t
+	const forwardShort = () => setTime(audio.currentTime + 10 < audio.duration ? audio.currentTime + 10 : audio.duration)
+	const backwardShort = () => setTime(audio.currentTime - 10 < 0 ? 0 : audio.currentTime - 10)
+	const forwardLong= () => setTime(audio.currentTime + 60 < audio.duration ? audio.currentTime + 60 : audio.duration)
+	const backwardLong = () => setTime(audio.currentTime - 60 < 0 ? 0 : audio.currentTime - 60)
 	players[id] = { audio, state }
 	return {
-		togglePlay,
+		togglePlay, forwardShort, backwardShort, forwardLong, backwardLong,
 		loading: computed(() => state.loading),
 		playing: computed(() => state.playing),
-		time: computed(() => formatTime(state.time)),
-		length: computed(() => formatTime(state.length)),
+		time: computed({ get: () => state.time, set: setTime}),
+		length: computed(() => state.length),
+		timeFormatted: computed(() => formatTime(state.time)),
+		lengthFormatted: computed(() => formatTime(state.length)),
 		error: computed(() => state.error)
 	}
 }
