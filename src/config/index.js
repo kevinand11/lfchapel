@@ -9,6 +9,7 @@ import '@/assets/style/index.scss'
 
 import RouteName from '@/components/application/RouteName'
 import Loading from '@/components/application/Loading'
+import AudioPlayer from '@/components/application/AudioPlayer'
 
 Vue.use(VueMeta, { keyName: 'meta', refreshOnceOnNavigation: true })
 Vue.use(CompositionApi)
@@ -19,6 +20,7 @@ Vue.use(VueJsModal, { dialog: true, dynamicDefaults: {
 
 Vue.component('RouteName', RouteName)
 Vue.component('Loading', Loading)
+Vue.component('AudioPlayer', AudioPlayer)
 
 export const closeNavbar = () => {
 	const collapse = document.getElementById('navbar')
