@@ -1,7 +1,7 @@
 <template>
 	<div class="container mb-5">
 		<div class="row">
-			<div class="col-lg-3 col-sm-6">
+			<div class="slide1 col-lg-3 col-sm-6">
 				<h4>Upcoming</h4>
 				<h3>Events</h3>
 				<router-link class="mt-3" to="/events">
@@ -9,7 +9,7 @@
 					<span>see more</span>
 				</router-link>
 			</div>
-			<div class="col-lg-3 col-sm-6">
+			<div class="slide2 col-lg-3 col-sm-6">
 				<h4>Service</h4>
 				<h3>Times</h3>
 				<router-link class="mt-3" to="/about-us/service-times">
@@ -17,7 +17,7 @@
 					<span>plan your visit</span>
 				</router-link>
 			</div>
-			<div class="col-lg-3 col-sm-6">
+			<div class="slide3 col-lg-3 col-sm-6">
 				<h4>Donate</h4>
 				<h3>Now</h3>
 				<router-link class="mt-3" to="/give">
@@ -25,7 +25,7 @@
 					<span>make a donation</span>
 				</router-link>
 			</div>
-			<div class="col-lg-3 col-sm-6">
+			<div class="slide4 col-lg-3 col-sm-6">
 				<h4>Prayer</h4>
 				<h3>Requests</h3>
 				<router-link class="mt-3" to="/forms/prayer-request">
@@ -38,7 +38,15 @@
 </template>
 
 <style lang="scss" scoped>
+	@keyframes slideIn {
+		from{ left: -1000px; opacity: 0; }
+		to{ left: 0; opacity: 1; }
+	}
 	.col-sm-6, .col-lg-3{
+		&.slide1{ animation: slideIn 1.5s; }
+		&.slide2{ animation: slideIn 1.25s; }
+		&.slide3{ animation: slideIn 1s; }
+		&.slide4{ animation: slideIn 0.75s; }
 		color: $white;
 		background: $red;
 		border: 1px solid transparent;
