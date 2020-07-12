@@ -32,7 +32,7 @@ export default {
 
 <style lang="scss" scoped>
 	.card-columns{ column-count: 1; }
-	@media (min-width: $md) {
+	@media (min-width: $lg) {
 		.card-columns{ column-count: 2; }
 	}
 	@media (min-width: $xl) {
