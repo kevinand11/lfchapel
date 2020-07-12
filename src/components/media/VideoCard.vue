@@ -1,7 +1,13 @@
 <template>
-	<div class="card mb-4" @click="showModal">
+	<div class="card mb-4">
+		<div class="position-relative">
+			<img :src="video.preview" class="card-img-top" alt="">
+			<div class="contain">
+				<i class="fas fa-play fa-2x text-light" @click="showModal"></i>
+			</div>
+		</div>
 		<div class="card-body">
-			<h5 class="card-title text-capitalize">{{ video.title }}</h5>
+			<h5 class="card-title text-capitalize" @click="showModal">{{ video.title }}</h5>
 			<p class="card-text">{{ video.trimmedDescription }}</p>
 		</div>
 	</div>
@@ -24,6 +30,18 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
 	.card{ cursor: pointer; }
+	div.contain{
+		background: $blackTransparent;
+		position: absolute;
+		left: 0;
+		top: 0;
+		z-index: 2;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
 </style>

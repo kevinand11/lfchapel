@@ -6,7 +6,7 @@
 	</div>
 </template>
 
-<style>
+<style lang="scss" scoped>
 	#background{
 		background: url('../../assets/images/background.jpg');
 		padding: 4rem 0;
