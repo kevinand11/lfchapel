@@ -1,1 +1,1 @@
-declare type Id = String | Number
+declare type Id = string | number

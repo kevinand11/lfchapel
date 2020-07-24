@@ -1,11 +1,11 @@
 export default class Article {
-	public readonly id: String | Number
-	public readonly title: String
-	public readonly description: String
-	public readonly tags: String[]
-	public readonly image: String
-	public readonly userName: String
-	public readonly userImage: String
+	public readonly id: Id
+	public readonly title: string
+	public readonly description: string
+	public readonly tags: string[]
+	public readonly image: string
+	public readonly userName: string
+	public readonly userImage: string
 	public readonly createdAt: Date
 
 	constructor(data: RawArticle){

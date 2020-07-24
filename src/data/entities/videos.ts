@@ -1,9 +1,9 @@
 export default class Video implements MediaWithPreview{
 	public readonly id: Id
-	public readonly title: String
-	public readonly description: String
-	public readonly link: String
-	public readonly preview: String
+	public readonly title: string
+	public readonly description: string
+	public readonly link: string
+	public readonly preview: string
 
 	constructor(data: MediaWithPreview){
 		this.id = data.id

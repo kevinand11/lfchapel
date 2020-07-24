@@ -1,9 +1,9 @@
 declare interface RawArticle {
     id: Id
-    title: String
-    description: String
-    tags: String[]
+    title: string
+    description: string
+    tags: string[]
     createdAt: Date
-    image: String
-    user: { image: String; name: String }
+    image: string
+    user: { image: string; name: string }
 }

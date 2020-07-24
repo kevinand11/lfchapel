@@ -1,14 +1,14 @@
 declare interface Media {
     id: Id
-    title: String | null
-    description: String | null
-    link: String
+    title: string | null
+    description: string | null
+    link: string
 }
 
 declare interface MediaWithPreview {
     id: Id
-    title: String
-    description: String
-    link: String
-    preview: String
+    title: string
+    description: string
+    link: string
+    preview: string
 }
