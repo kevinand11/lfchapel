@@ -4,17 +4,18 @@
 	</div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from '@vue/composition-api'
+export default defineComponent({
 	props: {
 		photo: {
-			type: Object,
+			type: Object as () => PhotoI,
 			required: true
 		},
 		onClicked: {
-			type: Function,
+			type: Object as () => (id: Id) => void,
 			required: true
 		}
 	}
-}
+})
 </script>

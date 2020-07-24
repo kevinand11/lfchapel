@@ -11,11 +11,12 @@
 
 <script>
 import GoogleMap from '@/components/application/GoogleMap'
-export default {
+import { defineComponent } from '@vue/composition-api'
+export default defineComponent({
 	components: {
 		GoogleMap
 	}
-}
+})
 </script>
 
 <style lang="scss" scoped>

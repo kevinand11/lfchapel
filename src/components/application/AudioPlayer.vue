@@ -19,17 +19,18 @@
 	</div>
 </template>
 
-<script>
+<script lang="ts">
 import { useAudioPlayer } from '@/usecases/media/useAudios'
-export default {
+import { defineComponent } from '@vue/composition-api'
+export default defineComponent({
 	props: {
 		audio: {
-			type: Object,
+			type: Object as () => AudioI,
 			required: true
 		}
 	},
 	setup(props){
 		return useAudioPlayer(props.audio.id, props.audio.link)
 	}
-}
+})
 </script>

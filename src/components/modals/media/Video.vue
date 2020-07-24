@@ -12,18 +12,19 @@
 	</div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from '@vue/composition-api'
+export default defineComponent({
 	props: {
 		video: {
-			type: Object,
+			type: Object as () => VideoI,
 			required: true
 		}
 	},
 	setup(props, { root }){
 		return { closeModal: root.$modal.hideAll }
 	}
-}
+})
 </script>
 
 <style lang="scss" scoped>

@@ -9,12 +9,12 @@
 	</div>
 </template>
 
-<script>
-import { ref } from '@vue/composition-api'
-export default {
+<script lang="ts">
+import { ref, defineComponent } from '@vue/composition-api'
+export default defineComponent({
 	props: {
 		audio: {
-			type: Object,
+			type: Object as () => AudioI,
 			required: true
 		}
 	},
@@ -23,5 +23,5 @@ export default {
 		const toggleDescription = () => show.value = !show.value
 		return { show, toggleDescription }
 	}
-}
+})
 </script>

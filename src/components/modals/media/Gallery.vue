@@ -26,16 +26,10 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
 import { usePhotoGalleryModal } from '@/usecases/media/usePhotos'
 import Photo from '@/data/entities/photos'
-
-interface SetupArgs {
-    photos: Photo[],
-    current: Id
-}
-
-export default {
+import { defineComponent } from '@vue/composition-api'
+export default defineComponent({
 	props:  {
 		photos: {
 			type: Object as () => Photo[],
@@ -50,7 +44,7 @@ export default {
 		const { index, next, previous, length } = usePhotoGalleryModal(props.photos, props.current)
 		return { index, next, previous, length }
 	}
-}
+})
 </script>
 
 <style lang="scss" scoped>

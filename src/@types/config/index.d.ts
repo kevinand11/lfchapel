@@ -1,6 +1,5 @@
 import Vue, { VueConstructor } from 'vue/types/vue'
 import { AsyncComponent, ComponentOptions } from 'vue'
-
 declare interface VModal {
     show(name: string, params?: object): void
     show(

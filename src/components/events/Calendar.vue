@@ -5,10 +5,11 @@
 	</div>
 </template>
 
-<script>
+<script lang="ts">
 import FullCalendar from '@fullcalendar/vue'
 import { useEventList } from '@/usecases/events/useEvents'
-export default {
+import { defineComponent } from '@vue/composition-api'
+export default defineComponent({
 	components: {
 		FullCalendar
 	},
@@ -16,7 +17,7 @@ export default {
 		const { options, loading } = useEventList(root.$modal)
 		return { options, loading }
 	}
-}
+})
 </script>
 
 <style lang="scss">
