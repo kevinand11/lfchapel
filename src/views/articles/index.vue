@@ -12,7 +12,7 @@
 
 <script>
 import ArticleCard from '@/components/articles/ArticleCard'
-import { useArticleList } from '@/usecases/useArticles'
+import { useArticleList } from '@/usecases/articles/useArticles'
 export default {
 	components: {
 		ArticleCard

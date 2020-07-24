@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import { useAudioPlayer } from '@/usecases/useAudios'
+import { useAudioPlayer } from '@/usecases/media/useAudios'
 export default {
 	props: {
 		audio: {

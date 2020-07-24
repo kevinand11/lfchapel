@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import { usePhotosList } from '@/usecases/usePhotos'
+import { usePhotosList } from '@/usecases/media/usePhotos'
 import GalleryPhotoCard from '@/components/media/GalleryPhotoCard'
 import { useModal } from '@/usecases/useModal'
 export default {

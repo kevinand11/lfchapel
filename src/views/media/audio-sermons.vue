@@ -9,7 +9,7 @@
 
 <script>
 import AudioCard from '@/components/media/AudioCard'
-import { useAudiosList } from '@/usecases/useAudios'
+import { useAudiosList } from '@/usecases/media/useAudios'
 export default {
 	components: {
 		AudioCard

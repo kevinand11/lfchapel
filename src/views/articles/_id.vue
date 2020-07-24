@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import { useArticle } from '@/usecases/useArticles'
+import { useArticle } from '@/usecases/articles/useArticles'
 import ArticleImageTitle from '@/components/articles/ArticleImageTitle'
 import ArticleContent from '@/components/articles/ArticleContent'
 export default {

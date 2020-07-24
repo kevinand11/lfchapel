@@ -9,7 +9,7 @@
 
 <script>
 import VideoCard from '@/components/media/VideoCard'
-import { useVideosList } from '@/usecases/useVideos'
+import { useVideosList } from '@/usecases/media/useVideos'
 export default {
 	components: {
 		VideoCard
