@@ -1,22 +1,29 @@
 <template>
-	<div>
-		<NavigationBar />
-		<router-view class="pb-5"/>
-		<BottomNavigation />
-	</div>
+  <div id="app">
+    <img alt="Vue logo" src="./assets/logo.png">
+    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+  </div>
 </template>
 
-<script>
-import { provideAllPlugins } from '@/usecases/usePlugins'
-import NavigationBar from '@/components/application/NavigationBar.vue'
-import BottomNavigation from '@/components/application/BottomNavigation.vue'
-export default {
+<script lang="ts">
+import Vue from 'vue'
+import HelloWorld from './components/HelloWorld.vue'
+
+export default Vue.extend({
+	name: 'App',
 	components: {
-		NavigationBar,
-		BottomNavigation
-	},
-	setup(){
-		provideAllPlugins()
+		HelloWorld
 	}
-}
+})
 </script>
+
+<style lang="scss">
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
+</style>
