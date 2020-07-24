@@ -46,7 +46,7 @@ export default {
 			required: true
 		}
 	},
-	setup(props: SetupArgs){
+	setup(props){
 		const { index, next, previous, length } = usePhotoGalleryModal(props.photos, props.current)
 		return { index, next, previous, length }
 	}
