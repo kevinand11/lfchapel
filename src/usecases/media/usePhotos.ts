@@ -4,9 +4,8 @@ import { computed, reactive, ref } from '@vue/composition-api'
 
 export const usePhotosList = () => {
 	const loading = ref(false)
-	const state = reactive({ photos: <Photo[]> [] } )
+	const state = reactive({ photos: <PhotoI[]> [] } )
 	const fetchPhotos = async () => {
-		loading.value = true
 		state.photos = await PhotoRepository.getPhotos()
 		loading.value = false
 	}

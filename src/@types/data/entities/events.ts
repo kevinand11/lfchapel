@@ -1,19 +1,11 @@
-type EventWithEnd = {
-    id: Id
-    title: string
-    description: string
-    start: Date
-    end: Date
-    allDay: false
-}
-
-type EventWithoutEnd = {
+declare type RawEvent = {
     id: Id
     title: string
     description: string
     start: Date
     end?: Date
-    allDay: true
+    allDay: boolean
 }
-
-declare type RawEvent = EventWithEnd | EventWithoutEnd
+declare interface EventI extends RawEvent {
+    isWithinDate: (date: Date) => boolean
+}

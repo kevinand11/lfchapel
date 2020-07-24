@@ -5,10 +5,12 @@ declare interface Media {
     link: string
 }
 
-declare interface MediaWithPreview {
-    id: Id
-    title: string
-    description: string
-    link: string
+declare interface MediaWithPreview extends Media{
     preview: string
+}
+
+declare interface AudioI extends Media {}
+declare interface PhotoI extends Media {}
+declare interface VideoI extends MediaWithPreview {
+    trimmedDescription?: string
 }

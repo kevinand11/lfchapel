@@ -3,6 +3,7 @@ import dayGridPlugin from '@fullcalendar/daygrid'
 import interactionPlugin from '@fullcalendar/interaction'
 import bootstrapPlugin from '@fullcalendar/bootstrap'
 import { reactive, ref, computed } from '@vue/composition-api'
+import Event from '@/data/entities/events'
 import EventRepository from '@/data/repositories/events'
 import { useModal } from '@/usecases/useModal'
 
@@ -18,12 +19,16 @@ const options = {
 	height: 'auto',
 	headerToolbar: { center: 'title', start: 'prev', end: 'next' },
 	titleFormat: { year: 'numeric', month: 'short' },
-	eventDisplay: 'block'
+	eventDisplay: 'block',
+	loading: <((loading: boolean) => any) | undefined> undefined,
+	dateClick: <((info: { date:Date }) => any) | undefined> undefined,
+	eventClick: <((info: { event: any }) => any) | undefined> undefined,
+	events: <((info:object, success:Function, failure:Function) => Promise<void>) | undefined> undefined
 }
 
-const dateFormat = (date) => formatDate(date, formatD)
-const dateTimeFormat = (date) => formatDate(date, formatT)
-const rangeFormat = (start, end) => formatRange(start, end, formatT)
+const dateFormat = (date: Date) => formatDate(date, formatD)
+const dateTimeFormat = (date: Date) => formatDate(date, formatT)
+const rangeFormat = (start: Date, end: Date) => formatRange(start, end, formatT)
 
 export const useEventList = (modal) => {
 	const { showDailyEventModal } = useModal(modal)
@@ -32,7 +37,7 @@ export const useEventList = (modal) => {
 	options.dateClick  = ({ date }) => showDailyEventModal({ date })
 	options.eventClick = ({ event }) => showDailyEventModal({ date: event.start })
 
-	options.events = async (info, success, failure) => {
+	options.events = async (info: object, success: Function, failure: Function) => {
 		try{
 			const { start, end } = info
 			const eventsFiltered = await EventRepository.findEventsBetween(start, end)
@@ -42,9 +47,9 @@ export const useEventList = (modal) => {
 	return { options, loading }
 }
 
-export const useEventsForDate = (date) => {
+export const useEventsForDate = (date: Date) => {
 	const loading = ref(true)
-	const state = reactive({ events: []})
+	const state = reactive({ events: <EventI[]> [] })
 	const fetchEvents = async () => {
 		loading.value = true
 		state.events = await EventRepository.findEventsByDate(date)

@@ -28,13 +28,13 @@ const articlesRaw: RawArticle[] = [
 	{ id: 6, description, tags, createdAt: new Date('2019 08 12'), title: 'You won\'t "Let" God do anything', user: { image: '/mock/users/official.jpg', name: 'Bill Hathaway' }, image: '/mock/articles/article (6).jpg' },
 ]
 
-const articles: Article[] = articlesRaw.map((article) => new Article(article))
+const articles: ArticleI[] = articlesRaw.map((article) => new Article(article))
 
 export default class ArticleRepository {
-	static async getArticles(): Promise<Article[]>{
+	static async getArticles(): Promise<ArticleI[]>{
 		return articles
 	}
-	static async findArticleById(id: Id): Promise<Article | undefined>{
+	static async findArticleById(id: Id): Promise<ArticleI | undefined>{
 		return articles.find((article) => article.id.toString() === id.toString())
 	}
 }

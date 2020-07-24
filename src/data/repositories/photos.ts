@@ -12,7 +12,7 @@ const photosRaw: Media[] = [
 const photos: Photo[] = photosRaw.map((photo) => new Photo(photo))
 
 export default class PhotoRepository {
-	static async getPhotos(): Promise<Photo[]>{
+	static async getPhotos(): Promise<PhotoI[]>{
 		return photos
 	}
 }

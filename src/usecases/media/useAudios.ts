@@ -1,4 +1,3 @@
-import Audio from '@/data/entities/audios'
 import AudioRepository from '@/data/repositories/audios'
 import { computed, reactive, ref } from '@vue/composition-api'
 
@@ -15,7 +14,7 @@ const formatTime = (length: number) => {
 
 export const useAudiosList = () => {
 	const loading = ref(false)
-	const state = reactive({ audios: <Audio[]> [] })
+	const state = reactive({ audios: <AudioI[]> [] })
 	const fetchAudios = async () => {
 		loading.value = true
 		state.audios = await AudioRepository.getAudios()

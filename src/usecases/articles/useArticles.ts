@@ -1,12 +1,10 @@
-import Article from '@/data/entities/articles'
 import ArticleRepository from '@/data/repositories/articles'
 import { reactive, ref, computed } from '@vue/composition-api'
 import { useRouter } from '@/usecases/usePlugins'
 
 export const useArticleList = () => {
 	const loading = ref(false)
-	const articles: Article[] = []
-	const state = reactive({ articles })
+	const state = reactive({ articles: <ArticleI[]> [] })
 	const fetchArticles = async () => {
 		loading.value = true
 		state.articles = await ArticleRepository.getArticles()

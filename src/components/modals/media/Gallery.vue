@@ -25,21 +25,28 @@
 	</div>
 </template>
 
-<script>
-import { usePhotoGalleryModal } from '@/usecases/usePhotos'
+<script lang="ts">
+import Vue from 'vue'
+import { usePhotoGalleryModal } from '@/usecases/media/usePhotos'
+import Photo from '@/data/entities/photos'
+
+interface SetupArgs {
+    photos: Photo[],
+    current: Id
+}
 
 export default {
-	props: {
+	props:  {
 		photos: {
-			type: Array[Object],
+			type: Object as () => Photo[],
 			required: true
 		},
 		current: {
-			type: Number || String,
+			type: Object as () => Id,
 			required: true
 		}
 	},
-	setup(props){
+	setup(props: SetupArgs){
 		const { index, next, previous, length } = usePhotoGalleryModal(props.photos, props.current)
 		return { index, next, previous, length }
 	}

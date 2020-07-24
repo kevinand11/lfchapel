@@ -1,4 +1,4 @@
-export default class Photo implements Media {
+export default class Photo implements PhotoI {
 	public readonly id: Id
 	public readonly title: string
 	public readonly description: string

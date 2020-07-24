@@ -12,7 +12,7 @@ const videosRaw: MediaWithPreview[] = [
 const videos: Video[] = videosRaw.map((video) => new Video(video))
 
 export default class VideoRepository {
-	static async getVideos(): Promise<Video[]> {
+	static async getVideos(): Promise<VideoI[]> {
 		return videos
 	}
 }

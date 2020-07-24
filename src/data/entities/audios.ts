@@ -1,4 +1,4 @@
-export default class Audio implements Media {
+export default class Audio implements AudioI {
 	public readonly id: Id
 	public readonly title: string
 	public readonly description: string

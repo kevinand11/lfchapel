@@ -7,19 +7,19 @@ const eventsRaw: RawEvent[] = [
 	{ id: 4, title: 'St Martin\'s', description: 'Service to celebrate the feast of St Martin\'s day', start: new Date(2020,6,14), allDay: true }
 ]
 
-const events = eventsRaw.map((event) => new Event(event))
+const events: EventI[] = eventsRaw.map((event) => new Event(event))
 
 export default class EventRepository {
-	static async getEvents(): Promise<Event[]>{
+	static async getEvents(): Promise<EventI[]>{
 		return events
 	}
-	static async findEventsBetween(start: Date, end: Date): Promise<Event[]>{
+	static async findEventsBetween(start: Date, end: Date): Promise<EventI[]>{
 		return events.filter((event) => event.start >= start && event.start <= end)
 	}
-	static async findEventById(id: Id): Promise<Event | undefined>{
+	static async findEventById(id: Id): Promise<EventI | undefined>{
 		return events.find((event) => event.id.toString() === id.toString())
 	}
-	static async findEventsByDate(date: Date): Promise<Event[]>{
+	static async findEventsByDate(date: Date): Promise<EventI[]>{
 		return events.filter((event) => event.isWithinDate(date))
 	}
 }

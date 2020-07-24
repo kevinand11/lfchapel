@@ -1,4 +1,4 @@
-export default class Video implements MediaWithPreview{
+export default class Video implements VideoI{
 	public readonly id: Id
 	public readonly title: string
 	public readonly description: string
@@ -7,8 +7,8 @@ export default class Video implements MediaWithPreview{
 
 	constructor(data: MediaWithPreview){
 		this.id = data.id
-		this.title = data.title
-		this.description = data.description
+		this.title = data.title!
+		this.description = data.description!
 		this.link = data.link
 		this.preview = data.preview
 	}

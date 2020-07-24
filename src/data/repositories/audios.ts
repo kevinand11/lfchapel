@@ -12,7 +12,7 @@ const audiosRaw: Media[] = [
 const audios: Audio[] = audiosRaw.map((audio) => new Audio(audio))
 
 export default class AudioRepository {
-	static async getAudios(): Promise<Audio[]>{
+	static async getAudios(): Promise<AudioI[]>{
 		return audios
 	}
 }

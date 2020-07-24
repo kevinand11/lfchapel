@@ -1,10 +1,10 @@
-export default class Event {
+export default class Event implements EventI{
 	public readonly id: Id
 	public readonly title: string
 	public readonly description: string
 	public readonly start: Date
 	public readonly end: Date
-	public readonly allDay: boolean | undefined
+	public readonly allDay: boolean
 	constructor(data: RawEvent){
 		this.id = data.id
 		this.title = data.title
@@ -17,7 +17,7 @@ export default class Event {
 			this.end = date
 		}else{
 			this.start = data.start
-			this.end = data.end
+			this.end = data.end!
 		}
 		this.allDay = data.allDay
 	}
