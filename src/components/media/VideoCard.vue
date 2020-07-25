@@ -16,10 +16,11 @@
 <script lang="ts">
 import { useModal } from '@/usecases/useModal'
 import { defineComponent } from '@vue/composition-api'
+import type { PropType } from '@vue/composition-api'
 export default defineComponent({
 	props: {
 		video: {
-			type: Object as () => VideoI,
+			type: Object as PropType<VideoI>,
 			required: true
 		}
 	},

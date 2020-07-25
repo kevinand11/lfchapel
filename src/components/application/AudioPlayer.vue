@@ -22,10 +22,11 @@
 <script lang="ts">
 import { useAudioPlayer } from '@/usecases/media/useAudios'
 import { defineComponent } from '@vue/composition-api'
+import type { PropType } from '@vue/composition-api'
 export default defineComponent({
 	props: {
 		audio: {
-			type: Object as () => AudioI,
+			type: Object as PropType<AudioI>,
 			required: true
 		}
 	},

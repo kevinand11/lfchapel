@@ -28,14 +28,15 @@
 <script lang="ts">
 import { usePhotoGalleryModal } from '@/usecases/media/usePhotos'
 import { defineComponent } from '@vue/composition-api'
+import type { PropType } from '@vue/composition-api'
 export default defineComponent({
 	props:  {
 		photos: {
-			type: Object as () => PhotoI[],
+			type: Array as PropType<PhotoI[]>,
 			required: true
 		},
 		current: {
-			type: Object as () => Id,
+			type: String as PropType<Id>,
 			required: true
 		}
 	},

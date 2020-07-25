@@ -12,10 +12,11 @@
 
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api'
+import type { PropType } from '@vue/composition-api'
 export default defineComponent({
 	props: {
 		article: {
-			type: Object as () => ArticleI,
+			type: Object as PropType<ArticleI>,
 			required: true
 		}
 	}

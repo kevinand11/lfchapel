@@ -1,4 +1,3 @@
-import Photo from '@/data/entities/photos'
 import PhotoRepository from '@/data/repositories/photos'
 import { computed, reactive, ref } from '@vue/composition-api'
 

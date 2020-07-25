@@ -20,10 +20,11 @@
 <script lang="ts">
 import { useEventsForDate } from '@/usecases/events/useEvents'
 import { defineComponent } from '@vue/composition-api'
+import type { PropType } from '@vue/composition-api'
 export default defineComponent({
 	props: {
 		date: {
-			type: Object as () => Date,
+			type: Object as PropType<Date>,
 			required: true
 		}
 	},

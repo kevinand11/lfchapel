@@ -4,8 +4,8 @@ import store from '@/store/index'
 import { VueRouter } from 'vue-router/types/router'
 import { Store } from 'vuex'
 
-const storeKey = 'store-key'
-const routerKey = 'router-key'
+const storeKey = Symbol()
+const routerKey = Symbol()
 
 export const provideAllPlugins = () => {
 	provide(storeKey, store)
