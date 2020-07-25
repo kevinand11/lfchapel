@@ -15,9 +15,9 @@ export default {
 	components: {
 		GalleryPhotoCard
 	},
-	setup(props, { root}){
+	setup(){
 		const { photos, loading } = usePhotosList()
-		const { showGalleryModal } = useModal(root.$modal)
+		const { showGalleryModal } = useModal()
 		const showModal = (id) => showGalleryModal({ photos: photos.value, current: id })
 		return { photos, loading, showModal }
 	},

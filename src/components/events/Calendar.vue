@@ -13,8 +13,8 @@ export default defineComponent({
 	components: {
 		FullCalendar
 	},
-	setup(props, { root }){
-		const { options, loading } = useEventList(root.$modal)
+	setup(){
+		const { options, loading } = useEventList()
 		return { options, loading }
 	}
 })

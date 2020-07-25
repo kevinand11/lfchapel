@@ -5,7 +5,6 @@ import bootstrapPlugin from '@fullcalendar/bootstrap'
 import { reactive, ref, computed } from '@vue/composition-api'
 import EventRepository from '@/data/repositories/events'
 import { useModal } from '@/usecases/useModal'
-import { VModal } from '@/@types/config'
 
 const formatD = { day: '2-digit', month: 'short', year: 'numeric', separator: ' to ' }
 const formatT = { minute: '2-digit', hour: '2-digit', day: '2-digit', month: 'short', year: 'numeric', separator: ' to ' }
@@ -26,8 +25,8 @@ const dateFormat = (date: Date) => formatDate(date, formatD)
 const dateTimeFormat = (date: Date) => formatDate(date, formatT)
 const rangeFormat = (start: Date, end: Date) => formatRange(start, end, formatT)
 
-export const useEventList = (modal: VModal) => {
-	const { showDailyEventModal } = useModal(modal)
+export const useEventList = () => {
+	const { showDailyEventModal } = useModal()
 	const loading = ref(true)
 	options.loading = (isLoading) => loading.value = isLoading
 	options.dateClick  = ({ date }) => showDailyEventModal({ date })

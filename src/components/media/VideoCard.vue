@@ -24,8 +24,8 @@ export default defineComponent({
 			required: true
 		}
 	},
-	setup(props, { root }){
-		const { showVideoModal } =  useModal(root.$modal)
+	setup(props){
+		const { showVideoModal } =  useModal()
 		const showModal = () => showVideoModal({ video: props.video })
 		return { showModal }
 	}
