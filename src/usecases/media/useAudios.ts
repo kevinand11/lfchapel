@@ -48,7 +48,7 @@ export const useAudioPlayer = (id: Id, link: string) => {
 	}
 	const play = async () => {
 		try{
-			const controllers = Object.values(players)
+			const controllers = Object.values(players) as AudioInstance[]
 			controllers.forEach((player) => player.audio.pause())
 			await audio.play()
 		}

@@ -1,9 +1,11 @@
 declare type AudioPlayers = {
-    [key in Id]: {
-        state: AudioState;
-        audio: HTMLAudioElement;
-    };
-};
+    [key in Id]: AudioInstance
+}
+
+declare type AudioInstance = {
+    state: AudioState
+    audio: HTMLAudioElement
+}
 
 declare interface AudioState {
     loading: boolean

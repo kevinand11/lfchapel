@@ -14,7 +14,7 @@ export const usePhotosList = () => {
 	return { photos: computed(() => state.photos), loading }
 }
 
-export const usePhotoGalleryModal = (photos: Photo[], current: Id) => {
+export const usePhotoGalleryModal = (photos: PhotoI[], current: Id) => {
 	const length = photos.length
 	let currentIndex = photos.findIndex((photo) => photo.id.toString() === current.toString())
 	currentIndex = currentIndex < 0 ? 0 : currentIndex
