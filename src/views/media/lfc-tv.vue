@@ -7,10 +7,11 @@
 	</div>
 </template>
 
-<script>
-import VideoCard from '@/components/media/VideoCard'
+<script lang="ts">
+import { defineComponent } from '@vue/composition-api'
+import VideoCard from '@/components/media/VideoCard.vue'
 import { useVideosList } from '@/usecases/media/useVideos'
-export default {
+export default defineComponent({
 	components: {
 		VideoCard
 	},
@@ -27,7 +28,7 @@ export default {
 			]
 		}
 	}
-}
+})
 </script>
 
 <style lang="scss" scoped>

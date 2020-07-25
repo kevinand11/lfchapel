@@ -10,10 +10,11 @@
 	</div>
 </template>
 
-<script>
-import ArticleCard from '@/components/articles/ArticleCard'
+<script lang="ts">
+import { defineComponent } from '@vue/composition-api'
+import ArticleCard from '@/components/articles/ArticleCard.vue'
 import { useArticleList } from '@/usecases/articles/useArticles'
-export default {
+export default defineComponent({
 	components: {
 		ArticleCard
 	},
@@ -30,7 +31,7 @@ export default {
 		const { articles, loading } = useArticleList()
 		return { articles, loading }
 	}
-}
+})
 </script>
 
 <style lang="scss" scoped>
