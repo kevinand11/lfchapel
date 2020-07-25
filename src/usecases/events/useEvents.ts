@@ -36,7 +36,7 @@ export const useEventList = (modal: VModal) => {
 	options.events = (info, success, failure) => {
 		try{
 			const { start, end } = info
-			EventRepository.findEventsBetween(start, end).then(events => success(events as EventInput[]))
+			EventRepository.findEventsBetween(start, end).then((events) => success(events as EventInput[]))
 		}catch(err){ failure(err) }
 	}
 	return { options, loading }

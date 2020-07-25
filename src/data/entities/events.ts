@@ -10,7 +10,7 @@ export default class Event implements EventI{
 		this.title = data.title
 		this.description = data.description
 		if(data.allDay){
-			let date = data.start
+			const date = data.start
 			date.setHours(0,0,0)
 			this.start = date
 			date.setHours(23,59,59)
