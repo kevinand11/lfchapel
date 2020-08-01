@@ -1,44 +1,43 @@
 <template>
-	<nav class="navbar navbar-expand-lg navbar-light container d-flex flex-row-reverse flex-lg-row align-content-center justify-content-between">
-		<router-link class="navbar-brand" to="/">LFChapel</router-link>
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
+	<header>
+		<nav class="navbar navbar-expand-lg navbar-dark container d-flex flex-row-reverse flex-lg-row align-content-center justify-content-between">
+			<router-link class="navbar-brand" to="/">LFChapel</router-link>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
 
-		<div class="collapse navbar-collapse font-weight-bold" id="navbar">
-			<ul class="navbar-nav mr-auto mt-2 ml-auto text-center">
-				<li class="nav-item">
-					<router-link class="nav-link" to="/about-us/our-church">ABOUT</router-link>
-				</li>
-				<li class="nav-item">
-					<router-link class="nav-link" to="/events">EVENTS</router-link>
-				</li>
-				<li class="nav-item">
-					<router-link class="nav-link" to="/articles">BLOG</router-link>
-				</li>
-				<li class="nav-item">
-					<router-link class="nav-link" to="/media/photo-gallery">MEDIA</router-link>
-				</li>
-				<li class="nav-item">
-					<router-link class="nav-link" to="/give">GIVE</router-link>
-				</li>
-				<li class="nav-item">
-					<router-link class="nav-link" to="/forms/ask-our-pastor">FORMS</router-link>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" target="_blank" href="https://rccglfc.vomoz.net/rccglfc/vxh">MEMBER'S PORTAL</a>
-				</li>
-				<li class="nav-item">
-					<router-link class="nav-link" to="/contact-us">CONTACT</router-link>
-				</li>
-			</ul>
-		</div>
-	</nav>
+			<div class="collapse navbar-collapse font-weight-bold" id="navbar">
+				<ul class="navbar-nav mr-auto mt-2 ml-auto text-center">
+					<li class="nav-item">
+						<router-link class="nav-link" to="/about-us/our-church">ABOUT</router-link>
+					</li>
+					<li class="nav-item">
+						<router-link class="nav-link" to="/events">EVENTS</router-link>
+					</li>
+					<li class="nav-item">
+						<router-link class="nav-link" to="/articles">BLOG</router-link>
+					</li>
+					<li class="nav-item">
+						<router-link class="nav-link" to="/media/photo-gallery">MEDIA</router-link>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" target="_blank" href="https://rccglfc.vomoz.net/rccglfc/vxh">MEMBER'S PORTAL</a>
+					</li>
+					<li class="nav-item">
+						<router-link class="nav-link" to="/contact-us">CONTACT</router-link>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</header>
 </template>
 
 <style lang="scss" scoped>
+	header{
+		background: $red;
+	}
 	.nav-link{
-		color: $red !important;
+		color: $white;
 		padding: 0.5rem 0;
 	}
 </style>

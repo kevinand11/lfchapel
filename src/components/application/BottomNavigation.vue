@@ -1,117 +1,111 @@
 <template>
-	<div class="container pt-5">
-		<hr class="bordered mb-4">
-		<div class="row align-items-center">
-			<div class="col-md-4 my-3">
-				<h1>LFChapel</h1>
-			</div>
-			<div class="col-md-4 d-flex align-items-center my-3">
+	<footer>
+		<div class="container pt-5">
+			<hr class="bordered mb-4">
+			<div class="row align-items-center">
+				<div class="col-md-4 my-3">
+					<h1>LFChapel</h1>
+				</div>
+				<div class="col-md-4 d-flex align-items-center my-3">
 				<span class="icon mr-2">
 					<i class="fa fa-map-marker-alt"></i>
 				</span>
-				<span class="info">321 Main Street, Suite 200<br>Reisterstown Road, Maryland 21136</span>
-			</div>
-			<div class="col-md-4 d-flex align-items-center my-3">
+					<span class="info">{{ address }}</span>
+				</div>
+				<div class="col-md-4 d-flex align-items-center my-3">
 				<span class="icon mr-2">
-					<i class="fa fa-map-marker-alt"></i>
+					<i class="fa fa-envelope"></i>
 				</span>
-				<div class="info">
-					<div class="email"><a href="mailto:info@lfchapel.com">info@lfchapel.com</a></div>
-					<div class="phone"><a href="tel:443-273-3563">443-273-3563</a></div><div class="email"><a href="mailto:pastor@lfchapel.com">pastor@lfchapel.com</a></div>
-					<div class="email"><a href="mailto:Lauretta@lfchapel.com">lauretta@lfchapel.com</a></div>
+					<div class="info">
+						<div class="phone"><a :href="`tel:${phone}`">{{ phone }}</a></div>
+						<div class="email"><a :href="`mailto:${email_1}`">{{ email_1 }}</a></div>
+						<div class="email"><a :href="`mailto:${email_2}`">{{ email_2 }}}</a></div>
+						<div class="email"><a :href="`mailto:${email_3}`">{{ email_3 }}</a></div>
+					</div>
 				</div>
 			</div>
-		</div>
-		<hr class="bordered my-5">
-		<div class="row links">
-			<div class="col-md-3 col-6">
-				<h4>MAIN LINKS</h4>
-				<ul class="list-group">
-					<li class="list-group-item">
-						<router-link to="/">Home</router-link>
-					</li>
-					<li class="list-group-item">
-						<router-link to="/about-us/our-church">Our Church</router-link>
-					</li>
-					<li class="list-group-item">
-						<router-link to="/media/photo-gallery">Media</router-link>
-					</li>
-					<li class="list-group-item">
-						<router-link to="/give">Give</router-link>
-					</li>
-					<li class="list-group-item">
-						<router-link to="/contact-us">Contact Us</router-link>
-					</li>
-				</ul>
-			</div>
-			<div class="col-md-3 col-6">
-				<h4>WHO WE ARE</h4>
-				<ul class="list-group">
-					<li class="list-group-item">
-						<router-link to="/about-us/mission-and-vision">Mission and Vision</router-link>
-					</li>
-					<li class="list-group-item">
-						<router-link to="/about-us/service-times">Service Times</router-link>
-					</li>
-					<li class="list-group-item">
-						<router-link to="/articles">Blog</router-link>
-					</li>
-					<li class="list-group-item">
-						<router-link to="/forms/prayer-requests">Prayer Requests</router-link>
-					</li>
-				</ul>
-			</div>
-			<div class="col-md-3 col-6">
-				<h4>FOLLOW US</h4>
-				<ul class="list-group">
-					<li class="list-group-item d-flex">
-						<span class="socials mr-2">
-							<i class="fab fa-twitter"></i>
-						</span>
-						<a href="https://www.twitter.com/">Twitter</a>
-					</li>
-					<li class="list-group-item d-flex">
-						<span class="socials mr-2">
-							<i class="fab fa-facebook-f"></i>
-						</span>
-						<a href="https://www.facebook.com/">Facebook</a>
-					</li>
-					<li class="list-group-item d-flex">
-						<span class="socials mr-2">
-							<i class="fab fa-google-plus-g"></i>
-						</span>
-						<a href="https://www.plus.google.com/">Google &plus;</a>
-					</li>
-					<li class="list-group-item d-flex">
-						<span class="socials mr-2">
-							<i class="fab fa-youtube"></i>
-						</span>
-						<a href="https://www.youtube.com/">Youtube</a>
-					</li>
-				</ul>
-			</div>
-			<div class="col-md-3 col-6">
-				<h4>NEWSLETTER</h4>
-				<form @submit.prevent="() => {}">
+			<hr class="bordered my-5">
+			<div class="row links">
+				<div class="col-md-3 col-6">
+					<h4>MAIN LINKS</h4>
 					<ul class="list-group">
 						<li class="list-group-item">
-							<input type="email" class="form-control" placeholder="Enter email">
+							<router-link to="/">Home</router-link>
 						</li>
 						<li class="list-group-item">
-							<button class="btn btn-outline-primary" type="submit">Submit</button>
+							<router-link to="/about-us/our-church">Our Church</router-link>
+						</li>
+						<li class="list-group-item">
+							<router-link to="/media/photo-gallery">Media</router-link>
+						</li>
+						<li class="list-group-item">
+							<router-link to="/contact-us">Contact Us</router-link>
 						</li>
 					</ul>
-				</form>
+				</div>
+				<div class="col-md-3 col-6">
+					<h4>WHO WE ARE</h4>
+					<ul class="list-group">
+						<li class="list-group-item">
+							<router-link to="/about-us/mission-and-vision">Mission and Vision</router-link>
+						</li>
+						<li class="list-group-item">
+							<router-link to="/about-us/service-times">Service Times</router-link>
+						</li>
+						<li class="list-group-item">
+							<router-link to="/articles">Blog</router-link>
+						</li>
+						<li class="list-group-item">
+							<router-link to="/forms/prayer-requests">Prayer Requests</router-link>
+						</li>
+					</ul>
+				</div>
+				<div class="col-md-3 col-6">
+					<h4>FOLLOW US</h4>
+					<ul class="list-group">
+						<li class="list-group-item d-flex">
+							<span class="socials mr-2">
+								<i class="fab fa-twitter"></i>
+							</span>
+							<a href="https://www.twitter.com/">Twitter</a>
+						</li>
+						<li class="list-group-item d-flex">
+							<span class="socials mr-2">
+								<i class="fab fa-facebook-f"></i>
+							</span>
+							<a href="https://www.facebook.com/">Facebook</a>
+						</li>
+						<li class="list-group-item d-flex">
+							<span class="socials mr-2">
+								<i class="fab fa-youtube"></i>
+							</span>
+							<a href="https://www.youtube.com/">Youtube</a>
+						</li>
+					</ul>
+				</div>
+				<div class="col-md-3 col-6">
+					<h4>NEWSLETTER</h4>
+					<form @submit.prevent="() => {}">
+						<ul class="list-group">
+							<li class="list-group-item">
+								<input type="email" class="form-control" placeholder="Enter email">
+							</li>
+							<li class="list-group-item">
+								<button class="btn btn-outline-primary" type="submit">Submit</button>
+							</li>
+						</ul>
+					</form>
+				</div>
+			</div>
+			<hr class="my-3">
+			<div class="d-flex justify-content-center">
+				<p>
+					<span class="copyright">&copy; Copyright {{ new Date().getFullYear() }} Living Faith Chapel. </span>
+					<span>All Right Reserved</span>
+				</p>
 			</div>
 		</div>
-		<hr class="my-3">
-		<div class="d-flex justify-content-center">
-			<p>
-				<span class="copyright">&copy; Copyright 2017 Living Faith Chapel. </span>
-				<span>All Right Reserved</span>
-			</p>
-		</div>
-	</div>
+	</footer>
 </template>
 
 <style lang="scss" scoped>
@@ -169,3 +163,18 @@
 		font-weight: bolder;
 	}
 </style>
+
+<script lang="ts">
+import { defineComponent } from '@vue/composition-api'
+export default defineComponent({
+	setup(){
+	    return {
+	        address: process.env.VUE_APP_CHURCH_ADDRESS,
+		    email_1: process.env.VUE_APP_CHURCH_EMAIL_1,
+		    email_2: process.env.VUE_APP_CHURCH_EMAIL_2,
+		    email_3: process.env.VUE_APP_CHURCH_EMAIL_3,
+		    phone: process.env.VUE_APP_CHURCH_PHONE,
+	    }
+	}
+})
+</script>
