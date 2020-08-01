@@ -1,4 +1,3 @@
-/*
 const { cacheableResponse, expiration, precaching, routing, strategies } = self.workbox
 
 self.addEventListener('message', (event) => {
@@ -36,4 +35,3 @@ routing.registerRoute(({ url }) => url.origin === 'https://fonts.gstatic.com', n
 	})
 ]
 }))
-*/
