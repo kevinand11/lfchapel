@@ -24,7 +24,7 @@ import type { PropType } from '@vue/composition-api'
 export default defineComponent({
 	props: {
 		date: {
-			type: Object as PropType<Date>,
+			type: Date as PropType<Date>,
 			required: true
 		}
 	},
