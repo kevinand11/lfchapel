@@ -1,7 +1,6 @@
 <template>
 	<footer>
 		<div class="container pt-5">
-			<hr class="bordered mb-4">
 			<div class="row align-items-center">
 				<div class="col-md-4 my-3">
 					<h1>LFChapel</h1>

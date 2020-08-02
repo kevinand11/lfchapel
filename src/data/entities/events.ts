@@ -23,7 +23,11 @@ export default class Event implements EventI{
 	}
 
 	isWithinDate(date: Date){
-		return this.start <= date && date <= this.end
+		const start = this.start, end = this.end
+		start.setHours(0,0,0,0)
+		end.setHours(0,0,0,0)
+		date.setHours(0,0,0,0)
+		return start <= date && date <= end
 	}
 
 	get trimmedDescription(){

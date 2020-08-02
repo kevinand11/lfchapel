@@ -37,7 +37,7 @@
 		background: $red;
 	}
 	.nav-link{
-		color: $white;
+		color: $white !important;
 		padding: 0.5rem 0;
 	}
 </style>

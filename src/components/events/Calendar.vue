@@ -22,4 +22,6 @@ export default defineComponent({
 
 <style scoped lang="scss">
 	td.fc-daygrid-day{ cursor: pointer !important; }
+	button.btn-primary{ color: $white !important; }
+	button.btn-primary{ color: $white !important; }
 </style>

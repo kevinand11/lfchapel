@@ -72,16 +72,6 @@ export default [
 		component: () => import(/* webpackChunkName: 'forms' */ '../views/forms/index.vue'),
 		children: [
 			{
-				path: '/forms/ask-our-pastor',
-				name: 'Ask Our Pastor',
-				component: () => import(/* webpackChunkName: 'ask-our-pastor' */ '../views/forms/ask-our-pastor.vue'),
-			},
-			{
-				path: '/forms/membership',
-				name: 'Membership',
-				component: () => import(/* webpackChunkName: 'membership' */ '../views/forms/membership.vue'),
-			},
-			{
 				path: '/forms/prayer-requests',
 				name: 'Prayer Requests',
 				component: () => import(/* webpackChunkName: 'prayer-requests' */ '../views/forms/prayer-requests.vue'),
@@ -90,16 +80,6 @@ export default [
 				path: '/forms/testimonies',
 				name: 'Testimonies',
 				component: () => import(/* webpackChunkName: 'testimonies' */ '../views/forms/testimonies.vue'),
-			},
-			{
-				path: '/forms/need-a-ride',
-				name: 'Need A Ride',
-				component: () => import(/* webpackChunkName: 'need-a-ride' */ '../views/forms/need-a-ride.vue'),
-			},
-			{
-				path: '/forms/invite-a-friend',
-				name: 'Invite A Friend',
-				component: () => import(/* webpackChunkName: 'invite-a-friend' */ '../views/forms/invite-a-friend.vue'),
 			},
 			{
 				path: '/forms/feedback',
