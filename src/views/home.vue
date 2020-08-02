@@ -1,25 +1,28 @@
 <template>
-	<div>
-		<Carousel />
+	<Default>
+		<Banner />
 		<QuickActions />
-		<Services />
 		<Mission />
+		<UpcomingEvents />
+		<RecentArticles />
 		<VisitUs />
-	</div>
+	</Default>
 </template>
 
 <script>
-import Carousel from '@/components/home/Carousel.vue'
+import Banner from '@/components/home/Banner.vue'
 import QuickActions from '@/components/home/QuickActions.vue'
-import Services from '@/components/home/Services.vue'
+import UpcomingEvents from '@/components/home/UpcomingEvents.vue'
+import RecentArticles from '@/components/home/RecentArticles.vue'
 import Mission from '@/components/home/Mission.vue'
 import VisitUs from '@/components/home/VisitUs.vue'
 export default {
 	name: 'Home',
 	components: {
-		Carousel,
+		Banner,
 		QuickActions,
-		Services,
+		UpcomingEvents,
+		RecentArticles,
 		VisitUs,
 		Mission
 	},

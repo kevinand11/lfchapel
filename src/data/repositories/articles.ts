@@ -37,4 +37,8 @@ export default class ArticleRepository {
 	static async findArticleById(id: Id): Promise<ArticleI | undefined>{
 		return articles.find((article) => article.id.toString() === id.toString())
 	}
+
+	static async getRecentArticles(): Promise<ArticleI[]>{
+		return articles.slice(0, 4)
+	}
 }

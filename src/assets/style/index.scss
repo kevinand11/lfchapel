@@ -10,10 +10,41 @@ $theme-colors: (
 
 body{
 	font-family: Montserrat, sans-serif;
+	* *{
+		overflow-wrap: break-word;
+	}
 }
 
 a{
 	text-decoration: none;
+}
+
+.section-header{
+	margin-bottom: 3.0rem;
+	h2{
+		text-align: center;
+		font-size: 1.4rem;
+		font-weight: 400;
+		padding: 1.5rem 0;
+		border-bottom: 3px dashed $red !important;
+		border-top:3px dashed $red !important;
+	}
+	@media (min-width: 576px){
+		h2{
+			font-size: 1.5rem;
+		}
+	}
+	@media (min-width: 768px){
+		h2{
+			font-size: 2.0rem;
+			font-weight: 300;
+		}
+	}
+	@media (min-width: 992px){
+		h2{
+			font-size: 2.5rem;
+		}
+	}
 }
 
 .bordered{
@@ -36,4 +67,8 @@ button[class*="btn-outline"]{
 	font-weight: bold;
 	padding-left: 2rem;
 	padding-right: 2rem;
+}
+
+.rounded-xl{
+	border-radius: 0.75rem;
 }

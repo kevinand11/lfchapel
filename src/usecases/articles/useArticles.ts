@@ -28,3 +28,15 @@ export const useArticle = (id: Id) => {
 
 	return { article: computed(() => state.article), loading }
 }
+
+export const useRecentArticles = () => {
+	const loading = ref(false)
+	const state = reactive({ articles: <ArticleI[]> [] })
+	const fetchArticles = async () => {
+		loading.value = true
+		state.articles = await ArticleRepository.getRecentArticles()
+		loading.value = false
+	}
+	fetchArticles()
+	return { articles: computed(() => state.articles), loading }
+}

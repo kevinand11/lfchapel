@@ -55,3 +55,19 @@ export const useEventsForDate = (date: Date) => {
 		events: computed(() => state.events)
 	}
 }
+
+export const useRecentEvents = () => {
+	const loading = ref(true)
+	const state = reactive({ events: <EventI[]> [] })
+	const fetchEvents = async () => {
+		loading.value = true
+		state.events = await EventRepository.findRecentEvents()
+		loading.value = false
+	}
+	fetchEvents()
+	return {
+		loading, events: computed(() => state.events)
+	}
+}
+
+export { dateFormat as formatDate, rangeFormat as formatRange, dateTimeFormat as formatDateTime }

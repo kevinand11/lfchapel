@@ -22,4 +22,8 @@ export default class EventRepository {
 	static async findEventsByDate(date: Date): Promise<EventI[]>{
 		return events.filter((event) => event.isWithinDate(date))
 	}
+	static async findRecentEvents(): Promise<EventI[]>{
+		//TODO: Implement logic to fetch 5 latest events
+		return events.sort((a, b) => a.start.getTime() - b.start.getTime())
+	}
 }

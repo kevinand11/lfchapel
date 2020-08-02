@@ -25,4 +25,11 @@ export default class Event implements EventI{
 	isWithinDate(date: Date){
 		return this.start <= date && date <= this.end
 	}
+
+	get trimmedDescription(){
+		if(this.description.length < 200){ return this.description }
+		const index = this.description.indexOf(' ', 200)
+		return `${this.description.slice(0, index)}...`
+	}
+
 }

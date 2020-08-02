@@ -1,12 +1,12 @@
 <template>
-	<div class="py-5">
+	<section class="py-5">
 		<div class="container">
-			<hr class="bordered">
-			<h2 class="text-center my-4">Visit Our Church</h2>
-			<hr class="bordered">
+			<div class="section-header">
+				<h2>Visit Our Church</h2>
+			</div>
 		</div>
 		<GoogleMap />
-	</div>
+	</section>
 </template>
 
 <script>

@@ -6,6 +6,8 @@ import '@/config/registerServiceWorker'
 import 'bootstrap'
 import '@/assets/style/index.scss'
 
+import Default from '@/layouts/Default.vue'
+
 import RouteName from '@/components/application/RouteName.vue'
 import Loading from '@/components/application/Loading.vue'
 import AudioPlayer from '@/components/application/AudioPlayer.vue'
@@ -15,6 +17,8 @@ Vue.use(VueJsModal, { dialog: true, dynamicDefaults: {
 	dynamic: true, width: '90%', minWidth: 600, maxWidth: 900,
 	height: 'auto', adaptive: false, scrollable: true, focusTrap: true
 }})
+
+Vue.component('Default', Default)
 
 Vue.component('RouteName', RouteName)
 Vue.component('Loading', Loading)
