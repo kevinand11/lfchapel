@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<Default>
 		<RouteName />
 		<div class="container">
 			<Loading v-if="loading" />
@@ -7,7 +7,7 @@
 				<ArticleCard v-for="article in articles" :article="article" :key="article.id" />
 			</div>
 		</div>
-	</div>
+	</Default>
 </template>
 
 <script lang="ts">
@@ -39,7 +39,7 @@ export default defineComponent({
 	@media (min-width: $md) {
 		.card-columns{ column-count: 2; }
 	}
-	@media (min-width: $lg) {
+	@media (min-width: $xl) {
 		.card-columns{ column-count: 3; }
 	}
 </style>

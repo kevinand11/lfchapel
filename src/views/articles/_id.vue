@@ -1,24 +1,25 @@
 <template>
-	<div>
+	<Default>
 		<Loading v-if="loading" />
 		<div v-else>
 			<ArticleImageTitle :article="article" />
 			<ArticleContent :article="article" />
 		</div>
-	</div>
+	</Default>
 </template>
 
 <script>
 import { useArticle } from '@/usecases/articles/useArticles'
 import ArticleImageTitle from '@/components/articles/ArticleImageTitle'
 import ArticleContent from '@/components/articles/ArticleContent'
+import router from '@/router'
 export default {
 	components: {
 		ArticleImageTitle,
 		ArticleContent
 	},
-	setup(props, { root }){
-		const { id } = root.$route.params
+	setup(){
+		const { id } = router.currentRoute.params
 		const { article, loading } = useArticle(id)
 		return { article, loading }
 	},
