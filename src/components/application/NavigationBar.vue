@@ -1,6 +1,6 @@
 <template>
-	<header>
-		<nav class="navbar navbar-expand-lg navbar-dark container d-flex flex-row-reverse flex-lg-row align-content-center justify-content-between">
+	<header class="sticky-top">
+		<nav class="navbar navbar-expand-lg navbar-dark container d-flex align-content-center justify-content-between">
 			<router-link class="navbar-brand" to="/">LFChapel</router-link>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>

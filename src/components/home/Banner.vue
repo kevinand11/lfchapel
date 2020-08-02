@@ -1,30 +1,36 @@
 <template>
-	<div class="banner d-flex align-items-center flex-column-reverse flex-md-row">
-		<div class="p-4 banner-content container">
-			<h1 class="display-4">Welcome to our church in corona exile</h1>
-			<p class="lead">We have moved to web sermons this period. Join us in growing the church in new ways. Stay tuned here for news from us.</p>
+	<div class="banner d-flex align-items-center justify-content-center flex-column-reverse flex-lg-row">
+		<div class="banner-content container text-center">
+			<h1 class="display-4">WELCOME TO OUR CHURCH</h1>
+			<p class="lead">Prayer can be rich when it's simple and spontaneous. In fact, we can pray, at any time. It doesn't require lofty language.</p>
 			<hr class="my-4">
-			<router-link class="btn btn-primary btn-lg" to="/media/audio-sermons" role="button">See sermons</router-link>
+			<router-link class="btn btn-danger btn-lg text-white" to="/media/audio-sermons" role="button">See sermons</router-link>
 		</div>
-		<img src="@/assets/images/home/slide-1.jpg" alt="" class="d-md-none w-100">
+		<div>
+			<img src="@/assets/images/home/banner.png" alt="" class="w-100">
+		</div>
 	</div>
 </template>
 
 <style lang="scss" scoped>
-	.display-4{
-		font-size: 2.0rem;
+	.banner{
+		.banner-content{
+			padding: 1.5rem;
+		}
+		color: $main-red;
+		.display-4{
+			font-size: 2.25rem;
+			font-weight: 900;
+		}
+		.lead{
+			font-size: 1.0rem;
+		}
 	}
-	.lead{
-		font-size: 1.0rem;
-	}
-	@media (min-width: $md){
+	@media (min-width: $lg){
 		.banner{
-			background: url("../../assets/images/home/slide-2.jpg") right;
 			min-height: 500px;
-			color: $white;
 			.banner-content{
-				padding: 4rem;
-				width: 80%;
+				padding: 4rem 0 4rem 10%;
 				.display-4{
 					font-size: 3.5rem;
 				}

@@ -43,7 +43,7 @@
 	</div>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 	p img{
 		float: left;
 		margin: 0 15px 5px 0;

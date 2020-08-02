@@ -3,8 +3,8 @@
 		<Banner />
 		<QuickActions />
 		<Mission />
-		<UpcomingEvents />
-		<RecentArticles />
+		<UpcomingEvents class="d-none" />
+		<RecentArticles class="d-none" />
 		<VisitUs />
 	</Default>
 </template>

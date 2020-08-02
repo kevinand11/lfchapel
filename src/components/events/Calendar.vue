@@ -20,6 +20,6 @@ export default defineComponent({
 })
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 	td.fc-daygrid-day{ cursor: pointer !important; }
 </style>

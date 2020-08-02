@@ -1,7 +1,9 @@
 <template>
 	<div>
 		<NavigationBar />
-		<slot class="pb-5"/>
+		<div class="mb-5">
+			<slot/>
+		</div>
 		<BottomNavigation />
 	</div>
 </template>

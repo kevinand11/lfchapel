@@ -1,35 +1,44 @@
 <template>
 	<section class="p-3 p-md-5">
 		<div class="container">
-			<div class="d-flex flex-wrap justify-content-center flex-column flex-sm-row align-items-sm-center">
-				<div class="slide slide1 flex-grow-1 shadow">
+			<div class="row align-items-center">
+				<div class="slide col-md-4">
 					<div class="contain">
-						<h4>Upcoming</h4>
-						<h3>Events</h3>
-						<router-link class="mt-3" to="/events">
-							<span class="content"><i class="fas fa-angle-right"></i></span>
-							<span>see more</span>
-						</router-link>
+						<img src="@/assets/images/home/quick_1.svg" alt="" class="w-100">
+						<div class="child">
+							<h4>Upcoming</h4>
+							<h3>Events</h3>
+							<router-link class="mt-3" to="/events">
+								<span class="content"><i class="fas fa-angle-right"></i></span>
+								<span>view events</span>
+							</router-link>
+						</div>
 					</div>
 				</div>
-				<div class="slide slide2 flex-grow-1 shadow">
+				<div class="slide col-md-4">
 					<div class="contain">
-						<h4>Service</h4>
-						<h3>Times</h3>
-						<router-link class="mt-3" to="/about-us/service-times">
-							<span class="content"><i class="fas fa-angle-right"></i></span>
-							<span>plan your visit</span>
-						</router-link>
+						<img src="@/assets/images/home/quick_2.svg" alt="" class="w-100">
+						<div class="child">
+							<h4>Service</h4>
+							<h3>Times</h3>
+							<router-link class="mt-3" to="/about-us/service-times">
+								<span class="content"><i class="fas fa-angle-right"></i></span>
+								<span>plan your visit</span>
+							</router-link>
+						</div>
 					</div>
 				</div>
-				<div class="slide slide3 flex-grow-1 shadow">
+				<div class="slide col-md-4">
 					<div class="contain">
-						<h4>Prayer</h4>
-						<h3>Requests</h3>
-						<router-link class="mt-3" to="/forms/prayer-request">
-							<span class="content"><i class="fas fa-angle-right"></i></span>
-							<span>submit request</span>
-						</router-link>
+						<img src="@/assets/images/home/quick_3.svg" alt="" class="w-100">
+						<div class="child">
+							<h4>Prayer</h4>
+							<h3>Requests</h3>
+							<router-link class="mt-3" to="/forms/prayer-request">
+								<span class="content"><i class="fas fa-angle-right"></i></span>
+								<span>submit request</span>
+							</router-link>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -46,26 +55,30 @@
 		to{ left: 0; opacity: 1; }
 	}
 	.slide{
-		&.slide1{ animation: slideIn 1.25s; }
-		&.slide2{ animation: slideIn 1.00s; }
-		&.slide3{ animation: slideIn 0.75s; }
-		margin: 0 0.5rem 0.5rem 0;
+		margin: 0 0 0.5rem ;
 		.contain{
-			color: $white;
-			width: 100%;
-			background: $red;
-			border: 1px solid transparent;
-			padding: 2.8rem 2.25rem 2.25rem;
-			h4{
-				font-size: 1.25rem;
-				margin-bottom: 0;
-			}
-			h3{
-				font-size: 2.5rem;
-				margin-bottom: 1.25rem;
-			}
-			a {
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			z-index: 0;
+			//padding: 2.8rem 2.25rem 2.25rem;
+			.child{
+				position: absolute;
 				color: $white;
+				z-index: 1;
+				h4{
+					font-size: 1.25rem;
+					margin-bottom: 0;
+				}
+				h3{
+					font-size: 2.5rem;
+					margin-bottom: 1.25rem;
+				}
+				a {
+					color: $white;
+				}
 			}
 		}
 	}

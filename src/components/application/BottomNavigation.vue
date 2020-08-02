@@ -19,7 +19,7 @@
 					<div class="info">
 						<div class="phone"><a :href="`tel:${phone}`">{{ phone }}</a></div>
 						<div class="email"><a :href="`mailto:${email_1}`">{{ email_1 }}</a></div>
-						<div class="email"><a :href="`mailto:${email_2}`">{{ email_2 }}}</a></div>
+						<div class="email"><a :href="`mailto:${email_2}`">{{ email_2 }}</a></div>
 						<div class="email"><a :href="`mailto:${email_3}`">{{ email_3 }}</a></div>
 					</div>
 				</div>
@@ -91,7 +91,7 @@
 								<input type="email" class="form-control" placeholder="Enter email">
 							</li>
 							<li class="list-group-item">
-								<button class="btn btn-outline-primary" type="submit">Submit</button>
+								<button class="btn btn-outline-light" type="submit">Submit</button>
 							</li>
 						</ul>
 					</form>
@@ -100,7 +100,7 @@
 			<hr class="my-3">
 			<div class="d-flex justify-content-center">
 				<p>
-					<span class="copyright">&copy; Copyright {{ new Date().getFullYear() }} Living Faith Chapel. </span>
+					<span class="font-weight-bolder">&copy; Copyright {{ new Date().getFullYear() }} Living Faith Chapel. </span>
 					<span>All Right Reserved</span>
 				</p>
 			</div>
@@ -109,8 +109,12 @@
 </template>
 
 <style lang="scss" scoped>
-	span.icon{
+	footer{
 		background: $red;
+		color: $white;
+	}
+	span.icon{
+		background: $main-red;
 		color: $white;
 		border-radius: 5rem;
 		font-size: 1.5rem;
@@ -125,10 +129,12 @@
 	.info{
 		font-weight: bold;
 		a{
-			color: $black !important;
+			color: $white;
 		}
 	}
 	.links{
+		background: $red;
+		color: $white;
 		div{
 			margin-bottom: 2rem;
 		}
@@ -138,15 +144,16 @@
 			margin-bottom: 1rem;
 		}
 		.list-group-item{
+			background: $red;
 			border: none;
 			padding: 0.5rem 0;
 			a{
-				color: $black;
+				color: $white;
 			}
 		}
 		span.socials{
-			background: $red;
-			color: $white;
+			//background: $white;
+			//color: $red;
 			border-radius: 5rem;
 			font-size: 1rem;
 			width: 1.75rem;
@@ -157,10 +164,6 @@
 			align-items: center;
 			flex-shrink: 0;
 		}
-	}
-	.copyright{
-		color: $red;
-		font-weight: bolder;
 	}
 </style>
 
