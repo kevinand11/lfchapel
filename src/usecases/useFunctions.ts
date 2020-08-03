@@ -17,3 +17,12 @@ export const createFeedback = async (feedback: {name: string, email: string, mes
 	const res = await callable({ feedback })
 	return res.data
 }
+
+export const subscribeToMailingList = async (email: string) => {
+	const callable = functions.httpsCallable('subscribeToMailingList')
+	const res = await callable({ email })
+	return res.data
+}
+
+
+

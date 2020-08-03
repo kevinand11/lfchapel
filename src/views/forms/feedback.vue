@@ -15,22 +15,34 @@
 				<textarea id="message" rows="6" class="form-control" v-model="feedback.message"
 				          placeholder="Eg I would recommend the pastor on his empowering message last sunday."></textarea>
 			</div>
-			<button class="btn btn-outline-primary" @click="submit">Submit</button>
+			<button class="btn btn-outline-primary" @click="submit" :disabled="loading">
+				<i class="fas fa-spinner fa-spin mr-2" v-if="loading"></i>
+				<span>Submit</span>
+			</button>
 		</form>
 	</div>
 </template>
 
 <script>
-import { reactive } from '@vue/composition-api'
+import { ref, reactive } from '@vue/composition-api'
+import { createFeedback } from '@/usecases/useFunctions'
+import { notify } from '@/config/notify'
 export default {
 	setup(){
+		const loading = ref(false)
 		const feedback = reactive({ name: '', email: '', message: '' })
-		const submit = () => {
-			console.log(feedback)
+		const submit = async () => {
+			if(!feedback.name || !feedback.email || !feedback.message){
+				return await notify({ title: 'Please fill in all fields', icon: 'error' })
+			}
+			loading.value = true
+			await createFeedback({ name: feedback.name, email: feedback.email, message: feedback.message })
 			feedback.name = feedback.email = feedback.message = ''
+			loading.value = false
+			await notify({ title: 'Feedback sent successfully', icon: 'success' })
 		}
 		return {
-			feedback, submit
+			feedback, submit, loading
 		}
 	},
 	meta(){

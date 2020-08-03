@@ -87,10 +87,13 @@
 					<form @submit.prevent="() => {}">
 						<ul class="list-group">
 							<li class="list-group-item">
-								<input type="email" class="form-control" placeholder="Enter email">
+								<input type="email" class="form-control" placeholder="Enter email" v-model="email">
 							</li>
 							<li class="list-group-item">
-								<button class="btn btn-outline-light" type="submit">Submit</button>
+								<button class="btn btn-outline-light" type="submit" :disabled="loading" @click="submit">
+									<i class="fas fa-spinner fa-spin mr-2" v-if="loading"></i>
+									<span>Submit</span>
+								</button>
 							</li>
 						</ul>
 					</form>
@@ -167,10 +170,25 @@
 </style>
 
 <script lang="ts">
-import { defineComponent } from '@vue/composition-api'
+import { defineComponent, ref } from '@vue/composition-api'
+import { notify } from '@/config/notify'
+import { subscribeToMailingList } from '@/usecases/useFunctions'
 export default defineComponent({
 	setup(){
+		const loading = ref(false)
+		const email = ref('')
+		const submit = async () => {
+			if(!email.value){
+				return await notify({ title: 'Please fill in the email field', icon: 'error' })
+			}
+			loading.value = true
+			await subscribeToMailingList(email.value)
+			email.value = ''
+			loading.value = false
+			await notify({ title: 'Subscription successful', icon: 'success' })
+		}
 	    return {
+			submit, email, loading,
 	        address: process.env.VUE_APP_CHURCH_ADDRESS,
 		    email_1: process.env.VUE_APP_CHURCH_EMAIL_1,
 		    email_2: process.env.VUE_APP_CHURCH_EMAIL_2,

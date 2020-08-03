@@ -41,7 +41,7 @@ export default {
 		const testimony = reactive({ name: '', email: '', message: '', public: true })
 		const submit = async () => {
 			if(!testimony.name || !testimony.email || !testimony.message){
-				await notify({ title: 'Please fill in all fields', icon: 'error' })
+				return await notify({ title: 'Please fill in all fields', icon: 'error' })
 			}
 			loading.value = true
 			await createTestimony({ name: testimony.name, email: testimony.email, message: testimony.message, public: testimony.public })

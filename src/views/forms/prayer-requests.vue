@@ -23,23 +23,36 @@
 					</label>
 				</div>
 			</div>
-			<button class="btn btn-outline-primary" @click="submit">Submit</button>
+			<button class="btn btn-outline-primary" @click="submit" :disabled="loading">
+				<i class="fas fa-spinner fa-spin mr-2" v-if="loading"></i>
+				<span>Submit</span>
+			</button>
 		</form>
 	</div>
 </template>
 
 <script>
-import { reactive } from '@vue/composition-api'
+import { ref, reactive } from '@vue/composition-api'
+import { createPrayerRequest } from '@/usecases/useFunctions'
+import { notify } from '@/config/notify'
+
 export default {
 	setup(){
+		const loading = ref(false)
 		const request = reactive({ name: '', email: '', message: '', public: true })
-		const submit = () => {
-			console.log(request)
+		const submit = async () => {
+			if(!request.name || !request.email || !request.message){
+				return await notify({ title: 'Please fill in all fields', icon: 'error' })
+			}
+			loading.value = true
+			await createPrayerRequest({ name: request.name, email: request.email, message: request.message, public: request.public })
 			request.name = request.email = request.message = ''
 			request.public = true
+			loading.value = false
+			await notify({ title: 'Prayer request sent successfully', icon: 'success' })
 		}
 		return {
-			request, submit
+			request, submit, loading
 		}
 	},
 	meta(){
