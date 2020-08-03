@@ -1,22 +1,15 @@
 <template>
-	<div>
-		<NavigationBar />
-		<router-view class="pb-5"/>
-		<BottomNavigation />
-	</div>
+  <div>
+    <router-view />
+  </div>
 </template>
 
 <script>
+import { defineComponent } from '@vue/composition-api'
 import { provideAllPlugins } from '@/usecases/usePlugins'
-import NavigationBar from '@/components/application/NavigationBar.vue'
-import BottomNavigation from '@/components/application/BottomNavigation.vue'
-export default {
-	components: {
-		NavigationBar,
-		BottomNavigation
-	},
+export default defineComponent({
 	setup(){
-		provideAllPlugins()
+	  provideAllPlugins()
 	}
-}
+})
 </script>

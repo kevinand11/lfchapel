@@ -7,18 +7,20 @@
 	</div>
 </template>
 
-<script>
-import { usePhotosList } from '@/usecases/usePhotos'
-import GalleryPhotoCard from '@/components/media/GalleryPhotoCard'
+<script lang="ts">
+import { defineComponent } from '@vue/composition-api'
+import { usePhotosList } from '@/usecases/media/usePhotos'
 import { useModal } from '@/usecases/useModal'
-export default {
+import GalleryPhotoCard from '@/components/media/GalleryPhotoCard.vue'
+
+export default defineComponent({
 	components: {
 		GalleryPhotoCard
 	},
-	setup(props, { root}){
+	setup(){
 		const { photos, loading } = usePhotosList()
-		const { showGalleryModal } = useModal(root.$modal)
-		const showModal = (id) => showGalleryModal({ photos: photos.value, current: id })
+		const { showGalleryModal } = useModal()
+		const showModal = (id: Id) => showGalleryModal({ photos: photos.value, current: id })
 		return { photos, loading, showModal }
 	},
 	meta(){
@@ -30,7 +32,7 @@ export default {
 			]
 		}
 	}
-}
+})
 </script>
 
 <style lang="scss" scoped>

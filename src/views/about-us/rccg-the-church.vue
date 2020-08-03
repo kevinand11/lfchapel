@@ -12,7 +12,7 @@
 	</div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 	p img{
 		float: left;
 		margin: 0 15px 5px 0;

@@ -13,21 +13,23 @@
 	</div>
 </template>
 
-<script>
+<script lang="ts">
 import { useModal } from '@/usecases/useModal'
-export default {
+import { defineComponent } from '@vue/composition-api'
+import type { PropType } from '@vue/composition-api'
+export default defineComponent({
 	props: {
 		video: {
-			type: Object,
+			type: Object as PropType<VideoI>,
 			required: true
 		}
 	},
-	setup(props, { root }){
-		const { showVideoModal } =  useModal(root.$modal)
+	setup(props){
+		const { showVideoModal } =  useModal()
 		const showModal = () => showVideoModal({ video: props.video })
 		return { showModal }
 	}
-}
+})
 </script>
 
 <style lang="scss" scoped>

@@ -7,10 +7,11 @@
 	</div>
 </template>
 
-<script>
-import AudioCard from '@/components/media/AudioCard'
-import { useAudiosList } from '@/usecases/useAudios'
-export default {
+<script lang="ts">
+import { defineComponent } from '@vue/composition-api'
+import AudioCard from '@/components/media/AudioCard.vue'
+import { useAudiosList } from '@/usecases/media/useAudios'
+export default defineComponent({
 	components: {
 		AudioCard
 	},
@@ -27,7 +28,7 @@ export default {
 			]
 		}
 	}
-}
+})
 </script>
 
 <style lang="scss" scoped>

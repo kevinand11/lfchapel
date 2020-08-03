@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<Default>
 		<RouteName />
 		<div class="container">
 			<Loading v-if="loading" />
@@ -7,13 +7,14 @@
 				<ArticleCard v-for="article in articles" :article="article" :key="article.id" />
 			</div>
 		</div>
-	</div>
+	</Default>
 </template>
 
-<script>
-import ArticleCard from '@/components/articles/ArticleCard'
-import { useArticleList } from '@/usecases/useArticles'
-export default {
+<script lang="ts">
+import { defineComponent } from '@vue/composition-api'
+import ArticleCard from '@/components/articles/ArticleCard.vue'
+import { useArticleList } from '@/usecases/articles/useArticles'
+export default defineComponent({
 	components: {
 		ArticleCard
 	},
@@ -30,7 +31,7 @@ export default {
 		const { articles, loading } = useArticleList()
 		return { articles, loading }
 	}
-}
+})
 </script>
 
 <style lang="scss" scoped>
@@ -38,7 +39,7 @@ export default {
 	@media (min-width: $md) {
 		.card-columns{ column-count: 2; }
 	}
-	@media (min-width: $lg) {
+	@media (min-width: $xl) {
 		.card-columns{ column-count: 3; }
 	}
 </style>

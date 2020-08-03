@@ -5,37 +5,38 @@
 			<div class="carousel-inner">
 				<div class="carousel-item" v-for="(photo, i) in photos" :key="photo.id" :class="{'active': i === index}">
 					<img :src="photo.link" class="d-block w-100" alt="">
-					<div class="carousel-caption">
+					<div class="carousel-caption d-flex justify-content-between py-2 px-2 px-md-4">
+						<a @click="previous" role="button" data-slide="prev">
+							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+							<span class="sr-only">Previous</span>
+						</a>
 						<h5>
 							<span>{{ index + 1 }} of {{ length }}</span>
 							<a :href="photo.link" download class="ml-3 text-info">Download</a>
 						</h5>
+						<a  @click="next" role="button" data-slide="next">
+							<span class="carousel-control-next-icon" aria-hidden="true"></span>
+							<span class="sr-only">Next</span>
+						</a>
 					</div>
 				</div>
 			</div>
-			<a class="carousel-control-prev" @click="previous" role="button" data-slide="prev">
-				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-				<span class="sr-only">Previous</span>
-			</a>
-			<a class="carousel-control-next" @click="next" role="button" data-slide="next">
-				<span class="carousel-control-next-icon" aria-hidden="true"></span>
-				<span class="sr-only">Next</span>
-			</a>
 		</div>
 	</div>
 </template>
 
-<script>
-import { usePhotoGalleryModal } from '@/usecases/usePhotos'
-
-export default {
-	props: {
+<script lang="ts">
+import { usePhotoGalleryModal } from '@/usecases/media/usePhotos'
+import { defineComponent } from '@vue/composition-api'
+import type { PropType } from '@vue/composition-api'
+export default defineComponent({
+	props:  {
 		photos: {
-			type: Array[Object],
+			type: Array as PropType<PhotoI[]>,
 			required: true
 		},
 		current: {
-			type: Number || String,
+			type: Number as PropType<Id>,
 			required: true
 		}
 	},
@@ -43,7 +44,7 @@ export default {
 		const { index, next, previous, length } = usePhotoGalleryModal(props.photos, props.current)
 		return { index, next, previous, length }
 	}
-}
+})
 </script>
 
 <style lang="scss" scoped>

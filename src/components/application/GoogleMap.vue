@@ -1,3 +1,5 @@
 <template>
-	<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6169.231887132871!2d-76.714284!3d39.364933!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c81a146f0f8537%3A0xde3feb9d5e50e7d!2s200%20Reisterstown%20Rd%2C%20Pikesville%2C%20MD%2021208%2C%20USA!5e0!3m2!1sen!2sph!4v1594257814742!5m2!1sen!2sph" class="w-100 border-none" height="420" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+	<div style="width: 100%">
+		<iframe class="w-100 border-none" height="428" allowfullscreen tabindex="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=11438%20Cronridge%20drive%20Suite%20A%20&amp;%20B,%20Owings%20Mills%20MD%2021117+(Living%20Faith%20Chapel)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+	</div>
 </template>

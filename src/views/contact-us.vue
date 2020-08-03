@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<Default>
 		<RouteName />
 		<GoogleMap />
 		<div class="container">
@@ -12,7 +12,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</Default>
 </template>
 
 <script>

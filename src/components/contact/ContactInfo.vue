@@ -4,27 +4,42 @@
 			<i class="fas fa-map-marker-alt"></i>
 			<h4>Address</h4>
 			<div class="hidden">
-				<p>321 Main Street, Suite 200 <br>Reisterstown Road, Maryland 21136</p>
+				<p>{{ address }}</p>
 			</div>
 		</div>
 		<div class="col-6 col-sm-4 hover d-flex flex-column">
 			<i class="fas fa-phone"></i>
 			<h4>Phone</h4>
 			<div class="hidden">
-				<p>443-273-3563</p>
+				<p>{{ phone }}</p>
 			</div>
 		</div>
 		<div class="col-8 col-sm-4 hover d-flex flex-column">
 			<i class="fas fa-envelope"></i>
 			<h4>Email</h4>
 			<div class="hidden">
-				<p class="mb-0">info@lfchapel.com</p>
-				<p class="mb-0">pastor@lfchapel.com</p>
-				<p class="mb-0">lauretta@lfchapel.com</p>
+				<p class="mb-0">{{ email_1 }}</p>
+				<p class="mb-0">{{ email_2 }}</p>
+				<p class="mb-0">{{ email_3 }}</p>
 			</div>
 		</div>
 	</div>
 </template>
+
+<script lang="ts">
+import { defineComponent } from '@vue/composition-api'
+export default defineComponent({
+	setup(){
+	    return {
+	        address: process.env.VUE_APP_CHURCH_ADDRESS,
+		    email_1: process.env.VUE_APP_CHURCH_EMAIL_1,
+		    email_2: process.env.VUE_APP_CHURCH_EMAIL_2,
+		    email_3: process.env.VUE_APP_CHURCH_EMAIL_3,
+		    phone: process.env.VUE_APP_CHURCH_PHONE
+	    }
+	}
+})
+</script>
 
 <style lang="scss" scoped>
 	.hover{

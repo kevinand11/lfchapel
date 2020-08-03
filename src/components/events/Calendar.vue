@@ -5,20 +5,23 @@
 	</div>
 </template>
 
-<script>
+<script lang="ts">
 import FullCalendar from '@fullcalendar/vue'
-import { useEventList } from '@/usecases/useEvents'
-export default {
+import { useEventList } from '@/usecases/events/useEvents'
+import { defineComponent } from '@vue/composition-api'
+export default defineComponent({
 	components: {
 		FullCalendar
 	},
-	setup(props, { root }){
-		const { options, loading } = useEventList(root.$modal)
+	setup(){
+		const { options, loading } = useEventList()
 		return { options, loading }
 	}
-}
+})
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 	td.fc-daygrid-day{ cursor: pointer !important; }
+	button.btn-primary{ color: $white !important; }
+	button.btn-primary{ color: $white !important; }
 </style>

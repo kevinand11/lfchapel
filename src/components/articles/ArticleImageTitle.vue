@@ -3,7 +3,7 @@
 		<div class="overlay">
 			<div class="container text-center">
 				<h1 class="title">{{ article.title }}</h1>
-				<p>{{ article.createdAt }}</p>
+				<p>{{ formatDate(article.createdAt) }}</p>
 				<img :src="article.userImage" alt="" width="50" height="50" class="rounded-circle border border-secondary">
 				<h6>{{ article.userName }}</h6>
 			</div>
@@ -11,15 +11,21 @@
 	</div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from '@vue/composition-api'
+import type { PropType } from '@vue/composition-api'
+import { formatDate} from '@/usecases/events/useEvents'
+export default defineComponent({
 	props: {
 		article: {
-			type: Object,
+			type: Object as PropType<ArticleI>,
 			required: true
 		}
+	},
+	setup(){
+	    return { formatDate }
 	}
-}
+})
 </script>
 
 <style lang="scss" scoped>

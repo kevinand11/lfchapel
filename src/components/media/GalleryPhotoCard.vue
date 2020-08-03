@@ -4,17 +4,19 @@
 	</div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from '@vue/composition-api'
+import type { PropType } from '@vue/composition-api'
+export default defineComponent({
 	props: {
 		photo: {
-			type: Object,
+			type: Object as PropType<PhotoI>,
 			required: true
 		},
 		onClicked: {
-			type: Function,
+			type: Function as PropType<(id: Id) => void>,
 			required: true
 		}
 	}
-}
+})
 </script>

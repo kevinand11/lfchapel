@@ -10,15 +10,17 @@
 	</div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from '@vue/composition-api'
+import type { PropType } from '@vue/composition-api'
+export default defineComponent({
 	props: {
 		article: {
-			type: Object,
+			type: Object as PropType<ArticleI>,
 			required: true
 		}
 	}
-}
+})
 </script>
 
 <style lang="scss" scoped>

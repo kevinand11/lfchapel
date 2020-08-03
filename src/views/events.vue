@@ -1,10 +1,10 @@
 <template>
-	<div>
+	<Default>
 		<RouteName />
 		<div class="container">
 			<Calendar />
 		</div>
-	</div>
+	</Default>
 </template>
 
 <script>
