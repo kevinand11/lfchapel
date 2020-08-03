@@ -24,6 +24,9 @@
 						<a class="nav-link" target="_blank" href="https://rccglfc.vomoz.net/rccglfc/vxh">MEMBER'S PORTAL</a>
 					</li>
 					<li class="nav-item">
+						<router-link class="nav-link" to="/forms/prayer-requests">PRAYER REQUEST</router-link>
+					</li>
+					<li class="nav-item">
 						<router-link class="nav-link" to="/contact-us">CONTACT</router-link>
 					</li>
 				</ul>

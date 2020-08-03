@@ -73,17 +73,17 @@ export default [
 		children: [
 			{
 				path: '/forms/prayer-requests',
-				name: 'Prayer Requests',
+				name: 'Make a Prayer Request',
 				component: () => import(/* webpackChunkName: 'prayer-requests' */ '../views/forms/prayer-requests.vue'),
 			},
 			{
 				path: '/forms/testimonies',
-				name: 'Testimonies',
+				name: 'Share a Testimony',
 				component: () => import(/* webpackChunkName: 'testimonies' */ '../views/forms/testimonies.vue'),
 			},
 			{
 				path: '/forms/feedback',
-				name: 'Feedback',
+				name: 'Give us Feedback',
 				component: () => import(/* webpackChunkName: 'feedback' */ '../views/forms/feedback.vue'),
 			},
 		]

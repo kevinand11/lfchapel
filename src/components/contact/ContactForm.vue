@@ -14,7 +14,7 @@
 			<input type="text" id="subject" class="form-control" placeholder="Eg. Book an appointment">
 		</div>
 		<div class="form-group">
-			<label for="subject">Your Message</label>
+			<label for="message">Your Message</label>
 			<textarea id="message" rows="6" class="form-control" placeholder="Eg I want to book a private session with the pastor on Friday at 12 noon"></textarea>
 		</div>
 		<button class="btn btn-outline-primary">Submit</button>

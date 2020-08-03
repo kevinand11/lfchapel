@@ -7,24 +7,24 @@
 		</div>
 		<ul class="list-group d-none d-md-block">
 			<li class="list-group-item">
-				<router-link to="/forms/prayer-requests">Prayer Requests</router-link>
+				<router-link to="/forms/prayer-requests">Make a Prayer Request</router-link>
 			</li>
 			<li class="list-group-item">
-				<router-link to="/forms/testimonies">Testimonies</router-link>
+				<router-link to="/forms/testimonies">Share a Testimony</router-link>
 			</li>
 			<li class="list-group-item">
-				<router-link to="/forms/feedback">Feedback</router-link>
+				<router-link to="/forms/feedback">Give us Feedback</router-link>
 			</li>
 		</ul>
 		<ul class="list-group d-md-none" v-if="show">
 			<li class="list-group-item">
-				<router-link to="/forms/prayer-requests">Prayer Requests</router-link>
+				<router-link to="/forms/prayer-requests">Make a Prayer Request</router-link>
 			</li>
 			<li class="list-group-item">
-				<router-link to="/forms/testimonies">Testimonies</router-link>
+				<router-link to="/forms/testimonies">Share a Testimony</router-link>
 			</li>
 			<li class="list-group-item">
-				<router-link to="/forms/feedback">Feedback</router-link>
+				<router-link to="/forms/feedback">Give us Feedback</router-link>
 			</li>
 		</ul>
 	</div>
