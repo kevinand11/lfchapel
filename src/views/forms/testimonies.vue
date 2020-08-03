@@ -23,23 +23,35 @@
 					</label>
 				</div>
 			</div>
-			<button class="btn btn-outline-primary" @click="submit">Submit</button>
+			<button class="btn btn-outline-primary" @click="submit" :disabled="loading">
+				<i class="fas fa-spinner fa-spin mr-2" v-if="loading"></i>
+				<span>Submit</span>
+			</button>
 		</form>
 	</div>
 </template>
 
 <script>
-import { reactive } from '@vue/composition-api'
+import { ref, reactive } from '@vue/composition-api'
+import { createTestimony } from '@/usecases/useFunctions'
+import { notify } from '@/config/notify'
 export default {
 	setup(){
+		const loading = ref(false)
 		const testimony = reactive({ name: '', email: '', message: '', public: true })
-		const submit = () => {
-			console.log(testimony)
+		const submit = async () => {
+			if(!testimony.name || !testimony.email || !testimony.message){
+				await notify({ title: 'Please fill in all fields', icon: 'error' })
+			}
+			loading.value = true
+			await createTestimony({ name: testimony.name, email: testimony.email, message: testimony.message, public: testimony.public })
 			testimony.name = testimony.email = testimony.message = ''
 			testimony.public = true
+			loading.value = false
+			await notify({ title: 'Testimony sent successfully', icon: 'success' })
 		}
 		return {
-			testimony, submit
+			testimony, submit, loading
 		}
 	},
 	meta(){
