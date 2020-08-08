@@ -6,18 +6,21 @@
 				<slot/>
 			</div>
 		</div>
+		<BottomCurve />
 		<BottomNavigation />
 	</div>
 </template>
 
 <script>
 import { defineComponent } from '@vue/composition-api'
+import BottomCurve from '@/components/application/BottomCurve'
 import NavigationBar from '@/components/application/NavigationBar.vue'
 import BottomNavigation from '@/components/application/BottomNavigation.vue'
 export default defineComponent({
 	components: {
 		NavigationBar,
-		BottomNavigation
+		BottomNavigation,
+		BottomCurve
 	},
 })
 </script>

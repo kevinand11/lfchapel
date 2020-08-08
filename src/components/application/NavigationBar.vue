@@ -40,6 +40,7 @@
 <style lang="scss" scoped>
 	header{
 		background: $red;
+		margin: 0;
 	}
 	.nav-link{
 		color: $white !important;
