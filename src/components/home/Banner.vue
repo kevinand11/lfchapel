@@ -10,8 +10,35 @@
 				<hr class="my-4">
 				<router-link class="btn btn-danger btn-lg text-white" to="/about-us/our-church" role="button">About Our Church</router-link>
 			</div>
-			<div>
-				<img src="@/assets/images/home/banner.png" alt="" class="w-100">
+			<div id="slide" class="carousel slide">
+				<ol class="carousel-indicators">
+					<li data-target="#slide" data-slide-to="0" class="active d-none d-sm-inline"></li>
+					<li data-target="#slide" data-slide-to="1" class="d-none d-sm-inline"></li>
+					<li data-target="#slide" data-slide-to="2" class="d-none d-sm-inline"></li>
+					<li data-target="#slide" data-slide-to="3" class="d-none d-sm-inline"></li>
+				</ol>
+				<div class="carousel-inner">
+					<div class="carousel-item active" data-interval="3000">
+						<img src="@/assets/images/home/slide-1.png" class="d-block w-100" alt="">
+					</div>
+					<div class="carousel-item" data-interval="3000">
+						<img src="@/assets/images/home/slide-2.png" class="d-block w-100" alt="">
+					</div>
+					<div class="carousel-item" data-interval="3000">
+						<img src="@/assets/images/home/slide-3.png" class="d-block w-100" alt="">
+					</div>
+					<div class="carousel-item" data-interval="3000">
+						<img src="@/assets/images/home/slide-4.png" class="d-block w-100" alt="">
+					</div>
+				</div>
+				<a class="carousel-control-prev" href="#slide" role="button" data-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="sr-only">Previous</span>
+				</a>
+				<a class="carousel-control-next" href="#slide" role="button" data-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="sr-only">Next</span>
+				</a>
 			</div>
 		</div>
 	</div>
@@ -20,7 +47,7 @@
 <style lang="scss" scoped>
 	.curve{
 		display: none;
-		width: 120vw;
+		width: 100vw;
 		margin-top: -0.25rem;
 		margin-left: -0.25rem;
 	}
@@ -46,7 +73,8 @@
 		.banner{
 			min-height: 500px;
 			.banner-content{
-				padding: 4rem 1rem 4rem 10%;
+				max-width: 50%;
+				padding: 4rem 1rem;
 				.display-4{
 					font-size: 3.5rem;
 				}
