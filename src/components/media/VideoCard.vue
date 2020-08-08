@@ -1,5 +1,5 @@
 <template>
-	<div class="card mb-4">
+	<div class="card mb-4 shadow">
 		<div class="position-relative">
 			<img :src="video.preview" class="card-img-top" alt="">
 			<div class="contain">

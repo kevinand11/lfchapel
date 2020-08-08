@@ -1,5 +1,5 @@
 <template>
-	<div class="card mb-4">
+	<div class="card mb-4 shadow">
 		<img :src="photo.link" class="card-img-top" alt="" @click="onClicked(photo.id)">
 	</div>
 </template>

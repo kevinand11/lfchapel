@@ -4,7 +4,7 @@
 			<h1 class="display-4">WELCOME TO OUR <br> CHURCH</h1>
 			<p class="lead">Prayer can be rich when it's simple and spontaneous. In fact, we can pray, at any time. It doesn't require lofty language.</p>
 			<hr class="my-4">
-			<router-link class="btn btn-danger btn-lg text-white" to="/media/audio-sermons" role="button">See sermons</router-link>
+			<router-link class="btn btn-danger btn-lg text-white" to="/about-us/our-church" role="button">About Our Church</router-link>
 		</div>
 		<div>
 			<img src="@/assets/images/home/banner.png" alt="" class="w-100">

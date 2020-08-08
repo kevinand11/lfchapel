@@ -15,9 +15,9 @@
 			<li class="list-group-item">
 				<router-link to="/about-us/the-general-overseer">The General Overseer</router-link>
 			</li>
-			<li class="list-group-item">
+			<!--<li class="list-group-item">
 				<router-link to="/about-us/our-pastor">Our Pastor</router-link>
-			</li>
+			</li>-->
 			<li class="list-group-item">
 				<router-link to="/about-us/mission-and-vision">Mission and Vision</router-link>
 			</li>
@@ -35,9 +35,9 @@
 			<li class="list-group-item">
 				<router-link to="/about-us/the-general-overseer">The General Overseer</router-link>
 			</li>
-			<li class="list-group-item">
+			<!--<li class="list-group-item">
 				<router-link to="/about-us/our-pastor">Our Pastor</router-link>
-			</li>
+			</li>-->
 			<li class="list-group-item">
 				<router-link to="/about-us/mission-and-vision">Mission and Vision</router-link>
 			</li>

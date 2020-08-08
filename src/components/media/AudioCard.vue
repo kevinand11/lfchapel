@@ -1,5 +1,5 @@
 <template>
-	<div class="card mb-4">
+	<div class="card mb-4 shadow">
 		<div class="card-body">
 			<h5 class="card-title text-capitalize">{{ audio.title }}</h5>
 			<AudioPlayer class="my-3" :audio="audio" />
