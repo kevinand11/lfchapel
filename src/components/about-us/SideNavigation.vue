@@ -6,22 +6,22 @@
 			<i class="fas" :class="show ? 'fa-angle-up' : 'fa-angle-down'"></i>
 		</div>
 		<ul class="list-group d-none d-md-block">
-			<li class="list-group-item">
+			<li class="list-group-item rounded-pill border border-danger mb-3">
 				<router-link to="/about-us/our-church">Our Church</router-link>
 			</li>
-			<li class="list-group-item">
+			<li class="list-group-item rounded-pill border border-danger mb-3">
 				<router-link to="/about-us/rccg-the-church">RCCG - The Church</router-link>
 			</li>
-			<li class="list-group-item">
+			<li class="list-group-item rounded-pill border border-danger mb-3">
 				<router-link to="/about-us/the-general-overseer">The General Overseer</router-link>
 			</li>
 			<!--<li class="list-group-item">
 				<router-link to="/about-us/our-pastor">Our Pastor</router-link>
 			</li>-->
-			<li class="list-group-item">
+			<li class="list-group-item rounded-pill border border-danger mb-3">
 				<router-link to="/about-us/mission-and-vision">Mission and Vision</router-link>
 			</li>
-			<li class="list-group-item">
+			<li class="list-group-item rounded-pill border border-danger mb-3">
 				<router-link to="/about-us/service-times">Service Times</router-link>
 			</li>
 		</ul>

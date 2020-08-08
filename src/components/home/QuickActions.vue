@@ -34,7 +34,7 @@
 						<div class="child">
 							<h4>Prayer</h4>
 							<h3>Requests</h3>
-							<router-link class="mt-3" to="/forms/prayer-request">
+							<router-link class="mt-3" to="/forms/prayer-requests">
 								<span class="content"><i class="fas fa-angle-right"></i></span>
 								<span>submit request</span>
 							</router-link>

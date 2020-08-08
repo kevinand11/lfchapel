@@ -6,13 +6,13 @@
 			<i class="fas" :class="show ? 'fa-angle-up' : 'fa-angle-down'"></i>
 		</div>
 		<ul class="list-group d-none d-md-block">
-			<li class="list-group-item">
+			<li class="list-group-item rounded-pill border border-danger mb-3">
 				<router-link to="/forms/prayer-requests">Make a Prayer Request</router-link>
 			</li>
-			<li class="list-group-item">
+			<li class="list-group-item rounded-pill border border-danger mb-3">
 				<router-link to="/forms/testimonies">Share a Testimony</router-link>
 			</li>
-			<li class="list-group-item">
+			<li class="list-group-item rounded-pill border border-danger mb-3">
 				<router-link to="/forms/feedback">Give us Feedback</router-link>
 			</li>
 		</ul>

@@ -64,21 +64,21 @@
 					<ul class="list-group">
 						<li class="list-group-item d-flex">
 							<span class="socials mr-2">
-								<i class="fab fa-twitter"></i>
+								<i class="fab fa-instagram"></i>
 							</span>
-							<a href="https://www.twitter.com/">Twitter</a>
+							<a href="https://instagram.com/lfcowingsmills" target="_blank">Instagram</a>
 						</li>
 						<li class="list-group-item d-flex">
 							<span class="socials mr-2">
 								<i class="fab fa-facebook-f"></i>
 							</span>
-							<a href="https://www.facebook.com/">Facebook</a>
+							<a href="https://www.facebook.com/lfcowingsmills1" target="_blank">Facebook</a>
 						</li>
 						<li class="list-group-item d-flex">
 							<span class="socials mr-2">
 								<i class="fab fa-youtube"></i>
 							</span>
-							<a href="https://www.youtube.com/">Youtube</a>
+							<a href="https://www.youtube.com/channel/UC-1hbQqRXFAuS1AkIuAF7cg" target="_blank">Youtube</a>
 						</li>
 					</ul>
 				</div>

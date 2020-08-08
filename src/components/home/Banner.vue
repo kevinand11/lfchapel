@@ -1,8 +1,10 @@
 <template>
 	<div class="banner d-flex align-items-center justify-content-center flex-column-reverse flex-lg-row">
 		<div class="banner-content container text-center">
-			<h1 class="display-4">WELCOME TO OUR <br> CHURCH</h1>
-			<p class="lead">Prayer can be rich when it's simple and spontaneous. In fact, we can pray, at any time. It doesn't require lofty language.</p>
+			<h1 class="display-4">WELCOME TO OUR <br>CHURCH</h1>
+			<p class="lead">
+				Connecting Men to God and people to purpose, while exercising their Faith
+			</p>
 			<hr class="my-4">
 			<router-link class="btn btn-danger btn-lg text-white" to="/about-us/our-church" role="button">About Our Church</router-link>
 		</div>

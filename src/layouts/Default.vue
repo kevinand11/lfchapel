@@ -1,8 +1,10 @@
 <template>
 	<div>
-		<NavigationBar />
-		<div class="mb-5">
-			<slot/>
+		<div class="content">
+			<NavigationBar />
+			<div class="mb-5">
+				<slot/>
+			</div>
 		</div>
 		<BottomNavigation />
 	</div>
@@ -19,3 +21,9 @@ export default defineComponent({
 	},
 })
 </script>
+
+<style lang="scss" scoped>
+	.content{
+		min-height: 95vh;
+	}
+</style>

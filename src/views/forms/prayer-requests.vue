@@ -1,7 +1,8 @@
 <template>
 	<div>
 		<form @submit.prevent="() => {}">
-			<h3 class="mb-4 red">Your Prayer Request</h3>
+			<h3 class="mb-3 red">Your Prayer Request</h3>
+			<p class="lead mb-4">Prayer can be rich when it's simple and spontaneous. In fact, we can pray, at any time. It doesn't require lofty language.</p>
 			<div class="form-group">
 				<label for="name">Your Name</label>
 				<input type="text" id="name" class="form-control" placeholder="Eg. John Doe" v-model="request.name">
