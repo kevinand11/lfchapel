@@ -3,6 +3,7 @@ import CompositionApi from '@vue/composition-api'
 import VueJsModal from 'vue-js-modal'
 
 import '@/config/registerServiceWorker'
+import 'jquery'
 import 'bootstrap'
 import '@/assets/style/index.scss'
 

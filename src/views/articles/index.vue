@@ -39,7 +39,4 @@ export default defineComponent({
 	@media (min-width: $md) {
 		.card-columns{ column-count: 2; }
 	}
-	@media (min-width: $xl) {
-		.card-columns{ column-count: 3; }
-	}
 </style>
