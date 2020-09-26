@@ -9,7 +9,7 @@
 			</button>
 
 			<div class="collapse navbar-collapse font-weight-bold" id="navbar">
-				<ul class="navbar-nav mr-auto mt-2 ml-auto text-center">
+				<ul class="navbar-nav mt-2 ml-auto text-center">
 					<li class="nav-item">
 						<router-link class="nav-link" to="/about-us/our-church">ABOUT</router-link>
 					</li>

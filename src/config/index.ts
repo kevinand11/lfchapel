@@ -8,6 +8,7 @@ import 'bootstrap'
 import '@/application/assets/style/index.scss'
 
 import Default from '@/application/layouts/Default.vue'
+import Admin from '@/application/layouts/Admin.vue'
 
 import RouteName from '@/application/components/application/RouteName.vue'
 import Loading from '@/application/components/application/Loading.vue'
@@ -20,6 +21,7 @@ Vue.use(VueJsModal, { dialog: true, dynamicDefaults: {
 }})
 
 Vue.component('Default', Default)
+Vue.component('Admin', Admin)
 
 Vue.component('RouteName', RouteName)
 Vue.component('Loading', Loading)
