@@ -5,13 +5,13 @@ import VueJsModal from 'vue-js-modal'
 import '@/config/registerServiceWorker'
 import 'jquery'
 import 'bootstrap'
-import '@/assets/style/index.scss'
+import '@/application/assets/style/index.scss'
 
-import Default from '@/layouts/Default.vue'
+import Default from '@/application/layouts/Default.vue'
 
-import RouteName from '@/components/application/RouteName.vue'
-import Loading from '@/components/application/Loading.vue'
-import AudioPlayer from '@/components/application/AudioPlayer.vue'
+import RouteName from '@/application/components/application/RouteName.vue'
+import Loading from '@/application/components/application/Loading.vue'
+import AudioPlayer from '@/application/components/application/AudioPlayer.vue'
 
 Vue.use(CompositionApi)
 Vue.use(VueJsModal, { dialog: true, dynamicDefaults: {
