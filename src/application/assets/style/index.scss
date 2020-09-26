@@ -1,13 +1,13 @@
-@import '~@/application/assetsation/assets/style/variables.scss';
-@import '~@/application/assetsation/assets/style/modals.scss';
+@import '~@/application/assets/style/variables.scss';
+@import '~@/application/assets/style/modals.scss';
 
 $theme-colors: (
 	'primary': $gold,
 	'danger': $main-red
 );
 
-@import '../../../../node_modules/bootstrap/scss/bootstrap';
-@import '../../../../node_modules/@fortawesome/fontawesome-free/css/all.min.css';
+@import '~bootstrap/scss/bootstrap';
+@import '~@fortawesome/fontawesome-free/css/all.min.css';
 
 body{
 	font-family: Montserrat, sans-serif;

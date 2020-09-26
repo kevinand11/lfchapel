@@ -3,7 +3,7 @@
 		<div class="container pt-5">
 			<div class="row align-items-center">
 				<div class="col-md-4 my-3">
-					<img src="@/application/assetsation/assets/images/logo.png" alt="LFChapel" height="80">
+					<img src="@/application/assets/images/logo.png" alt="LFChapel" height="80">
 				</div>
 				<div class="col-md-4 d-flex align-items-center my-3">
 				<span class="icon mr-2">
