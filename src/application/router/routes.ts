@@ -111,6 +111,28 @@ export default [
 		]
 	},
 	{
+		path: '/admin',
+		name: 'Admin',
+		component: () => import(/* webpackChunkName: 'admin' */ '../views/admin/index.vue'),
+		children: [
+			{
+				path: '/admin/',
+				name: 'Dashboard',
+				component: () => import(/* webpackChunkName: 'admin-dashboard' */ '../views/admin/dashboard.vue'),
+			},
+			{
+				path: '/admin/signin',
+				name: 'Sign In',
+				component: () => import(/* webpackChunkName: 'sign-in' */ '../views/admin/signin.vue'),
+			},
+			{
+				path: '/admin/signup',
+				name: 'Sign In',
+				component: () => import(/* webpackChunkName: 'sign-up' */ '../views/admin/signup.vue'),
+			},
+		]
+	},
+	{
 		path: '/*',
 		name: 'Not Found',
 		component: () => import(/* webpackChunkName: 'not-found' */ '../views/not-found.vue'),
