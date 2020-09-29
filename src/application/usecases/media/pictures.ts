@@ -145,7 +145,7 @@ export const useCreatePicture = () => {
 				await fetchPicture(id)
 				state.factory.reset()
 				await useCreateModal().closeCreateModal()
-				await router.push(`/blog/${id}`)
+				await Notify({ icon: 'success', title: 'Picture created successfully' })
 			}catch(error){ await Notify({ icon: 'error', title: error.message }) }
 			state.loading = false
 		}else state.factory.validateAll()

@@ -20,13 +20,13 @@
 				<div class="form-group my-3">
 					<input type="file" @change="catchImage" class="d-none" ref="imageInput" accept="image/*">
 					<a @click.prevent="() => { $refs.imageInput.value= ''; $refs.imageInput.click() }">
-						<span v-if="factory.image">{{ factory.image.name }} </span>
+						<p class="mb-0" v-if="factory.image">{{ factory.image.name }} </p>
 						<span class="text-info">{{ factory.image ? 'Change' : 'Upload' }} image</span>
 					</a>
 				</div>
 				<hr>
 				<div class="d-flex justify-content-end my-3">
-					<button class="btn btn-gold" type="submit" :disabled="loading || !factory.valid">
+					<button class="btn btn-gold text-white" type="submit" :disabled="loading || !factory.valid">
 						<i class="fas fa-spinner fa-spin mr-2" v-if="loading"></i>
 						<span>
 							<slot name="buttonText">Submit</slot>
