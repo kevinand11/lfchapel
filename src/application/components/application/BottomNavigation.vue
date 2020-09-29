@@ -171,7 +171,7 @@
 
 <script lang="ts">
 import { defineComponent, ref } from '@vue/composition-api'
-import { Notify } from '@/config/notify'
+import { Notify } from '@/application/config/notify'
 import { subscribeToMailingList } from '@/application/usecases/useFunctions'
 export default defineComponent({
 	setup(){

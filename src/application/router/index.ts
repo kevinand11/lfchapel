@@ -2,10 +2,10 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import VueMeta from 'vue-meta'
 import routes from './routes'
-import { closeNavbar } from '@/config'
+import { closeNavbar } from '@/application/config'
 import { addToCachedScrolls, saveIntendedRoute } from '@/application/usecases/core/router'
 import { useStore } from '@/application/usecases/store'
-import { Notify } from '@/config/notify'
+import { Notify } from '@/application/config/notify'
 
 Vue.use(VueRouter)
 Vue.use(VueMeta, { keyName: 'meta', refreshOnceOnNavigation: true })

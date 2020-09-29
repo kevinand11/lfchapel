@@ -1,6 +1,6 @@
 import router from '@/application/router'
-import { Notify } from '@/config/notify'
-import { closeNavbar } from '@/config'
+import { Notify } from '@/application/config/notify'
+import { closeNavbar } from '@/application/config'
 import {
 	GetLoginFactory, GetRegisterFactory, GetResetPasswordFactory,
 	LoginWithEmail, LoginWithGoogle, Logout, RegisterWithEmail, ResetPassword

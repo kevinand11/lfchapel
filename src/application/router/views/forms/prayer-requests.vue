@@ -35,7 +35,7 @@
 <script>
 import { ref, reactive } from '@vue/composition-api'
 import { createPrayerRequest } from '@/application/usecases/useFunctions'
-import { Notify } from '@/config/notify'
+import { Notify } from '@/application/config/notify'
 
 export default {
 	setup(){

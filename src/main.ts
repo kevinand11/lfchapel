@@ -1,8 +1,8 @@
 import Vue from 'vue'
-import App from './application/App.vue'
-import { setup } from '@/config/'
-import router from './application/router'
-import { Store } from './application/store'
+import App from '@/application/App.vue'
+import { setup } from '@/application/config/'
+import router from '@/application/router'
+import { Store } from '@/application/store'
 import { useStore } from '@/application/usecases/store'
 import { RegisterAuthChangedCB } from '@/modules/users'
 

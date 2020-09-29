@@ -1,6 +1,6 @@
 import { computed, reactive } from '@vue/composition-api'
 import { GetMailingListFactory, SubscribeToMailingList } from '@/modules/users'
-import { Notify } from '@/config/notify'
+import { Notify } from '@/application/config/notify'
 
 export const useMailingList = () => {
 	const state = reactive({
