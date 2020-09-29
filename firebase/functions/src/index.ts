@@ -1,6 +1,11 @@
 import * as admin from 'firebase-admin'
 admin.initializeApp()
 
+// Auth Triggers
+import { authUserCreated } from './auth/onCreate'
+import { authUserDeleted } from './auth/onDelete'
+export { authUserCreated, authUserDeleted }
+
 //On call
 import { createContactMessage } from './onCall/createContactMessage'
 import { createFeedback } from './onCall/createFeedback'

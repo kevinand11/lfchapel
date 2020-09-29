@@ -1,6 +1,6 @@
 import { computed, ref } from '@vue/composition-api'
 
-const createModal = ref('picture' as string | null)
+const createModal = ref(null as string | null)
 
 export const useCreateModal = () => {
 	return {
