@@ -47,10 +47,10 @@ export default defineComponent({
 		text-align: center;
 		i{
 			font-size: 2rem;
-			color: $red;
+			color: $gold;
 		}
 		h4{
-			color: $red;
+			color: $gold;
 			margin: 1rem 0;
 			font-size: 1.125rem;
 		}
@@ -59,7 +59,7 @@ export default defineComponent({
 		}
 	}
 	.hover:hover {
-		border: 2px solid $red;
+		border: 2px solid $gold;
 		border-radius: 8px;
 		i{ font-size: 4rem; }
 		.hidden{ display: block; }

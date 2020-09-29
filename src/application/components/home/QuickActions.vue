@@ -83,7 +83,7 @@
 		}
 	}
 	.content{
-		background: $red;
+		background: $gold;
 		color: $white;
 		border-radius: 5rem;
 		border: 2px solid $white;

@@ -24,7 +24,7 @@
 					</label>
 				</div>
 			</div>
-			<button class="btn btn-outline-primary" @click="submit" :disabled="loading">
+			<button class="btn btn-outline-gold" @click="submit" :disabled="loading">
 				<i class="fas fa-spinner fa-spin mr-2" v-if="loading"></i>
 				<span>Submit</span>
 			</button>

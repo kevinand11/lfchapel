@@ -18,7 +18,7 @@
 			<textarea id="message" rows="6" class="form-control" v-model="message.message"
 		          placeholder="Eg I want to book a private session with the pastor on Friday at 12 noon"></textarea>
 		</div>
-		<button class="btn btn-outline-primary" @click="submit" :disabled="loading">
+		<button class="btn btn-outline-gold" @click="submit" :disabled="loading">
 			<i class="fas fa-spinner fa-spin mr-2" v-if="loading"></i>
 			<span>Submit</span>
 		</button>

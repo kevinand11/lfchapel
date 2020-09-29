@@ -112,7 +112,7 @@
 
 <style lang="scss" scoped>
 	footer{
-		background: $red;
+		background: $gold;
 		color: $white;
 	}
 	span.icon{
@@ -135,7 +135,7 @@
 		}
 	}
 	.links{
-		background: $red;
+		background: $gold;
 		color: $white;
 		div{
 			margin-bottom: 2rem;
@@ -146,7 +146,7 @@
 			margin-bottom: 1rem;
 		}
 		.list-group-item{
-			background: $red;
+			background: $gold;
 			border: none;
 			padding: 0.5rem 0;
 			a{
@@ -155,7 +155,7 @@
 		}
 		span.socials{
 			//background: $white;
-			//color: $red;
+			//color: $gold;
 			border-radius: 5rem;
 			font-size: 1rem;
 			width: 1.75rem;

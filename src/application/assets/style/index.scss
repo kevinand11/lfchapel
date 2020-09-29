@@ -1,10 +1,5 @@
-@import '~@app/assets/style/variables.scss';
-@import '~@app/assets/style/modals.scss';
-
-$theme-colors: (
-	'primary': $gold,
-	'danger': $main-red
-);
+@import './variables.scss';
+@import './modals.scss';
 
 @import '~bootstrap/scss/bootstrap';
 @import '~@fortawesome/fontawesome-free/css/all.min.css';
@@ -51,7 +46,7 @@ a{
 }
 
 .red{
-	color: $red;
+	color: $gold;
 	font-weight: bold;
 }
 

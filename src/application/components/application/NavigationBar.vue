@@ -39,7 +39,7 @@
 
 <style lang="scss" scoped>
 	header{
-		background: $red;
+		background: $gold;
 		margin: 0;
 	}
 	.nav-link{

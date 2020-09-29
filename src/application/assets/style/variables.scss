@@ -1,6 +1,6 @@
 $gold: #DAB100;
-$red: $gold;
 $main-red: #910B0B;
+$red: $main-red;
 $blue: #062a54;
 $white: #FEFEFE;
 $black: #111111;
@@ -10,3 +10,7 @@ $sm: 576px;
 $md: 768px;
 $lg: 992px;
 $xl: 1200px;
+
+$theme-colors: (
+	'gold': $gold
+);

@@ -26,7 +26,7 @@
 						<span class="small text-danger" v-if="factory.errors.c_password">passwords don't match</span>
 					</div>
 					<div class="d-flex flex-column">
-						<button class="btn btn-primary text-white" type="submit" :disabled="anyLoading || !factory.valid">
+						<button class="btn btn-gold text-white" type="submit" :disabled="anyLoading || !factory.valid">
 							<i class="fas fa-spinner fa-spin mr-2" v-if="regLoading"></i>
 							<span>Sign up with email</span>
 						</button>

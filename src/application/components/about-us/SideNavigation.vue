@@ -67,7 +67,7 @@ export default defineComponent({
 		color: $black;
 	}
 	.router-link-exact-active{
-		color: $red;
+		color: $gold;
 		font-weight: bold;
 	}
 </style>

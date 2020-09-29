@@ -18,6 +18,6 @@
 			<label for="amount">Enter Contribution Amount &dollar;</label>
 			<input type="number" id="amount" class="form-control" placeholder="10.00">
 		</div>
-		<button class="btn btn-outline-primary" type="submit">Submit</button>
+		<button class="btn btn-outline-gold" type="submit">Submit</button>
 	</form>
 </template>
