@@ -4,7 +4,7 @@ import { FindUser } from '@/modules/users'
 
 const state = {
 	id: window.localStorage.getItem('user_id') ?? null,
-	user: JSON.parse(window.localStorage.getItem('user') ?? '') ?? {},
+	user: window.localStorage.getItem('user') || JSON.parse(window.localStorage.getItem('user')),
 	profileListener: () => {}
 }
 

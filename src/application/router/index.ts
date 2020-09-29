@@ -25,7 +25,7 @@ router.beforeEach(async (to, from, next) => {
 	if (requiresAuth && !isLoggedIn) {
 		saveIntendedRoute(to.fullPath)
 		await Notify({ icon: 'error', 'title': 'Login to continue' })
-		return next('/admin/sign-in')
+		return next('/admin/signin')
 	}
 	if(requiresAdmin && !isAdmin){
 		return next('/')

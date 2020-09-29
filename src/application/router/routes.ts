@@ -136,6 +136,11 @@ export default [
 				name: 'Forgot Password',
 				component: () => import(/* webpackChunkName: 'forgot-password' */ '../views/admin/auth/forgot-password.vue'),
 			},
+			{
+				path: '/admin/*',
+				name: 'Not Found',
+				redirect: '/admin/'
+			},
 		]
 	},
 	{

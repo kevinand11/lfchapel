@@ -46,7 +46,7 @@ export const useLogout = () => {
 	const logout = async () => {
 		state.loading = true
 		await useStore().auth.setId(null)
-		if(router.currentRoute.meta.requiresAuth) await router.push('/')
+		if(router.currentRoute.meta.requiresAuth) await router.push('/admin/signin')
 		await Logout.call()
 		closeNavbar()
 		state.loading = false
