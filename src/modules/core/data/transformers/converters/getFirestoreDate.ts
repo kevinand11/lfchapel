@@ -1,4 +1,4 @@
-import firebase from '@root/services/firebase'
+import firebase from '@/services/firebase'
 
 export const timestampToDate = (timestamp: firebase.firestore.Timestamp | number | undefined) :Date | undefined => {
 	if(typeof(timestamp) === 'number') return new Date(timestamp)

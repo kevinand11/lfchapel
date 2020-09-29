@@ -34,21 +34,21 @@
 <script>
 import { ref, reactive } from '@vue/composition-api'
 import { createTestimony } from '@/application/usecases/useFunctions'
-import { notify } from '@/config/notify'
+import { Notify } from '@/config/notify'
 export default {
 	setup(){
 		const loading = ref(false)
 		const testimony = reactive({ name: '', email: '', message: '', public: true })
 		const submit = async () => {
 			if(!testimony.name || !testimony.email || !testimony.message){
-				return await notify({ title: 'Please fill in all fields', icon: 'error' })
+				return await Notify({ title: 'Please fill in all fields', icon: 'error' })
 			}
 			loading.value = true
 			await createTestimony({ name: testimony.name, email: testimony.email, message: testimony.message, public: testimony.public })
 			testimony.name = testimony.email = testimony.message = ''
 			testimony.public = true
 			loading.value = false
-			await notify({ title: 'Testimony sent successfully', icon: 'success' })
+			await Notify({ title: 'Testimony sent successfully', icon: 'success' })
 		}
 		return {
 			testimony, submit, loading

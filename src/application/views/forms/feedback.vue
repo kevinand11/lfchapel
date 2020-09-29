@@ -26,20 +26,20 @@
 <script>
 import { ref, reactive } from '@vue/composition-api'
 import { createFeedback } from '@/application/usecases/useFunctions'
-import { notify } from '@/config/notify'
+import { Notify } from '@/config/notify'
 export default {
 	setup(){
 		const loading = ref(false)
 		const feedback = reactive({ name: '', email: '', message: '' })
 		const submit = async () => {
 			if(!feedback.name || !feedback.email || !feedback.message){
-				return await notify({ title: 'Please fill in all fields', icon: 'error' })
+				return await Notify({ title: 'Please fill in all fields', icon: 'error' })
 			}
 			loading.value = true
 			await createFeedback({ name: feedback.name, email: feedback.email, message: feedback.message })
 			feedback.name = feedback.email = feedback.message = ''
 			loading.value = false
-			await notify({ title: 'Feedback sent successfully', icon: 'success' })
+			await Notify({ title: 'Feedback sent successfully', icon: 'success' })
 		}
 		return {
 			feedback, submit, loading

@@ -1,6 +1,6 @@
 import { computed, reactive } from '@vue/composition-api'
 import { GetMailingListFactory, SubscribeToMailingList } from '@/modules/users'
-import { notify } from '@/config/notify'
+import { Notify } from '@/config/notify'
 
 export const useMailingList = () => {
 	const state = reactive({
@@ -15,8 +15,8 @@ export const useMailingList = () => {
 				await SubscribeToMailingList.call(state.factory)
 				state.factory.reset()
 				state.loading = false
-				await notify({ icon: 'success', title: 'Subscribed successfully' })
-			}catch(error){ await notify({ icon: 'error', title: error.message }) }
+				await Notify({ icon: 'success', title: 'Subscribed successfully' })
+			}catch(error){ await Notify({ icon: 'error', title: error.message }) }
 			state.loading = false
 		}else state.factory.validateAll()
 	}

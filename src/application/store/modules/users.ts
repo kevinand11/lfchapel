@@ -1,10 +1,10 @@
 // @ts-nocheck
-import { firestore } from '@/config/firebase'
 import { Store } from '@/application/store'
+import { FindUser } from '@/modules/users'
 
 const state = {
 	id: window.localStorage.getItem('user_id') ?? null,
-	user: JSON.parse(window.localStorage.getItem('user')) ?? {},
+	user: JSON.parse(window.localStorage.getItem('user') ?? '') ?? {},
 	profileListener: () => {}
 }
 
@@ -30,16 +30,12 @@ const actions = {
 		commit('setUser', {})
 		await Store.dispatch('closeProfileListener')
 		if(id){
-			const listener = firestore
-				.collection('users')
-				.doc(id).onSnapshot((snapshot) => {
-					if (snapshot.exists) {
-						const user = snapshot.data()
-						commit('setUser', user)
-						window.localStorage.setItem('user', JSON.stringify(user))
-					} else commit('setId', null)
-				})
-			await commit('setProfileListener', listener)
+			const user = await FindUser.call(id)
+			commit('setUser', user ?? null)
+			if(user){
+				commit('setUser', user)
+				window.localStorage.setItem('user', JSON.stringify(user))
+			}else commit('setId', null)
 			window.localStorage.setItem('user_id', id)
 		}else{
 			window.localStorage.removeItem('user')

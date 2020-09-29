@@ -171,7 +171,7 @@
 
 <script lang="ts">
 import { defineComponent, ref } from '@vue/composition-api'
-import { notify } from '@/config/notify'
+import { Notify } from '@/config/notify'
 import { subscribeToMailingList } from '@/application/usecases/useFunctions'
 export default defineComponent({
 	setup(){
@@ -179,13 +179,13 @@ export default defineComponent({
 		const email = ref('')
 		const submit = async () => {
 			if(!email.value){
-				return await notify({ title: 'Please fill in the email field', icon: 'error' })
+				return await Notify({ title: 'Please fill in the email field', icon: 'error' })
 			}
 			loading.value = true
 			await subscribeToMailingList(email.value)
 			email.value = ''
 			loading.value = false
-			await notify({ title: 'Subscription successful', icon: 'success' })
+			await Notify({ title: 'Subscription successful', icon: 'success' })
 		}
 	    return {
 			submit, email, loading,

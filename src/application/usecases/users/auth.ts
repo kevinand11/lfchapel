@@ -1,5 +1,5 @@
 import router from '@/application/router'
-import { notify } from '@/config/notify'
+import { Notify } from '@/config/notify'
 import { closeNavbar } from '@/config'
 import {
 	GetLoginFactory, GetRegisterFactory, GetResetPasswordFactory,
@@ -26,7 +26,7 @@ export const useRegisterForm = () => {
 				await useStore().auth.setId(userId)
 				state.factory.reset()
 				await afterAuthHook()
-			}catch(error){ await notify({ icon: 'error', title: error.message }) }
+			}catch(error){ await Notify({ icon: 'error', title: error.message }) }
 			state.loading = false
 		}else{
 			state.factory.validateAll()
@@ -71,7 +71,7 @@ export const useLoginForm = () => {
 				await useStore().auth.setId(userId)
 				state.factory.reset()
 				await afterAuthHook()
-			}catch(error){ await notify({ icon: 'error', title: error.message }) }
+			}catch(error){ await Notify({ icon: 'error', title: error.message }) }
 			state.loading = false
 		}else{
 			state.factory.validateAll()
@@ -94,7 +94,7 @@ export const useGoogleLogin = () => {
 			const userId = await LoginWithGoogle.call()
 			await useStore().auth.setId(userId)
 			await afterAuthHook()
-		}catch(error){ await notify({ icon: 'error', title: error.message }) }
+		}catch(error){ await Notify({ icon: 'error', title: error.message }) }
 		state.loading = false
 	}
 	return {
@@ -114,7 +114,7 @@ export const useDevLogin = () => {
 		if(state.id){
 			await useStore().auth.setId(state.id)
 			await afterAuthHook()
-		}else await notify({ title: 'Select a dev id first', icon: 'error' })
+		}else await Notify({ title: 'Select a dev id first', icon: 'error' })
 		state.loading = false
 	}
 	return {
@@ -136,8 +136,8 @@ export const useResetPasswordForm = () => {
 			try{
 				await ResetPassword.call(state.factory)
 				state.factory.reset()
-				await notify({ icon: 'success', title: 'Proceed to your registered email to continue' })
-			}catch(error){ await notify({ icon: 'error', title: error.message }) }
+				await Notify({ icon: 'success', title: 'Proceed to your registered email to continue' })
+			}catch(error){ await Notify({ icon: 'error', title: error.message }) }
 			state.loading = false
 		}else{
 			state.factory.validateAll()

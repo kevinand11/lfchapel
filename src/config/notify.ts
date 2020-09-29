@@ -12,7 +12,7 @@ type Args = {
 	icon?: 'warning' | 'success' | 'error' | 'info'
 }
 
-export const notify = (args: Args) => {
+export const Notify = (args: Args) => {
 	return Toast.fire({
 		title: args.title,
 		icon: args.icon ?? 'info',

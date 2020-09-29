@@ -28,14 +28,14 @@
 <script>
 import { ref, reactive } from '@vue/composition-api'
 import { createContactMessage } from '@/application/usecases/useFunctions'
-import { notify } from '@/config/notify'
+import { Notify } from '@/config/notify'
 export default {
 	setup() {
 		const loading = ref(false)
 		const message = reactive({ name: '', email: '', subject: '', message: '' })
 		const submit = async () => {
 			if (!message.name || !message.email || !message.subject || !message.message) {
-				return await notify({ title: 'Please fill in all fields', icon: 'error' })
+				return await Notify({ title: 'Please fill in all fields', icon: 'error' })
 			}
 			loading.value = true
 			await createContactMessage({
@@ -46,7 +46,7 @@ export default {
 			})
 			message.name = message.email = message.subject = message.message = ''
 			loading.value = false
-			await notify({ title: 'Message sent successfully', icon: 'success' })
+			await Notify({ title: 'Message sent successfully', icon: 'success' })
 		}
 		return {
 			message, submit, loading

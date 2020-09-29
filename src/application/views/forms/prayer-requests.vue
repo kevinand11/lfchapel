@@ -35,7 +35,7 @@
 <script>
 import { ref, reactive } from '@vue/composition-api'
 import { createPrayerRequest } from '@/application/usecases/useFunctions'
-import { notify } from '@/config/notify'
+import { Notify } from '@/config/notify'
 
 export default {
 	setup(){
@@ -43,14 +43,14 @@ export default {
 		const request = reactive({ name: '', email: '', message: '', public: true })
 		const submit = async () => {
 			if(!request.name || !request.email || !request.message){
-				return await notify({ title: 'Please fill in all fields', icon: 'error' })
+				return await Notify({ title: 'Please fill in all fields', icon: 'error' })
 			}
 			loading.value = true
 			await createPrayerRequest({ name: request.name, email: request.email, message: request.message, public: request.public })
 			request.name = request.email = request.message = ''
 			request.public = true
 			loading.value = false
-			await notify({ title: 'Prayer request sent successfully', icon: 'success' })
+			await Notify({ title: 'Prayer request sent successfully', icon: 'success' })
 		}
 		return {
 			request, submit, loading
