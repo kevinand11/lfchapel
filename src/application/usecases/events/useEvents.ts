@@ -4,7 +4,7 @@ import interactionPlugin from '@fullcalendar/interaction'
 import bootstrapPlugin from '@fullcalendar/bootstrap'
 import { reactive, ref, computed } from '@vue/composition-api'
 import EventRepository from '@/data/repositories/events'
-import { useModal } from '@/application/usecases/useModal'
+import { useModal } from '@app/usecases/useModal'
 
 const formatD = { day: '2-digit', month: 'short', year: 'numeric', separator: ' to ' }
 const formatT = { minute: '2-digit', hour: '2-digit', day: '2-digit', month: 'short', year: 'numeric', separator: ' to ' }

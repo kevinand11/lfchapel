@@ -20,7 +20,7 @@
 </template>
 
 <script lang="ts">
-import { useAudioPlayer } from '@/application/usecases/media/useAudios'
+import { useAudioPlayer } from '@app/usecases/media/useAudios'
 import { defineComponent } from '@vue/composition-api'
 import type { PropType } from '@vue/composition-api'
 export default defineComponent({

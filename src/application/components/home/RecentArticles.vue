@@ -28,8 +28,8 @@
 
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api'
-import { useRecentArticles } from '@/application/usecases/articles/useArticles'
-import ArticleCard from '@/application/components/articles/ArticleCard.vue'
+import { useRecentArticles } from '@app/usecases/articles/useArticles'
+import ArticleCard from '@app/components/articles/ArticleCard.vue'
 export default defineComponent({
 	components: {
 		ArticleCard

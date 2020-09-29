@@ -1,6 +1,6 @@
 // @ts-nocheck
-import { Store } from '@/application/store'
-import { FindUser } from '@/modules/users'
+import { Store } from '@app/store'
+import { FindUser } from '@modules/users'
 
 const state = {
 	id: window.localStorage.getItem('user_id') ?? null,

@@ -1,10 +1,10 @@
 import Vue from 'vue'
-import '@/application/config/composition'
-import App from '@/application/App.vue'
-import { setup } from '@/application/config/'
-import router from '@/application/router'
-import { Store } from '@/application/store'
-import { useStore } from '@/application/usecases/store'
+import '@app/config/composition'
+import App from '@app/App.vue'
+import { setup } from '@app/config/'
+import router from '@app/router'
+import { Store } from '@app/store'
+import { useStore } from '@app/usecases/store'
 import { RegisterAuthChangedCB } from '@/modules/users'
 
 Vue.config.productionTip = false

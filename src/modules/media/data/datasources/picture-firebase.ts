@@ -1,5 +1,5 @@
-import { FirestoreService } from '../../../core/services/firebase'
-import { GetClauses } from '../../../core/data/datasources/base'
+import { FirestoreService } from '@modules/core/services/firebase'
+import { GetClauses } from '@modules/core/data/datasources/base'
 import { PictureBaseDataSource } from '../datasources/picture-base'
 import { PictureFromModel, PictureToModel } from '../models/picture'
 

@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<img src="@/application/assets/images/top.svg" alt="" class="curve">
+		<img src="@app/assets/images/top.svg" alt="" class="curve">
 		<div class="banner d-flex align-items-center justify-content-center flex-column-reverse flex-lg-row">
 			<div class="banner-content container text-center">
 				<h1 class="display-4">WELCOME TO OUR <br>CHURCH</h1>
@@ -19,16 +19,16 @@
 				</ol>
 				<div class="carousel-inner">
 					<div class="carousel-item active" data-ride="2000">
-						<img src="@/application/assets/images/home/slide-1.png" class="d-block w-100" alt="">
+						<img src="@app/assets/images/home/slide-1.png" class="d-block w-100" alt="">
 					</div>
 					<div class="carousel-item" data-ride="2000">
-						<img src="@/application/assets/images/home/slide-2.png" class="d-block w-100" alt="">
+						<img src="@app/assets/images/home/slide-2.png" class="d-block w-100" alt="">
 					</div>
 					<div class="carousel-item" data-ride="2000">
-						<img src="@/application/assets/images/home/slide-3.png" class="d-block w-100" alt="">
+						<img src="@app/assets/images/home/slide-3.png" class="d-block w-100" alt="">
 					</div>
 					<div class="carousel-item" data-ride="2000">
-						<img src="@/application/assets/images/home/slide-4.png" class="d-block w-100" alt="">
+						<img src="@app/assets/images/home/slide-4.png" class="d-block w-100" alt="">
 					</div>
 				</div>
 			</div>

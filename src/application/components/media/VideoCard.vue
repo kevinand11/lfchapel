@@ -14,7 +14,7 @@
 </template>
 
 <script lang="ts">
-import { useModal } from '@/application/usecases/useModal'
+import { useModal } from '@app/usecases/useModal'
 import { defineComponent } from '@vue/composition-api'
 import type { PropType } from '@vue/composition-api'
 export default defineComponent({

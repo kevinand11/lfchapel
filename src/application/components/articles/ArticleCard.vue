@@ -16,7 +16,7 @@
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api'
 import type { PropType } from '@vue/composition-api'
-import { formatDate } from '@/application/usecases/events/useEvents'
+import { formatDate } from '@app/usecases/events/useEvents'
 export default defineComponent({
 	props: {
 		article: {

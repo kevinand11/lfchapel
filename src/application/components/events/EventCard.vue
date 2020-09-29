@@ -12,7 +12,7 @@
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api'
 import Event from '@/data/entities/events'
-import { formatDate, formatDateTime } from '@/application/usecases/events/useEvents'
+import { formatDate, formatDateTime } from '@app/usecases/events/useEvents'
 
 export default defineComponent({
 	props: {

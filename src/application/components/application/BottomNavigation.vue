@@ -3,7 +3,7 @@
 		<div class="container pt-5">
 			<div class="row align-items-center">
 				<div class="col-md-4 my-3">
-					<img src="@/application/assets/images/logo.png" alt="LFChapel" height="80">
+					<img src="@app/assets/images/logo.png" alt="LFChapel" height="80">
 				</div>
 				<div class="col-md-4 d-flex align-items-center my-3">
 				<span class="icon mr-2">
@@ -171,8 +171,8 @@
 
 <script lang="ts">
 import { defineComponent, ref } from '@vue/composition-api'
-import { Notify } from '@/application/config/notify'
-import { subscribeToMailingList } from '@/application/usecases/useFunctions'
+import { Notify } from '@app/config/notifications'
+import { subscribeToMailingList } from '@app/usecases/useFunctions'
 export default defineComponent({
 	setup(){
 		const loading = ref(false)

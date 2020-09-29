@@ -1,4 +1,12 @@
+const path = require('path')
+
 module.exports = {
+	chainWebpack: (config) => {
+		config.resolve.alias
+			.set('@', path.join(__dirname, 'src'))
+			.set('@modules', path.join(__dirname, 'src/modules'))
+			.set('@app', path.join(__dirname, 'src/application'))
+	},
 	css: {
 		loaderOptions: {
 			sass: {

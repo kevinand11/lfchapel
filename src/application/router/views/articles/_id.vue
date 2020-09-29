@@ -9,10 +9,10 @@
 </template>
 
 <script>
-import { useArticle } from '@/application/usecases/articles/useArticles'
-import ArticleImageTitle from '@/application/components/articles/ArticleImageTitle'
-import ArticleContent from '@/application/components/articles/ArticleContent'
-import router from '@/application/router'
+import { useArticle } from '@app/usecases/articles/useArticles'
+import ArticleImageTitle from '@app/components/articles/ArticleImageTitle'
+import ArticleContent from '@app/components/articles/ArticleContent'
+import router from '@app/router'
 export default {
 	components: {
 		ArticleImageTitle,

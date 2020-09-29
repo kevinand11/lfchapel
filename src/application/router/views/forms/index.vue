@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import SideNavigation from '@/application/components/forms/SideNavigation.vue'
+import SideNavigation from '@app/components/forms/SideNavigation.vue'
 export default {
 	components: {
 		SideNavigation

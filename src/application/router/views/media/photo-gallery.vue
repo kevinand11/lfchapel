@@ -9,9 +9,9 @@
 
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api'
-import { usePhotosList } from '@/application/usecases/media/usePhotos'
-import { useModal } from '@/application/usecases/useModal'
-import GalleryPhotoCard from '@/application/components/media/GalleryPhotoCard.vue'
+import { usePhotosList } from '@app/usecases/media/usePhotos'
+import { useModal } from '@app/usecases/useModal'
+import GalleryPhotoCard from '@app/components/media/GalleryPhotoCard.vue'
 
 export default defineComponent({
 	components: {

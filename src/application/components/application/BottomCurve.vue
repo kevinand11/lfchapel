@@ -1,5 +1,5 @@
 <template>
-	<img src="@/application/assets/images/bottom.svg" alt="" class="curve">
+	<img src="@app/assets/images/bottom.svg" alt="" class="curve">
 </template>
 
 <style lang="scss" scoped>

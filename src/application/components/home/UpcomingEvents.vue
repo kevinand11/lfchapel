@@ -33,8 +33,8 @@
 
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api'
-import { useRecentEvents } from '@/application/usecases/events/useEvents'
-import EventCard from '@/application/components/events/EventCard.vue'
+import { useRecentEvents } from '@app/usecases/events/useEvents'
+import EventCard from '@app/components/events/EventCard.vue'
 export default defineComponent({
 	components: {
 	    EventCard

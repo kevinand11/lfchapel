@@ -53,7 +53,7 @@
 
 <script lang="ts">
 import { defineComponent, computed } from '@vue/composition-api'
-import { useGoogleLogin, useRegisterForm } from '@/application/usecases/users/auth'
+import { useGoogleLogin, useRegisterForm } from '@app/usecases/users/auth'
 export default defineComponent({
 	name: 'Signup',
 	setup(){

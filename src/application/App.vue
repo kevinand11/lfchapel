@@ -7,7 +7,7 @@
 
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api'
-import Modals from '@/application/components/modals/Base.vue'
+import Modals from '@app/components/modals/Base.vue'
 export default defineComponent({
 	components: {
 		Modals

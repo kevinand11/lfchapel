@@ -25,8 +25,8 @@
 
 <script>
 import { ref, reactive } from '@vue/composition-api'
-import { createFeedback } from '@/application/usecases/useFunctions'
-import { Notify } from '@/application/config/notify'
+import { createFeedback } from '@app/usecases/useFunctions'
+import { Notify } from '@app/config/notifications'
 export default {
 	setup(){
 		const loading = ref(false)

@@ -1,6 +1,6 @@
 import { PictureFromModel, PictureToModel } from '../models/picture'
 import { PictureEntity } from '../../domain/entities/picture'
-import { timestampToDate } from '../../../core/data/transformers/converters/getFirestoreDate'
+import { timestampToDate } from '@modules/core/data/transformers/converters/getFirestoreDate'
 
 export class PictureTransformer {
 	public fromJSON(model: PictureFromModel) {

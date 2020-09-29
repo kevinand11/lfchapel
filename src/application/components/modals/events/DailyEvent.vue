@@ -18,7 +18,7 @@
 </template>
 
 <script lang="ts">
-import { useEventsForDate } from '@/application/usecases/events/useEvents'
+import { useEventsForDate } from '@app/usecases/events/useEvents'
 import { defineComponent } from '@vue/composition-api'
 import type { PropType } from '@vue/composition-api'
 export default defineComponent({

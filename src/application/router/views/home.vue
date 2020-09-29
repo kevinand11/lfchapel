@@ -10,12 +10,12 @@
 </template>
 
 <script>
-import Banner from '@/application/components/home/Banner.vue'
-import QuickActions from '@/application/components/home/QuickActions.vue'
-import UpcomingEvents from '@/application/components/home/UpcomingEvents.vue'
-import RecentArticles from '@/application/components/home/RecentArticles.vue'
-import Mission from '@/application/components/home/Mission.vue'
-import VisitUs from '@/application/components/home/VisitUs.vue'
+import Banner from '@app/components/home/Banner.vue'
+import QuickActions from '@app/components/home/QuickActions.vue'
+import UpcomingEvents from '@app/components/home/UpcomingEvents.vue'
+import RecentArticles from '@app/components/home/RecentArticles.vue'
+import Mission from '@app/components/home/Mission.vue'
+import VisitUs from '@app/components/home/VisitUs.vue'
 export default {
 	name: 'Home',
 	components: {

@@ -1,4 +1,4 @@
-import { Auth } from '@/application/usecases/store/modules/auth'
+import { Auth } from '@app/usecases/store/modules/auth'
 
 export const useStore = () => {
 	return {

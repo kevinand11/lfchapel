@@ -1,6 +1,6 @@
 import ArticleRepository from '@/data/repositories/articles'
 import { reactive, ref, computed } from '@vue/composition-api'
-import router from '@/application/router'
+import router from '@app/router'
 
 export const useArticleList = () => {
 	const loading = ref(false)

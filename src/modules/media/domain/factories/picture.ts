@@ -1,9 +1,9 @@
-import { BaseFactory } from '../../../core/domains/factories/base'
+import { BaseFactory } from '@modules/core/domains/factories/base'
 import {
 	isLongerThan, isImageOrMedia, isRequired
-} from '../../../core/validations/rules'
+} from '@modules/core/validations/rules'
 import { PictureToModel } from '../../data/models/picture'
-import { Media } from '../../../core/data/models/base'
+import { Media } from '@modules/core/data/models/base'
 import { PictureEntity } from '../entities/picture'
 
 type MediaContent = File | Media

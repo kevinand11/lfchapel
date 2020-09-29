@@ -4,7 +4,7 @@
 			<div class="row align-items-center">
 				<div class="slide col-md-4">
 					<div class="contain">
-						<img src="@/application/assets/images/home/quick_1.svg" alt="" class="w-100">
+						<img src="@app/assets/images/home/quick_1.svg" alt="" class="w-100">
 						<div class="child">
 							<h4>Upcoming</h4>
 							<h3>Events</h3>
@@ -17,7 +17,7 @@
 				</div>
 				<div class="slide col-md-4">
 					<div class="contain">
-						<img src="@/application/assets/images/home/quick_2.svg" alt="" class="w-100">
+						<img src="@app/assets/images/home/quick_2.svg" alt="" class="w-100">
 						<div class="child">
 							<h4>Service</h4>
 							<h3>Times</h3>
@@ -30,7 +30,7 @@
 				</div>
 				<div class="slide col-md-4">
 					<div class="contain">
-						<img src="@/application/assets/images/home/quick_3.svg" alt="" class="w-100">
+						<img src="@app/assets/images/home/quick_3.svg" alt="" class="w-100">
 						<div class="child">
 							<h4>Prayer</h4>
 							<h3>Requests</h3>

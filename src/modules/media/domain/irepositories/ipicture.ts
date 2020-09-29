@@ -1,5 +1,5 @@
 import { PictureEntity } from '../entities/picture'
-import { GetClauses } from '../../../core/data/datasources/base'
+import { GetClauses } from '@modules/core/data/datasources/base'
 import { PictureToModel } from '../../data/models/picture'
 
 export interface IPictureRepository {

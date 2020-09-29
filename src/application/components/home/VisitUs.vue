@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import GoogleMap from '@/application/components/application/GoogleMap'
+import GoogleMap from '@app/components/application/GoogleMap'
 import { defineComponent } from '@vue/composition-api'
 export default defineComponent({
 	components: {

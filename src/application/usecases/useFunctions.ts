@@ -1,4 +1,4 @@
-import { functions } from '@/application/config/firebase'
+import { functions } from '@app/config/firebase'
 
 export const createContactMessage = async (message: {name: string, email: string, message: string, subject: string}) => {
 	const callable = functions.httpsCallable('createContactMessage')

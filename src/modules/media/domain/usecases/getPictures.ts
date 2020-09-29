@@ -1,6 +1,6 @@
 import { IPictureRepository } from '../irepositories/ipicture'
 import { PictureEntity } from '../entities/picture'
-import { GetClauses } from '../../../core/data/datasources/base'
+import { GetClauses } from '@modules/core/data/datasources/base'
 
 export class GetPicturesUseCase {
 	private repository: IPictureRepository

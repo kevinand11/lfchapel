@@ -9,8 +9,8 @@
 
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api'
-import VideoCard from '@/application/components/media/VideoCard.vue'
-import { useVideosList } from '@/application/usecases/media/useVideos'
+import VideoCard from '@app/components/media/VideoCard.vue'
+import { useVideosList } from '@app/usecases/media/useVideos'
 export default defineComponent({
 	components: {
 		VideoCard

@@ -1,4 +1,4 @@
-import { GetClauses } from '../../../core/data/datasources/base'
+import { GetClauses } from '@modules/core/data/datasources/base'
 import { PictureFromModel, PictureToModel } from '../models/picture'
 
 export abstract class PictureBaseDataSource {

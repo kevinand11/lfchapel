@@ -12,8 +12,8 @@
 
 <script>
 import { defineComponent } from '@vue/composition-api'
-import NavigationBar from '@/application/components/application/AdminNavigationBar.vue'
-import BottomNavigation from '@/application/components/application/AdminBottomNavigation.vue'
+import NavigationBar from '@app/components/application/AdminNavigationBar.vue'
+import BottomNavigation from '@app/components/application/AdminBottomNavigation.vue'
 export default defineComponent({
 	components: {
 		NavigationBar,

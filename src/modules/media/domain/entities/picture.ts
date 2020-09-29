@@ -1,5 +1,5 @@
-import { trimToLength, extractTextFromHTML, extractDate } from '../../../core/validations/sanitizers'
-import { Media } from '../../../core/data/models/base'
+import { trimToLength, extractTextFromHTML, extractDate } from '@modules/core/validations/sanitizers'
+import { Media } from '@modules/core/data/models/base'
 
 export class PictureEntity{
 	public readonly id: string

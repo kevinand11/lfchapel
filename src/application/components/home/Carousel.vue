@@ -7,13 +7,13 @@
 		</ol>
 		<div class="carousel-inner">
 			<div class="carousel-item active">
-				<img src="@/application/assets/images/home/slide-1.png" class="d-block w-100" alt="">
+				<img src="@app/assets/images/home/slide-1.png" class="d-block w-100" alt="">
 			</div>
 			<div class="carousel-item">
-				<img src="@/application/assets/images/home/slide-2.png" class="d-block w-100" alt="">
+				<img src="@app/assets/images/home/slide-2.png" class="d-block w-100" alt="">
 			</div>
 			<div class="carousel-item">
-				<img src="@/application/assets/images/home/slide-3.png" class="d-block w-100" alt="">
+				<img src="@app/assets/images/home/slide-3.png" class="d-block w-100" alt="">
 			</div>
 		</div>
 	</div>

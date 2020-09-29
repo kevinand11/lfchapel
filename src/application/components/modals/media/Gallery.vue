@@ -26,7 +26,7 @@
 </template>
 
 <script lang="ts">
-import { usePhotoGalleryModal } from '@/application/usecases/media/usePhotos'
+import { usePhotoGalleryModal } from '@app/usecases/media/usePhotos'
 import { defineComponent } from '@vue/composition-api'
 import type { PropType } from '@vue/composition-api'
 export default defineComponent({

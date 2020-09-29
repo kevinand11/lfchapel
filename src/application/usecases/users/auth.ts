@@ -1,11 +1,11 @@
-import router from '@/application/router'
-import { Notify } from '@/application/config/notify'
+import router from '@app/router'
+import { Notify } from '@app/config/notifications'
 import {
 	GetLoginFactory, GetRegisterFactory, GetResetPasswordFactory,
 	LoginWithEmail, LoginWithGoogle, Logout, RegisterWithEmail, ResetPassword
-} from '@/modules/users'
+} from '@modules/users'
 import { computed, reactive } from '@vue/composition-api'
-import { useStore } from '@/application/usecases/store'
+import { useStore } from '@app/usecases/store'
 
 const afterAuthHook = async () => {
 	await router.push('/admin/')

@@ -1,6 +1,6 @@
 import { IPictureRepository } from '../../domain/irepositories/ipicture'
 import { PictureBaseDataSource } from '../datasources/picture-base'
-import { GetClauses } from '../../../core/data/datasources/base'
+import { GetClauses } from '@modules/core/data/datasources/base'
 import { PictureTransformer } from '../transformers/picture'
 import { PictureFromModel, PictureToModel } from '../models/picture'
 

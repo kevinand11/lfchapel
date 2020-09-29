@@ -1,12 +1,12 @@
 import Vue from 'vue'
 import VueJsModal from 'vue-js-modal'
 
-import '@/application/config/registerServiceWorker'
-import '@/application/config/components'
+import '@app/config/registerServiceWorker'
+import '@app/config/components'
 
 import 'jquery'
 import 'bootstrap'
-import '@/application/assets/style/index.scss'
+import '@app/assets/style/index.scss'
 
 export const setup = () => {
 	Vue.use(VueJsModal, { dialog: true, dynamicDefaults: {

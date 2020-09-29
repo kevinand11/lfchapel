@@ -6,7 +6,7 @@
 
 <script>
 import { defineComponent } from '@vue/composition-api'
-import CreateModal from '@/application/components/modals/create/Index.vue'
+import CreateModal from '@app/components/modals/create/Index.vue'
 export default defineComponent({
 	components: {
 		CreateModal

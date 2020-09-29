@@ -2,7 +2,7 @@
 	<header class="bg-dark">
 		<nav class="navbar navbar-expand navbar-dark container d-flex align-content-center justify-content-between">
 			<router-link class="navbar-brand" to="/admin/">
-				<img src="@/application/assets/images/logo.png" alt="LFChapel" height="40">
+				<img src="@app/assets/images/logo.png" alt="LFChapel" height="40">
 			</router-link>
 			<button class="navbar-toggler border border-white" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
@@ -34,8 +34,8 @@
 
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api'
-import { useStore } from '@/application/usecases/store'
-import { useLogout } from '@/application/usecases/users/auth'
+import { useStore } from '@app/usecases/store'
+import { useLogout } from '@app/usecases/users/auth'
 export default defineComponent({
 	setup(){
 		const { logout, loading } = useLogout()

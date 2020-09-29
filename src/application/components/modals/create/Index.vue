@@ -6,8 +6,8 @@
 
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api'
-import { useCreateModal } from '@/application/usecases/modals'
-import CreatePicture from '@/application/components/modals/create/CreatePicture.vue'
+import { useCreateModal } from '@app/usecases/modals'
+import CreatePicture from '@app/components/modals/create/CreatePicture.vue'
 export default defineComponent({
 	components: {
 		CreatePicture

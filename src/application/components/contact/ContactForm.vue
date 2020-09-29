@@ -27,8 +27,8 @@
 
 <script>
 import { ref, reactive } from '@vue/composition-api'
-import { createContactMessage } from '@/application/usecases/useFunctions'
-import { Notify } from '@/application/config/notify'
+import { createContactMessage } from '@app/usecases/useFunctions'
+import { Notify } from '@app/config/notifications'
 export default {
 	setup() {
 		const loading = ref(false)

@@ -16,9 +16,9 @@
 </template>
 
 <script>
-import GoogleMap from '@/application/components/application/GoogleMap.vue'
-import ContactForm from '@/application/components/contact/ContactForm.vue'
-import ContactInfo from '@/application/components/contact/ContactInfo.vue'
+import GoogleMap from '@app/components/application/GoogleMap.vue'
+import ContactForm from '@app/components/contact/ContactForm.vue'
+import ContactInfo from '@app/components/contact/ContactInfo.vue'
 export default {
 	components: {
 		GoogleMap,

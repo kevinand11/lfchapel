@@ -12,8 +12,8 @@
 
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api'
-import ArticleCard from '@/application/components/articles/ArticleCard.vue'
-import { useArticleList } from '@/application/usecases/articles/useArticles'
+import ArticleCard from '@app/components/articles/ArticleCard.vue'
+import { useArticleList } from '@app/usecases/articles/useArticles'
 export default defineComponent({
 	components: {
 		ArticleCard

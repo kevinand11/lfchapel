@@ -1,6 +1,6 @@
-import Gallery from '@/application/components/modals/media/Gallery.vue'
-import DailyEvent from '@/application/components/modals/events/DailyEvent.vue'
-import Video from '@/application/components/modals/media/Video.vue'
+import Gallery from '@app/components/modals/media/Gallery.vue'
+import DailyEvent from '@app/components/modals/events/DailyEvent.vue'
+import Video from '@app/components/modals/media/Video.vue'
 import { VModal } from '@/@types/config'
 import { getCurrentInstance } from '@vue/composition-api'
 
