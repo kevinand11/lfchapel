@@ -119,7 +119,7 @@ export default [
 				path: '/admin/',
 				name: 'Dashboard',
 				component: () => import(/* webpackChunkName: 'admin-dashboard' */ '../views/admin/dashboard.vue'),
-				meta: { requiresAuth: true }
+				meta: { requiresAuth: true, requiresAdmin: true }
 			},
 			{
 				path: '/admin/signin',
@@ -128,7 +128,7 @@ export default [
 			},
 			{
 				path: '/admin/signup',
-				name: 'Sign In',
+				name: 'Sign Up',
 				component: () => import(/* webpackChunkName: 'sign-up' */ '../views/admin/auth/signup.vue'),
 			},
 			{
