@@ -123,12 +123,17 @@ export default [
 			{
 				path: '/admin/signin',
 				name: 'Sign In',
-				component: () => import(/* webpackChunkName: 'sign-in' */ '../views/admin/signin.vue'),
+				component: () => import(/* webpackChunkName: 'sign-in' */ '../views/admin/auth/signin.vue'),
 			},
 			{
 				path: '/admin/signup',
 				name: 'Sign In',
-				component: () => import(/* webpackChunkName: 'sign-up' */ '../views/admin/signup.vue'),
+				component: () => import(/* webpackChunkName: 'sign-up' */ '../views/admin/auth/signup.vue'),
+			},
+			{
+				path: '/admin/forgot-password',
+				name: 'Forgot Password',
+				component: () => import(/* webpackChunkName: 'forgot-password' */ '../views/admin/auth/forgot-password.vue'),
 			},
 		]
 	},

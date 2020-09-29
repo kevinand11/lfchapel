@@ -1,6 +1,6 @@
-import { Rules, ValidatorService } from '@root/modules/core/validations'
-import { UploaderService } from '@root/modules/core/services/uploader'
-import { Media } from '@root/modules/core/data/models/base'
+import { Rules, ValidatorService } from '../../validations'
+import { UploaderService } from '../../services/uploader'
+import { Media } from '../../data/models/base'
 
 export abstract class BaseFactory<E, T> {
 	abstract readonly rules: { [key: string]: Rules }
