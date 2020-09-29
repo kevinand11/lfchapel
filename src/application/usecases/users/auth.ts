@@ -1,6 +1,5 @@
 import router from '@/application/router'
 import { Notify } from '@/application/config/notify'
-import { closeNavbar } from '@/application/config'
 import {
 	GetLoginFactory, GetRegisterFactory, GetResetPasswordFactory,
 	LoginWithEmail, LoginWithGoogle, Logout, RegisterWithEmail, ResetPassword
@@ -10,7 +9,6 @@ import { useStore } from '@/application/usecases/store'
 
 const afterAuthHook = async () => {
 	await router.push('/admin/')
-	closeNavbar()
 }
 
 export const useRegisterForm = () => {
@@ -48,7 +46,6 @@ export const useLogout = () => {
 		await useStore().auth.setId(null)
 		if(router.currentRoute.meta.requiresAuth) await router.push('/admin/signin')
 		await Logout.call()
-		closeNavbar()
 		state.loading = false
 	}
 
@@ -137,6 +134,7 @@ export const useResetPasswordForm = () => {
 				await ResetPassword.call(state.factory)
 				state.factory.reset()
 				await Notify({ icon: 'success', title: 'Proceed to your registered email to continue' })
+				await router.push('/admin/signin')
 			}catch(error){ await Notify({ icon: 'error', title: error.message }) }
 			state.loading = false
 		}else{

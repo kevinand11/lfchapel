@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import VueJsModal from 'vue-js-modal'
 
-import '@/application/configation/config/composition'
-import '@/application/configation/config/registerServiceWorker'
-import '@/application/configation/config/components'
+import '@/application/config/composition'
+import '@/application/config/registerServiceWorker'
+import '@/application/config/components'
 
 import 'jquery'
 import 'bootstrap'

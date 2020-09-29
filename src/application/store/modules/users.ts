@@ -4,14 +4,14 @@ import { FindUser } from '@/modules/users'
 
 const state = {
 	id: window.localStorage.getItem('user_id') ?? null,
-	user: window.localStorage.getItem('user') || JSON.parse(window.localStorage.getItem('user')),
+	user: JSON.parse(window.localStorage.getItem('user')) ?? null,
 	profileListener: () => {}
 }
 
 const getters = {
 	getId: (state) => state.id,
 	getUser: (state) => state.user,
-	isLoggedIn: (state) => !!(state.id && state.user.bio),
+	isLoggedIn: (state) => !!(state.id && state.user),
 	isAdmin: (state) => state.user?.roles?.isAdmin ?? false,
 }
 
@@ -27,7 +27,7 @@ const mutations = {
 const actions = {
 	setId: async({ commit }, id) => {
 		commit('setId', id)
-		commit('setUser', {})
+		commit('setUser', null)
 		await Store.dispatch('closeProfileListener')
 		if(id){
 			const user = await FindUser.call(id)
