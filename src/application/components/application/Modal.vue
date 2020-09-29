@@ -1,9 +1,7 @@
 <template>
 	<div class="modal-background">
 		<div class="modal-inner">
-			<slot name="header">
-				<h3>Header</h3>
-			</slot>
+			<slot name="header"><h3>Header</h3></slot>
 			<hr>
 			<div class="my-3">
 				<slot>
