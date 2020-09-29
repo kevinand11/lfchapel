@@ -1,0 +1,65 @@
+<template>
+	<div class="modal-background">
+		<div class="modal-inner">
+			<slot name="header">
+				<h3>Header</h3>
+			</slot>
+			<hr>
+			<div class="my-3">
+				<slot>
+					<p>This is the default content of the modal</p>
+				</slot>
+			</div>
+		</div>
+	</div>
+</template>
+
+<style lang="scss" scoped>
+.modal-background{
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	left: 0;
+	top: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 3rem;
+	z-index: 1050;
+	background: #777777DD;
+}
+
+.modal-background .modal-inner{
+	width: 90%;
+	max-width: 800px;
+	max-height: 90%;
+	padding: 1.5rem;
+	border-radius: 10px;
+	background: #ffffff;
+	box-shadow: 0 4px 8px #000000;
+	z-index: 1051;
+	overflow-y: auto;
+	-ms-overflow-style: none;
+	&::-webkit-scrollbar{
+		display: none;
+	}
+}
+
+@media screen and (max-width: 767px){
+	.modal-background{
+		padding: 0;
+	}
+	.modal-background .modal-inner{
+		width: 100%;
+	}
+}
+@media screen and (max-height: 650px){
+	.modal-background{
+		padding: 0;
+	}
+	.modal-background .modal-inner{
+		max-height: 99%;
+	}
+}
+
+</style>

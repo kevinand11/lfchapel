@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import '@/application/config/composition'
 import App from '@/application/App.vue'
 import { setup } from '@/application/config/'
 import router from '@/application/router'

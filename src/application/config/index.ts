@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import VueJsModal from 'vue-js-modal'
 
-import '@/application/config/composition'
 import '@/application/config/registerServiceWorker'
 import '@/application/config/components'
 

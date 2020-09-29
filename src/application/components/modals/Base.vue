@@ -1,16 +1,15 @@
 <template>
 	<div>
-		<router-view />
-		<Modals />
+		<CreateModal />
 	</div>
 </template>
 
-<script lang="ts">
+<script>
 import { defineComponent } from '@vue/composition-api'
-import Modals from '@/application/components/modals/Base.vue'
+import CreateModal from '@/application/components/modals/create/Index.vue'
 export default defineComponent({
 	components: {
-		Modals
+		CreateModal
 	}
 })
 </script>

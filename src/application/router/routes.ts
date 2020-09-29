@@ -141,7 +141,7 @@ export default [
 			},
 			{
 				path: '/admin/*',
-				name: 'Not Found',
+				name: 'Admin Not Found',
 				redirect: '/admin/'
 			},
 		]
