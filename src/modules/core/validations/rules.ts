@@ -57,6 +57,11 @@ export const isImageOrMedia = (file: any) => {
 	return { valid: false, error: 'is not an image' }
 }
 
+export const isAudioOrMedia = (file: any) => {
+	if(file?.type?.startsWith('audio/')) return { valid: true, error: undefined }
+	return { valid: false, error: 'is not an audio' }
+}
+
 export const isVideoOrMediaOrUndefined = (file: any) => {
 	if(file === undefined) return { valid: true, error: undefined }
 	if(file?.type?.startsWith('video/')) return { valid: true, error: undefined }

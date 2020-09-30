@@ -1,14 +1,14 @@
 import { IPictureRepository } from '../../domain/irepositories/ipicture'
-import { PictureBaseDataSource } from '../datasources/picture-base'
+import { MediaBaseDataSource } from '../datasources/media-base'
 import { GetClauses } from '@modules/core/data/datasources/base'
 import { PictureTransformer } from '../transformers/picture'
 import { PictureFromModel, PictureToModel } from '../models/picture'
 
 export class PictureRepository implements IPictureRepository{
-	private dataSource: PictureBaseDataSource
+	private dataSource: MediaBaseDataSource<PictureFromModel, PictureToModel>
 	private transformer: PictureTransformer
 
-	constructor(dataSource: PictureBaseDataSource, transformer: PictureTransformer) {
+	constructor(dataSource: MediaBaseDataSource<PictureFromModel, PictureToModel>, transformer: PictureTransformer) {
 		this.dataSource = dataSource
 		this.transformer = transformer
 	}
