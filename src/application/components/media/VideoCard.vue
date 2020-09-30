@@ -1,5 +1,5 @@
 <template>
-	<div class="card mb-4 shadow">
+	<div class="card shadow-sm">
 		<div class="position-relative">
 			<img :src="video.preview" class="card-img-top" alt="">
 			<div class="contain">
@@ -14,19 +14,22 @@
 </template>
 
 <script lang="ts">
-import { useModal } from '@app/usecases/useModal'
 import { defineComponent } from '@vue/composition-api'
-import type { PropType } from '@vue/composition-api'
+import { VideoEntity } from '@modules/media/domain/entities/video'
+import { setCurrentViewingVideo } from '@app/usecases/media/videos'
+import { useMediaModal } from '@app/usecases/modals'
 export default defineComponent({
 	props: {
 		video: {
-			type: Object as PropType<VideoI>,
+			type: VideoEntity,
 			required: true
 		}
 	},
 	setup(props){
-		const { showVideoModal } =  useModal()
-		const showModal = () => showVideoModal({ video: props.video })
+		const showModal = () => {
+			setCurrentViewingVideo(props.video)
+			useMediaModal().setMediaModalVideo()
+		}
 		return { showModal }
 	}
 })

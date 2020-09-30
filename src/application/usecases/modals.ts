@@ -33,8 +33,10 @@ export const useEditModal = () => {
 export const useMediaModal = () => {
 	return {
 		isMediaModalGallery: computed(() => mediaModal.value === 'gallery'),
+		isMediaModalVideo: computed(() => mediaModal.value === 'video'),
 
 		setMediaModalGallery: () => mediaModal.value = 'gallery',
+		setMediaModalVideo: () => mediaModal.value = 'video',
 		closeMediaModal: () => mediaModal.value = null
 	}
 }

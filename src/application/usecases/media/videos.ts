@@ -194,3 +194,17 @@ export const useEditVideo = () => {
 		editVideo,
 	}
 }
+
+
+let currentView = undefined as VideoEntity | undefined
+
+export const setCurrentViewingVideo = (video: VideoEntity) => currentView = video
+
+export const useVideoModal = () => {
+	let index = globalState.videos.findIndex((video) => video.id === currentView?.id)
+	index = index !== -1 ? index : 0
+
+	return {
+		video: computed(() => globalState.videos[index])
+	}
+}
