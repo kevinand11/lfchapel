@@ -8,7 +8,7 @@
 					<a @click.prevent="closeEditModal"><i class="fas fa-times text-danger"></i></a>
 				</div>
 			</template>
-			<template slot="buttonText">Edit Audio</template>
+			<template slot="buttonText">Save Audio</template>
 		</audio-form>
 	</div>
 </template>

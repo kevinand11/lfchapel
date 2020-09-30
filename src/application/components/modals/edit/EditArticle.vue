@@ -1,33 +1,33 @@
 <template>
 	<div class="">
-		<picture-form :submit="editPicture" :loading="loading" :factory="factory">
+		<article-form :submit="editArticle" :loading="loading" :factory="factory">
 			<template slot="title">
 				<div class="d-flex align-items-baseline justify-content-between my-3">
 					<i></i>
-					<h4>Edit Picture</h4>
+					<h4>Edit Article</h4>
 					<a @click.prevent="closeEditModal"><i class="fas fa-times text-danger"></i></a>
 				</div>
 			</template>
-			<template slot="buttonText">Save Picture</template>
-		</picture-form>
+			<template slot="buttonText">Save Article</template>
+		</article-form>
 	</div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api'
 import { useEditModal } from '@app/usecases/modals'
-import { useEditPicture } from '@app/usecases/media/pictures'
-import PictureForm from '@app/components/admin/media/PictureForm.vue'
+import { useEditArticle } from '@app/usecases/articles/articles'
+import ArticleForm from '@app/components/admin/articles/ArticleForm.vue'
 export default defineComponent({
-	name: 'EditPicture',
+	name: 'EditArticle',
 	components: {
-		'picture-form': PictureForm
+		'article-form': ArticleForm
 	},
 	setup(){
 		const { closeEditModal } = useEditModal()
-		const { loading, editPicture, factory } = useEditPicture()
+		const { loading, editArticle, factory } = useEditArticle()
 		return {
-			loading, editPicture, factory,
+			loading, editArticle, factory,
 			closeEditModal
 		}
 	}
