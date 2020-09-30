@@ -140,6 +140,12 @@ export default [
 				meta: { requiresNoAuth: true }
 			},
 			{
+				path: '/admin/media/pictures/',
+				name: 'Pictures',
+				component: () => import(/* webpackChunkName: 'admin-pictures' */ './views/admin/media/pictures.vue'),
+				meta: { requiresAuth: true, requiresAdmin: true }
+			},
+			{
 				path: '/admin/*',
 				name: 'Admin Not Found',
 				redirect: '/admin/'

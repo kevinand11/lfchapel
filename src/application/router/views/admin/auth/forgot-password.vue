@@ -31,6 +31,18 @@ export default defineComponent({
 		const { loading, factory, resetPassword } = useResetPasswordForm()
 		return { loading, factory, resetPassword }
 	},
+	meta(){
+		return {
+			title: 'Forgot Password',
+			meta: [
+				{
+					vmid: 'robots',
+					name: 'robots',
+					content: 'none'
+				}
+			]
+		}
+	}
 })
 </script>
 

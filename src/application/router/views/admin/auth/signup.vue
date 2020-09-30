@@ -64,6 +64,18 @@ export default defineComponent({
 			regLoading, register, factory,
 			anyLoading: computed(() => googleLoading.value || regLoading.value),
 		}
+	},
+	meta(){
+		return {
+			title: 'Sign Up',
+			meta: [
+				{
+					vmid: 'robots',
+					name: 'robots',
+					content: 'none'
+				}
+			]
+		}
 	}
 })
 </script>

@@ -72,6 +72,18 @@ export default defineComponent({
 			devLoading, devLogin, devId, devs, isDev,
 			anyLoading: computed(() => emailLoading.value || devLoading.value || googleLoading.value),
 		}
+	},
+	meta(){
+		return {
+			title: 'Sign In',
+			meta: [
+				{
+					vmid: 'robots',
+					name: 'robots',
+					content: 'none'
+				}
+			]
+		}
 	}
 })
 </script>

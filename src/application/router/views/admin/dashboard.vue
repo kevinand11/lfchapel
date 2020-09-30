@@ -1,14 +1,59 @@
 <template>
 	<Admin>
-		<h1>Dashboard</h1>
+		<RouteName />
+		<div class="container px-3">
+			<ul class="list-group">
+				<li class="list-group-item list-group-item-action mb-3">
+					<router-link to="/admin/media/pictures" class="d-flex justify-content-between align-items-center">
+						<div>
+							<h4>Pictures</h4>
+							<p>Create, modify and delete pictures</p>
+						</div>
+						<i class="fas fa-2x fa-angle-right"></i>
+					</router-link>
+				</li>
+				<li class="list-group-item list-group-item-action mb-3">
+					<router-link to="/admin/media/audios" class="d-flex justify-content-between align-items-center">
+						<div>
+							<h4>Audios</h4>
+							<p>Create, modify and delete audios</p>
+						</div>
+						<i class="fas fa-2x fa-angle-right"></i>
+					</router-link>
+				</li>
+				<li class="list-group-item list-group-item-action mb-3">
+					<router-link to="/admin/media/videos" class="d-flex justify-content-between align-items-center">
+						<div>
+							<h4>Videos</h4>
+							<p>Create, modify and delete videos</p>
+						</div>
+						<i class="fas fa-2x fa-angle-right"></i>
+					</router-link>
+				</li>
+			</ul>
+		</div>
 	</Admin>
 </template>
 
-<script>
+<style lang="scss" scoped>
+a:hover { text-decoration: none; }
+</style>
+
+<script lang="ts">
 import { defineComponent } from '@vue/composition-api'
 export default defineComponent({
-	setup(){
-
+	name: 'Dashboard',
+	meta(){
+		return {
+			title: 'Dashboard',
+			meta: [
+				{
+					vmid: 'robots',
+					name: 'robots',
+					content: 'none'
+				}
+			]
+		}
 	}
 })
 </script>
