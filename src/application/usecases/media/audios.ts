@@ -196,3 +196,64 @@ export const useEditAudio = () => {
 		editAudio,
 	}
 }
+
+const formatTime = (length: number) => {
+	if(length < 0) length = 0
+	const hours = Math.trunc(length / 3600)
+	const minutes = Math.trunc((length % 3600) / 60)
+	const seconds = Math.trunc(length % 60)
+	const hoursToString = hours > 9 ? `${hours}` :`0${hours}`
+	const minutesToString = minutes > 9 ? `${minutes}` :`0${minutes}`
+	const secondsToString = seconds > 9 ? `${seconds}` :`0${seconds}`
+	return `${hours < 1 ? '' : `${hoursToString}:`}${minutesToString}:${secondsToString}`
+}
+
+const players: AudioPlayers = {}
+
+export const useAudioPlayer = (audio: AudioEntity) => {
+	const { id, audio: link } = audio
+	let { state, player } = players[id] || {}
+	state = state || reactive({ loading: true, playing: false, time: 0, error: '', length: 0 })
+	player = player || new window.Audio(link)
+	player.onerror = () => {
+		state.error = 'Failed loading audio'
+		state.loading = false
+	}
+	player.oncanplay = () => {
+		state.loading = false
+		state.length = player.duration
+	}
+	player.ontimeupdate = () => state.time = player.currentTime
+	player.onplay = () => state.playing = true
+	player.onpause = () => state.playing = false
+	player.onended = () => {
+		state.playing = false
+		state.time = 0
+	}
+	const play = async () => {
+		try{
+			const controllers = Object.values(players) as AudioInstance[]
+			controllers.forEach((player) => player.player.pause())
+			await player.play()
+		}
+		catch{ state.error = 'Failed to play audio'}
+	}
+	const pause = () => player.pause()
+	const togglePlay = () => state.playing ? pause() : play()
+	const setTime = (t: number) => player.currentTime = t
+	const forwardShort = () => setTime(player.currentTime + 10 < player.duration ? player.currentTime + 10 : player.duration)
+	const backwardShort = () => setTime(player.currentTime - 10 < 0 ? 0 : player.currentTime - 10)
+	const forwardLong= () => setTime(player.currentTime + 60 < player.duration ? player.currentTime + 60 : player.duration)
+	const backwardLong = () => setTime(player.currentTime - 60 < 0 ? 0 : player.currentTime - 60)
+	players[id] = { player, state }
+	return {
+		togglePlay, forwardShort, backwardShort, forwardLong, backwardLong,
+		loading: computed(() => state.loading),
+		playing: computed(() => state.playing),
+		time: computed({ get: () => state.time, set: setTime}),
+		length: computed(() => state.length),
+		timeFormatted: computed(() => formatTime(state.time)),
+		lengthFormatted: computed(() => formatTime(state.length)),
+		error: computed(() => state.error)
+	}
+}

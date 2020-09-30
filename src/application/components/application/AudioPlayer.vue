@@ -20,18 +20,18 @@
 </template>
 
 <script lang="ts">
-import { useAudioPlayer } from '@app/usecases/media/useAudios'
+import { useAudioPlayer } from '@app/usecases/media/audios'
 import { defineComponent } from '@vue/composition-api'
-import type { PropType } from '@vue/composition-api'
+import { AudioEntity } from '@modules/media/domain/entities/audio'
 export default defineComponent({
 	props: {
 		audio: {
-			type: Object as PropType<AudioI>,
+			type: AudioEntity,
 			required: true
 		}
 	},
 	setup(props){
-		return useAudioPlayer(props.audio.id, props.audio.link)
+		return useAudioPlayer(props.audio)
 	}
 })
 </script>

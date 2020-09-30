@@ -4,7 +4,7 @@ declare type AudioPlayers = {
 
 declare type AudioInstance = {
     state: AudioState
-    audio: HTMLAudioElement
+    player: HTMLAudioElement
 }
 
 declare interface AudioState {
