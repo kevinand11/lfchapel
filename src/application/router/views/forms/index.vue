@@ -4,7 +4,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-3 mb-3">
-					<SideNavigation />
+					<SideNavigation :routes="routes" />
 				</div>
 				<div class="col-md-9 mb-3">
 					<router-view />
@@ -15,14 +15,19 @@
 </template>
 
 <script>
-import SideNavigation from '@app/components/forms/SideNavigation.vue'
 export default {
-	components: {
-		SideNavigation
+	setup(){
+		return {
+			routes: [
+				{ name: 'Make A Prayer Request', route: '/forms/prayer-requests' },
+				{ name: 'Share A Testimony', route: '/forms/testimonies' },
+				{ name: 'Give Us Feedback', route: '/forms/feedback' },
+			]
+		}
 	},
 	meta(){
 		return {
-			title: 'Online Forms - Living Faith Chapel',
+			title: 'Forms - Living Faith Chapel',
 			meta: [
 				{ vmid: 'description', name: 'description', content: '' },
 				{ vmid: 'keywords', name: 'keywords', content: '' },

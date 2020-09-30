@@ -4,7 +4,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-3 mb-3">
-					<SideNavigation />
+					<SideNavigation :routes="routes" />
 				</div>
 				<div class="col-md-9 mb-3">
 					<router-view />
@@ -15,10 +15,15 @@
 </template>
 
 <script>
-import SideNavigation from '@app/components/media/SideNavigation.vue'
 export default {
-	components: {
-		SideNavigation
+	setup(){
+		return {
+			routes: [
+				{ name: 'Photo Gallery', route: '/media/photo-gallery' },
+				{ name: 'Audio Sermons', route: '/media/audio-sermons' },
+				{ name: 'LFC TV', route: '/media/lfc-tv' },
+			]
+		}
 	},
 	meta(){
 		return {
