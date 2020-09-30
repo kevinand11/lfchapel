@@ -6,7 +6,7 @@ import { getCurrentInstance } from '@vue/composition-api'
 
 export const useModal = () => {
 	const modal: VModal = getCurrentInstance()!.$modal
-	const showGalleryModal = (props: object) => modal.show(Gallery, props)
+	const showGalleryModal = () => modal.show(Gallery)
 	const showDailyEventModal = (props: object) => modal.show(DailyEvent, props)
 	const showVideoModal = (props: object) => modal.show(Video, props, { clickToClose: false })
 	return { showGalleryModal, showDailyEventModal, showVideoModal }

@@ -2,26 +2,31 @@
 	<div>
 		<Loading v-if="loading" />
 		<div class="card-columns" v-else>
-			<GalleryPhotoCard v-for="photo in photos" :photo="photo" :onClicked="showModal" :key="photo.id" />
+			<GalleryPhotoCard v-for="picture in pictures" :picture="picture" :key="picture.id" />
 		</div>
+		<div class="d-flex justify-content-end my-3" v-if="hasMore">
+			<button class="btn-success" @click="fetchOlderPictures" :disabled="olderPicturesLoading">
+				<i class="fas fa-spinner fa-spin mr-2" v-if="olderPicturesLoading"></i>
+				<span>Fetch More</span>
+			</button>
+		</div>
+		<p v-if="error" class="mt-4 text-danger lead text-center">{{ error }}</p>
 	</div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api'
-import { usePhotosList } from '@app/usecases/media/usePhotos'
-import { useModal } from '@app/usecases/useModal'
 import GalleryPhotoCard from '@app/components/media/GalleryPhotoCard.vue'
-
+import { usePicturesList } from '@app/usecases/media/pictures'
 export default defineComponent({
 	components: {
 		GalleryPhotoCard
 	},
 	setup(){
-		const { photos, loading } = usePhotosList()
-		const { showGalleryModal } = useModal()
-		const showModal = (id: Id) => showGalleryModal({ photos: photos.value, current: id })
-		return { photos, loading, showModal }
+		const { loading, olderPicturesLoading, hasMore, error, pictures, fetchOlderPictures } = usePicturesList()
+		return {
+			loading, olderPicturesLoading, hasMore, error, pictures, fetchOlderPictures
+		}
 	},
 	meta(){
 		return {
@@ -37,10 +42,7 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 	.card-columns{ column-count: 1; }
-	@media (min-width: $sm) {
+	@media (min-width: $md) {
 		.card-columns{ column-count: 2; }
-	}
-	@media (min-width: $lg) {
-		.card-columns{ column-count: 3; }
 	}
 </style>

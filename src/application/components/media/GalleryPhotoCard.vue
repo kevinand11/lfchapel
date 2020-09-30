@@ -1,22 +1,31 @@
 <template>
-	<div class="card mb-4 shadow">
-		<img :src="photo.link" class="card-img-top" alt="" @click="onClicked(photo.id)">
+	<div class="card mb-4 shadow-sm">
+		<img :src="picture.image" class="card-img-top" @click="showModal" alt="">
+		<div class="card-body">
+			<h4 class="card-title text-center">{{ picture.title }}</h4>
+			<p class="card-text">{{ picture.trimmedDescription }}</p>
+		</div>
 	</div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api'
-import type { PropType } from '@vue/composition-api'
+import { PictureEntity } from '@modules/media/domain/entities/picture'
+import { setCurrentViewingPicture } from '@app/usecases/media/pictures'
+import { useModal } from '@app/usecases/useModal'
 export default defineComponent({
 	props: {
-		photo: {
-			type: Object as PropType<PhotoI>,
-			required: true
-		},
-		onClicked: {
-			type: Function as PropType<(id: Id) => void>,
+		picture: {
+			type: PictureEntity,
 			required: true
 		}
+	},
+	setup(props ){
+		const showModal = () => {
+			setCurrentViewingPicture(props.picture)
+			useModal().showGalleryModal()
+		}
+		return { showModal }
 	}
 })
 </script>

@@ -3,8 +3,8 @@
 		<div class="d-flex justify-content-between align-items-center"></div>
 		<div id="gallery" class="carousel slide" data-ride="carousel">
 			<div class="carousel-inner">
-				<div class="carousel-item" v-for="(photo, i) in photos" :key="photo.id" :class="{'active': i === index}">
-					<img :src="photo.link" class="d-block w-100" alt="">
+				<div class="carousel-item" v-for="(picture, i) in pictures" :key="picture.id" :class="{'active': i === index}">
+					<img :src="picture.image" class="d-block w-100" alt="">
 					<div class="carousel-caption d-flex justify-content-between py-2 px-2 px-md-4">
 						<a @click="previous" role="button" data-slide="prev">
 							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -12,7 +12,7 @@
 						</a>
 						<h5>
 							<span>{{ index + 1 }} of {{ length }}</span>
-							<a :href="photo.link" download class="ml-3 text-info">Download</a>
+							<a :href="picture.image" download class="ml-3 text-info">Download</a>
 						</h5>
 						<a  @click="next" role="button" data-slide="next">
 							<span class="carousel-control-next-icon" aria-hidden="true"></span>
@@ -26,23 +26,12 @@
 </template>
 
 <script lang="ts">
-import { usePhotoGalleryModal } from '@app/usecases/media/usePhotos'
+import { useGalleryModal } from '@app/usecases/media/pictures'
 import { defineComponent } from '@vue/composition-api'
-import type { PropType } from '@vue/composition-api'
 export default defineComponent({
-	props:  {
-		photos: {
-			type: Array as PropType<PhotoI[]>,
-			required: true
-		},
-		current: {
-			type: Number as PropType<Id>,
-			required: true
-		}
-	},
-	setup(props){
-		const { index, next, previous, length } = usePhotoGalleryModal(props.photos, props.current)
-		return { index, next, previous, length }
+	setup(){
+		const { index, next, previous, length, pictures } = useGalleryModal()
+		return { index, next, previous, length, pictures }
 	}
 })
 </script>

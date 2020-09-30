@@ -1,4 +1,4 @@
-import { computed, reactive } from '@vue/composition-api'
+import { computed, reactive, ref } from '@vue/composition-api'
 import { PictureEntity } from '@modules/media/domain/entities/picture'
 import {
 	DeletePicture, GetPictures, FindPicture,
@@ -192,5 +192,25 @@ export const useEditPicture = () => {
 		factory: state.factory,
 		loading: computed(() => state.loading),
 		editPicture,
+	}
+}
+
+
+let currentView = undefined as PictureEntity | undefined
+
+export const setCurrentViewingPicture = (picture: PictureEntity) => currentView = picture
+
+export const useGalleryModal = () => {
+	const length = computed(() => globalState.pictures.length)
+	let currentIndex = globalState.pictures.findIndex((picture) => picture.id === currentView?.id)
+	currentIndex = currentIndex < 0 ? 0 : currentIndex
+	const index = ref(currentIndex)
+
+	const next = () => index.value < length.value - 1 ? index.value++ : index.value = 0
+	const previous = () => index.value > 0 ? index.value-- : index.value = length.value - 1
+
+	return {
+		index, next, previous, length,
+		pictures: computed(() => globalState.pictures)
 	}
 }

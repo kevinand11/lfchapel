@@ -11,7 +11,7 @@
 				<PictureCard v-for="picture in pictures" :key="picture.id" :picture="picture" />
 			</div>
 			<div class="d-flex justify-content-end my-3" v-if="hasMore">
-				<button class="btn-success" @click="fetchOlderPictures">
+				<button class="btn-success" @click="fetchOlderPictures" :disabled="olderPicturesLoading">
 					<i class="fas fa-spinner fa-spin mr-2" v-if="olderPicturesLoading"></i>
 					<span>Fetch More</span>
 				</button>
