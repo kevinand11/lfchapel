@@ -1,29 +1,36 @@
 <template>
-	<div class="contain">
-		<video controls class="w-100" allowfullscreen="false">
-			<source :src="video.link">
-			Your browser does not playing videos.
-		</video>
-		<h4 class="text-center">{{ video.title }}</h4>
-		<p>{{ video.description }}</p>
-		<div class="d-flex justify-content-end">
-			<button class="btn btn-danger float-right" @click="closeModal">Close</button>
-		</div>
-	</div>
+	<ModalBase :show-separator="false">
+		<template slot="header"><div></div></template>
+		<template>
+			<div class="m-n3">
+				<video controls class="w-100" :allowfullscreen="false">
+					<source :src="video.video">
+					Your browser does not playing videos.
+				</video>
+				<div class="p-3 px-md-5">
+					<div class="d-flex justify-content-between align-items-center mb-3">
+						<i></i>
+						<h4 class="mb-0">{{ video.title }}</h4>
+						<a @click="closeMediaModal" class="text-danger"><i class="fas fa-times"></i></a>
+					</div>
+					<p>{{ video.description }}</p>
+				</div>
+			</div>
+		</template>
+	</ModalBase>
 </template>
 
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api'
-import type { PropType } from '@vue/composition-api'
+import { useVideoModal } from '@app/usecases/media/videos'
+import { useMediaModal } from '@app/usecases/modals'
 export default defineComponent({
-	props: {
-		video: {
-			type: Object as PropType<VideoI>,
-			required: true
+	setup(){
+		const { video } = useVideoModal()
+		return {
+			video,
+			closeMediaModal: useMediaModal().closeMediaModal
 		}
-	},
-	setup(props, { root }){
-		return { closeModal: root.$modal.hideAll }
 	}
 })
 </script>
