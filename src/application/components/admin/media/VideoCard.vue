@@ -6,6 +6,7 @@
 				<h5 class="card-title">{{ video.title }}</h5>
 				<p class="card-text">{{ video.trimmedDescription }}</p>
 				<div>
+					<a target="_blank" :href="video.video" class="card-link text-info">Watch</a>
 					<a class="card-link text-warning" @click.prevent="openEditModal">Edit</a>
 					<a class="card-link text-danger" @click.prevent="deleteVideo">Delete</a>
 				</div>
