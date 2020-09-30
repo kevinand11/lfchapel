@@ -7,6 +7,7 @@ import {
 import { Alert, Notify } from '@app/config/notifications'
 import router from '@app/router'
 import { useStore } from '@app/usecases/store'
+import { useCreateModal, useEditModal } from '@app/usecases/modals'
 
 const PAGINATION_LIMIT = parseInt(process.env.VUE_APP_PAGINATION_LIMIT)
 
@@ -23,11 +24,13 @@ const setArticle = (article: ArticleEntity) => {
 	const index = globalState.articles.findIndex((p) => p.id === article.id)
 	if(index !== -1) globalState.articles[index] = article
 	else globalState.articles.push(article)
+	globalState.error = ''
 }
 const unshiftArticle = (article: ArticleEntity) => {
 	const index = globalState.articles.findIndex((p) => p.id === article.id)
 	if(index !== -1) globalState.articles[index] = article
 	else globalState.articles.unshift(article)
+	globalState.error = ''
 }
 const fetchArticles = async () => {
 	const date = globalState.articles[globalState.articles.length - 1]?.createdAt ?? undefined
@@ -139,8 +142,7 @@ export const useCreateArticle = () => {
 				const id = await AddArticle.call(state.factory)
 				await fetchArticle(id)
 				state.factory.reset()
-				//await useStore().modals.closeCreateModal()
-				//await router.push(`/blog/${id}`)
+				useCreateModal().closeCreateModal()
 			}catch(error){ await Notify({ icon: 'error', title: error.message }) }
 			state.loading = false
 		}else state.factory.validateAll()
@@ -174,9 +176,7 @@ export const useEditArticle = () => {
 				const article = await FindArticle.call(newId)
 				if(article) unshiftArticle(article)
 				state.factory.reset()
-				//if(router.currentRoute.params.id) await router.replace('/blog')
-				//await router.replace(`/blog/${newId}`)
-				//await useStore().modals.closeEditModal()
+				useEditModal().closeEditModal()
 			}catch(error){ await Notify({ icon: 'error', title: error.message }) }
 			state.loading = false
 		}else state.factory.validateAll()

@@ -6,13 +6,6 @@
 		<form class="mx-2" @submit.prevent="submit">
 			<template>
 				<div class="form-group my-3">
-					<input type="file" @change="catchImage" class="d-none" ref="imageInput" accept="image/*">
-					<a @click.prevent="() => { $refs.imageInput.value= ''; $refs.imageInput.click() }">
-						<span v-if="factory.image">{{ factory.image.name }} </span>
-						<span class="text-info">Upload preview image</span>
-					</a>
-				</div>
-				<div class="form-group my-3">
 					<input class="form-control" placeholder="Title" v-model="factory.title"
 					       :class="{'is-invalid': factory.errors.title, 'is-valid': factory.isValid('title')}">
 					<span class="small" v-if="factory.errors.title">{{ factory.errors.title }}</span>
@@ -34,6 +27,14 @@
 					<small class="small text-danger" v-if="factory.errors.tags">{{ factory.errors.tags }}</small>
 				</div>
 				<hr>
+				<div class="form-group my-3">
+					<input type="file" @change="catchImage" class="d-none" ref="imageInput" accept="image/*">
+					<a @click.prevent="() => { $refs.imageInput.value= ''; $refs.imageInput.click() }">
+						<img :src="imageLink" alt="" v-if="imageLink" width="50px" class="mr-2">
+						<span class="text-info">{{ factory.image ? 'Change' : 'Upload' }} preview image</span>
+					</a>
+				</div>
+				<hr>
 				<div class="d-flex justify-content-end my-3">
 					<button class="btn btn-gold text-white" type="submit" :disabled="loading || !factory.valid">
 						<i class="fas fa-spinner fa-spin mr-2" v-if="loading"></i>
@@ -46,7 +47,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from '@vue/composition-api'
+import { defineComponent, ref } from '@vue/composition-api'
 import { ArticleFactory } from '@modules/articles/domain/factories/article'
 import { useFileInputs, useTags } from '@app/usecases/core/forms'
 export default defineComponent({
@@ -70,10 +71,14 @@ export default defineComponent({
 			(tag: string) => props.factory.addTag(tag),
 			(tag: string) => props.factory.removeTag(tag)
 		)
+		const imageLink = ref((props.factory.image as any)?.link ?? null)
 		const { catchFiles: catchImage } = useFileInputs(
-			(file:File) => props.factory.image = file
+			(file:File) => {
+				props.factory.image = file
+				imageLink.value = window.URL.createObjectURL(file)
+			}
 		)
-		return { catchImage, tag, removeTag, splitTag }
+		return { catchImage, tag, removeTag, splitTag, imageLink }
 	}
 })
 </script>
