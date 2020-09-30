@@ -208,7 +208,16 @@ const formatTime = (length: number) => {
 	return `${hours < 1 ? '' : `${hoursToString}:`}${minutesToString}:${secondsToString}`
 }
 
-const players: AudioPlayers = {}
+const players = {} as { [key: string]: {
+	state: {
+		loading: boolean
+		playing: boolean
+		time: number
+		error: string
+		length: number
+	}
+	player: HTMLAudioElement
+}}
 
 export const useAudioPlayer = (audio: AudioEntity) => {
 	const { id, audio: link } = audio
@@ -232,8 +241,8 @@ export const useAudioPlayer = (audio: AudioEntity) => {
 	}
 	const play = async () => {
 		try{
-			const controllers = Object.values(players) as AudioInstance[]
-			controllers.forEach((player) => player.player.pause())
+			const controllers = Object.values(players)
+			controllers.forEach((controller) => controller.player.pause())
 			await player.play()
 		}
 		catch{ state.error = 'Failed to play audio'}
