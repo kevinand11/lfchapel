@@ -20,7 +20,7 @@
 				<div class="form-group my-3">
 					<input type="file" @change="catchImage" class="d-none" ref="imageInput" accept="image/*">
 					<a @click.prevent="() => { $refs.imageInput.value= ''; $refs.imageInput.click() }">
-						<p class="mb-0" v-if="factory.image">{{ factory.image.name }} </p>
+						<img :src="imageLink" alt="" v-if="imageLink" width="50px" class="mr-2">
 						<span class="text-info">{{ factory.image ? 'Change' : 'Upload' }} image</span>
 					</a>
 				</div>
@@ -39,11 +39,11 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from '@vue/composition-api'
+import { defineComponent, ref } from '@vue/composition-api'
 import { PictureFactory } from '@modules/media/domain/factories/picture'
 import { useFileInputs } from '@app/usecases/core/forms'
 export default defineComponent({
-	name: 'ArticleForm',
+	name: 'PictureForm',
 	props: {
 		factory: {
 			type: PictureFactory,
@@ -59,10 +59,14 @@ export default defineComponent({
 		}
 	},
 	setup(props) {
+		const imageLink = ref((props.factory.image as any)?.link ?? null)
 		const { catchFiles: catchImage } = useFileInputs(
-			(file:File) => props.factory.image = file
+			(file:File) => {
+				props.factory.image = file
+				imageLink.value = window.URL.createObjectURL(file)
+			}
 		)
-		return { catchImage }
+		return { catchImage, imageLink }
 	}
 })
 </script>

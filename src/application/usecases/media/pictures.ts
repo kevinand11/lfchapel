@@ -82,8 +82,9 @@ export const useDeletePicture = (picture: PictureEntity) => {
 				state.loading = false
 				await Notify({ icon: 'success', title: 'Picture deleted successfully' })
 			}
-			return result.value
+			return result.value as boolean
 		} catch(error) {
+			state.loading = false
 			await Notify({ icon: 'error', title: error.message })
 			return false
 		}

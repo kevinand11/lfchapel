@@ -16,7 +16,7 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		z-index: 3;
+		z-index: 9999999999999999;
 		background: #00000088;
 	}
 	div.spinner-border{
