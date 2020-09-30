@@ -146,6 +146,12 @@ export default [
 				meta: { requiresAuth: true, requiresAdmin: true }
 			},
 			{
+				path: '/admin/media/audios/',
+				name: 'Audios',
+				component: () => import(/* webpackChunkName: 'admin-audios */ './views/admin/media/audios.vue'),
+				meta: { requiresAuth: true, requiresAdmin: true }
+			},
+			{
 				path: '/admin/*',
 				name: 'Admin Not Found',
 				redirect: '/admin/'

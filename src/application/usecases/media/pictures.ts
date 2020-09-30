@@ -7,7 +7,7 @@ import {
 import { Alert, Notify } from '@app/config/notifications'
 import router from '@app/router'
 import { useStore } from '@app/usecases/store'
-import { useCreateModal } from '@app/usecases/modals'
+import { useCreateModal, useEditModal } from '@app/usecases/modals'
 
 const PAGINATION_LIMIT = parseInt(process.env.VUE_APP_PAGINATION_LIMIT)
 
@@ -24,11 +24,13 @@ const setPicture = (picture: PictureEntity) => {
 	const index = globalState.pictures.findIndex((p) => p.id === picture.id)
 	if(index !== -1) globalState.pictures[index] = picture
 	else globalState.pictures.push(picture)
+	globalState.error = ''
 }
 const unshiftPicture = (picture: PictureEntity) => {
 	const index = globalState.pictures.findIndex((p) => p.id === picture.id)
 	if(index !== -1) globalState.pictures[index] = picture
 	else globalState.pictures.unshift(picture)
+	globalState.error = ''
 }
 const fetchPictures = async () => {
 	const date = globalState.pictures[globalState.pictures.length - 1]?.createdAt ?? undefined
@@ -145,7 +147,7 @@ export const useCreatePicture = () => {
 				const id = await AddPicture.call(state.factory)
 				await fetchPicture(id)
 				state.factory.reset()
-				await useCreateModal().closeCreateModal()
+				useCreateModal().closeCreateModal()
 				await Notify({ icon: 'success', title: 'Picture created successfully' })
 			}catch(error){ await Notify({ icon: 'error', title: error.message }) }
 			state.loading = false
@@ -182,7 +184,7 @@ export const useEditPicture = () => {
 				state.factory.reset()
 				if(router.currentRoute.params.id) await router.replace('/blog')
 				await router.replace(`/blog/${newId}`)
-				//await useStore().modals.closeEditModal()
+				useEditModal().closeEditModal()
 			}catch(error){ await Notify({ icon: 'error', title: error.message }) }
 			state.loading = false
 		}else state.factory.validateAll()

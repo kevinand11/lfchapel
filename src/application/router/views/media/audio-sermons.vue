@@ -9,7 +9,7 @@
 
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api'
-import AudioCard from '@app/components/media/AudioCard.vue'
+import AudioCard from '@app/components/media/Audio.vue'
 import { useAudiosList } from '@app/usecases/media/useAudios'
 export default defineComponent({
 	components: {
