@@ -1,6 +1,5 @@
 <template>
 	<div>
-		<img src="@app/assets/images/top.svg" alt="" class="curve">
 		<div class="banner d-flex align-items-center justify-content-center flex-column-reverse flex-lg-row">
 			<div class="banner-content container text-center">
 				<h1 class="display-4">WELCOME TO OUR <br>CHURCH</h1>
