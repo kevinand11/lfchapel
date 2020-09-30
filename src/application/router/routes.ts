@@ -141,20 +141,26 @@ export default [
 			},
 			{
 				path: '/admin/media/pictures/',
-				name: 'Pictures',
+				name: 'Admin Pictures',
 				component: () => import(/* webpackChunkName: 'admin-pictures' */ './views/admin/media/pictures.vue'),
 				meta: { requiresAuth: true, requiresAdmin: true }
 			},
 			{
 				path: '/admin/media/audios/',
-				name: 'Audios',
-				component: () => import(/* webpackChunkName: 'admin-audios */ './views/admin/media/audios.vue'),
+				name: 'Admin Audios',
+				component: () => import(/* webpackChunkName: 'admin-audios' */ './views/admin/media/audios.vue'),
 				meta: { requiresAuth: true, requiresAdmin: true }
 			},
 			{
 				path: '/admin/media/videos/',
-				name: 'Videos',
-				component: () => import(/* webpackChunkName: 'admin-videos */ './views/admin/media/videos.vue'),
+				name: 'Admin Videos',
+				component: () => import(/* webpackChunkName: 'admin-videos' */ './views/admin/media/videos.vue'),
+				meta: { requiresAuth: true, requiresAdmin: true }
+			},
+			{
+				path: '/admin/articles/',
+				name: 'Admin Articles',
+				component: () => import(/* webpackChunkName: 'admin-articles' */ './views/admin/articles/index.vue'),
 				meta: { requiresAuth: true, requiresAdmin: true }
 			},
 			{
@@ -167,6 +173,6 @@ export default [
 	{
 		path: '/*',
 		name: 'Not Found',
-		component: () => import(/* webpackChunkName: 'not-found' */ './views/not-found.vue'),
+		redirect: '/'
 	},
 ]

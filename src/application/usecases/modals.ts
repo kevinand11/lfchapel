@@ -9,10 +9,12 @@ export const useCreateModal = () => {
 		isCreateModalPicture: computed(() => createModal.value === 'picture'),
 		isCreateModalAudio: computed(() => createModal.value === 'audio'),
 		isCreateModalVideo: computed(() => createModal.value === 'video'),
+		isCreateModalArticle: computed(() => createModal.value === 'article'),
 
 		setCreateModalPicture: () => createModal.value = 'picture',
 		setCreateModalAudio: () => createModal.value = 'audio',
 		setCreateModalVideo: () => createModal.value = 'video',
+		setCreateModalArticle: () => createModal.value = 'article',
 		closeCreateModal: () => createModal.value = null
 	}
 }
@@ -22,10 +24,12 @@ export const useEditModal = () => {
 		isEditModalPicture: computed(() => editModal.value === 'picture'),
 		isEditModalAudio: computed(() => editModal.value === 'audio'),
 		isEditModalVideo: computed(() => editModal.value === 'video'),
+		isEditModalArticle: computed(() => editModal.value === 'article'),
 
 		setEditModalPicture: () => editModal.value = 'picture',
 		setEditModalVideo: () => editModal.value = 'video',
 		setEditModalAudio: () => editModal.value = 'audio',
+		setEditModalArticle: () => editModal.value = 'article',
 		closeEditModal: () => editModal.value = null
 	}
 }

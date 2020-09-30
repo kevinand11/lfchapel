@@ -2,6 +2,7 @@
 	<Admin>
 		<RouteName />
 		<div class="container px-3">
+			<h2>Media</h2>
 			<ul class="list-group">
 				<li class="list-group-item list-group-item-action mb-3">
 					<router-link to="/admin/media/pictures" class="d-flex justify-content-between align-items-center">
@@ -26,6 +27,19 @@
 						<div>
 							<h4>Videos</h4>
 							<p>Create, modify and delete videos</p>
+						</div>
+						<i class="fas fa-2x fa-angle-right"></i>
+					</router-link>
+				</li>
+			</ul>
+			<hr class="mb-5">
+			<h2>Articles</h2>
+			<ul class="list-group">
+				<li class="list-group-item list-group-item-action mb-3">
+					<router-link to="/admin/articles" class="d-flex justify-content-between align-items-center">
+						<div>
+							<h4>Blog Articles</h4>
+							<p>Create, modify and delete articles for the blog</p>
 						</div>
 						<i class="fas fa-2x fa-angle-right"></i>
 					</router-link>
