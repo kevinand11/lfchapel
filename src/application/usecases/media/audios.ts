@@ -182,8 +182,6 @@ export const useEditAudio = () => {
 				const audio = await FindAudio.call(newId)
 				if(audio) unshiftAudio(audio)
 				state.factory.reset()
-				if(router.currentRoute.params.id) await router.replace('/blog')
-				await router.replace(`/blog/${newId}`)
 				useEditModal().closeEditModal()
 			}catch(error){ await Notify({ icon: 'error', title: error.message }) }
 			state.loading = false

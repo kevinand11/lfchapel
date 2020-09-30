@@ -182,8 +182,6 @@ export const useEditVideo = () => {
 				const video = await FindVideo.call(newId)
 				if(video) unshiftVideo(video)
 				state.factory.reset()
-				if(router.currentRoute.params.id) await router.replace('/blog')
-				await router.replace(`/blog/${newId}`)
 				useEditModal().closeEditModal()
 			}catch(error){ await Notify({ icon: 'error', title: error.message }) }
 			state.loading = false

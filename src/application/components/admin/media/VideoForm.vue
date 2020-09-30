@@ -21,7 +21,7 @@
 					<input type="file" @change="catchImage" class="d-none" ref="imageInput" accept="image/*">
 					<a @click.prevent="() => { $refs.imageInput.value= ''; $refs.imageInput.click() }">
 						<img :src="previewLink" alt="" v-if="previewLink" width="50px" class="mr-2">
-						<span class="text-info">{{ factory.image ? 'Change' : 'Upload' }} preview image</span>
+						<span class="text-info">{{ factory.preview ? 'Change' : 'Upload' }} preview image</span>
 					</a>
 				</div>
 				<div class="form-group my-3">
