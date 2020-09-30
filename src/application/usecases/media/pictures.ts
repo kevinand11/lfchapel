@@ -211,6 +211,6 @@ export const useGalleryModal = () => {
 
 	return {
 		index, next, previous, length,
-		pictures: computed(() => globalState.pictures)
+		picture: computed(() => globalState.pictures[index.value])
 	}
 }

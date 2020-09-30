@@ -2,6 +2,7 @@ import { computed, ref } from '@vue/composition-api'
 
 const createModal = ref(null as string | null)
 const editModal = ref(null as string | null)
+const mediaModal = ref(null as string | null)
 
 export const useCreateModal = () => {
 	return {
@@ -18,5 +19,14 @@ export const useEditModal = () => {
 
 		setEditModalPicture: () => editModal.value = 'picture',
 		closeEditModal: () => editModal.value = null
+	}
+}
+
+export const useMediaModal = () => {
+	return {
+		isMediaModalGallery: computed(() => mediaModal.value === 'gallery'),
+
+		setMediaModalGallery: () => mediaModal.value = 'gallery',
+		closeMediaModal: () => mediaModal.value = null
 	}
 }

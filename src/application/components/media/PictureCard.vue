@@ -12,7 +12,7 @@
 import { defineComponent } from '@vue/composition-api'
 import { PictureEntity } from '@modules/media/domain/entities/picture'
 import { setCurrentViewingPicture } from '@app/usecases/media/pictures'
-import { useModal } from '@app/usecases/useModal'
+import { useMediaModal } from '@app/usecases/modals'
 export default defineComponent({
 	props: {
 		picture: {
@@ -23,7 +23,7 @@ export default defineComponent({
 	setup(props ){
 		const showModal = () => {
 			setCurrentViewingPicture(props.picture)
-			useModal().showGalleryModal()
+			useMediaModal().setMediaModalGallery()
 		}
 		return { showModal }
 	}

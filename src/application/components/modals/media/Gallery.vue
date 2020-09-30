@@ -1,47 +1,41 @@
 <template>
-	<div>
-		<div class="d-flex justify-content-between align-items-center"></div>
-		<div id="gallery" class="carousel slide" data-ride="carousel">
-			<div class="carousel-inner">
-				<div class="carousel-item" v-for="(picture, i) in pictures" :key="picture.id" :class="{'active': i === index}">
-					<img :src="picture.image" class="d-block w-100" alt="">
-					<div class="carousel-caption d-flex justify-content-between py-2 px-2 px-md-4">
-						<a @click="previous" role="button" data-slide="prev">
-							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-							<span class="sr-only">Previous</span>
-						</a>
-						<h5>
-							<span>{{ index + 1 }} of {{ length }}</span>
-							<a :href="picture.image" download class="ml-3 text-info">Download</a>
-						</h5>
-						<a  @click="next" role="button" data-slide="next">
-							<span class="carousel-control-next-icon" aria-hidden="true"></span>
-							<span class="sr-only">Next</span>
-						</a>
-					</div>
+	<ModalBase :close="closeMediaModal" :show-separator="false">
+		<template slot="header"><div></div></template>
+		<template>
+			<div class="position-relative m-n3">
+				<img :src="picture.image" class="d-block w-100" alt="">
+				<div class="d-flex justify-content-between p-2 px-md-4 top text-white">
+					<a @click="previous"><span class="fas fa-angle-left" aria-hidden="true"></span></a>
+					<h5 class="mb-0">
+						<span>{{ index + 1 }} of {{ length }}</span>
+						<a :href="picture.image" download target="__blank" class="ml-3 text-info">Download</a>
+					</h5>
+					<a @click="next"><span class="fas fa-angle-right" aria-hidden="true"></span></a>
 				</div>
 			</div>
-		</div>
-	</div>
+		</template>
+	</ModalBase>
 </template>
 
 <script lang="ts">
 import { useGalleryModal } from '@app/usecases/media/pictures'
 import { defineComponent } from '@vue/composition-api'
+import { useMediaModal } from '@app/usecases/modals'
 export default defineComponent({
 	setup(){
-		const { index, next, previous, length, pictures } = useGalleryModal()
-		return { index, next, previous, length, pictures }
+		const { index, next, previous, length, picture } = useGalleryModal()
+		const { closeMediaModal } = useMediaModal()
+		return { index, next, previous, length, picture, closeMediaModal }
 	}
 })
 </script>
 
 <style lang="scss" scoped>
-	.carousel-caption{
+	.top{
 		background: $blackTransparent;
-		width: 100%;
-		left: 0;
+		z-index: 1;
 		bottom: 0;
-		padding: 0.5rem 0;
+		width: 100%;
+		position: absolute;
 	}
 </style>

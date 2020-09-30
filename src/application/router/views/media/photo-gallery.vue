@@ -2,7 +2,7 @@
 	<div>
 		<Loading v-if="loading" />
 		<div class="card-columns" v-else>
-			<GalleryPhotoCard v-for="picture in pictures" :picture="picture" :key="picture.id" />
+			<PictureCard v-for="picture in pictures" :picture="picture" :key="picture.id" />
 		</div>
 		<div class="d-flex justify-content-end my-3" v-if="hasMore">
 			<button class="btn-success" @click="fetchOlderPictures" :disabled="olderPicturesLoading">
@@ -16,11 +16,11 @@
 
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api'
-import GalleryPhotoCard from '@app/components/media/GalleryPhotoCard.vue'
+import PictureCard from '@app/components/media/PictureCard.vue'
 import { usePicturesList } from '@app/usecases/media/pictures'
 export default defineComponent({
 	components: {
-		GalleryPhotoCard
+		PictureCard
 	},
 	setup(){
 		const { loading, olderPicturesLoading, hasMore, error, pictures, fetchOlderPictures } = usePicturesList()
