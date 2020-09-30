@@ -152,6 +152,12 @@ export default [
 				meta: { requiresAuth: true, requiresAdmin: true }
 			},
 			{
+				path: '/admin/media/videos/',
+				name: 'Videos',
+				component: () => import(/* webpackChunkName: 'admin-videos */ './views/admin/media/videos.vue'),
+				meta: { requiresAuth: true, requiresAdmin: true }
+			},
+			{
 				path: '/admin/*',
 				name: 'Admin Not Found',
 				redirect: '/admin/'
