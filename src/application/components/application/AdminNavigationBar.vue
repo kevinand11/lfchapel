@@ -1,6 +1,6 @@
 <template>
 	<header class="bg-dark">
-		<nav class="navbar navbar-expand navbar-dark container d-flex align-content-center justify-content-between">
+		<nav class="navbar navbar-expand-md navbar-dark container d-flex align-content-center justify-content-between">
 			<router-link class="navbar-brand" to="/admin/">
 				<img src="@app/assets/images/logo.png" alt="LFChapel" height="40">
 			</router-link>
@@ -18,12 +18,13 @@
 							<router-link class="nav-link" to="/admin/signup">Sign Up</router-link>
 						</li>
 					</template>
-					<template v-else>
+					<li class="nav-item">
+						<router-link class="nav-link" to="/">Back to main site</router-link>
+					</li>
+					<template v-if="isLoggedIn">
 						<li class="nav-item">
-							<button class="nav-link btn btn-sm btn-danger" @click="logout" :disabled="loading">
-								<i class="fas fa-spinner fa-spin" v-if="loading"></i>
-								<span v-else>Logout</span>
-							</button>
+							<a @click.prevent="logout" class="nav-link text-danger">Logout</a>
+							<Loading v-if="loading" />
 						</li>
 					</template>
 				</ul>
@@ -49,7 +50,6 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 	.nav-link{
-		color: $white !important;
 		padding: 0.5rem 0;
 	}
 </style>
