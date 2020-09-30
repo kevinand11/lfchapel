@@ -1,5 +1,5 @@
 <template>
-	<div class="card mb-4 shadow-sm">
+	<div class="card shadow-sm">
 		<img :src="picture.image" class="card-img-top" @click="showModal" alt="">
 		<div class="card-body">
 			<h4 class="card-title text-center">{{ picture.title }}</h4>

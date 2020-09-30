@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<Loading v-if="loading" />
-		<div class="card-columns" v-else>
+		<div class="grid" v-else>
 			<PictureCard v-for="picture in pictures" :picture="picture" :key="picture.id" />
 		</div>
 		<div class="d-flex justify-content-end my-3" v-if="hasMore">
@@ -41,8 +41,15 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-	.card-columns{ column-count: 1; }
-	@media (min-width: $md) {
-		.card-columns{ column-count: 2; }
+.grid{
+	display: grid;
+	grid-template-columns: repeat(1, 1fr);
+	grid-column-gap: 1rem;
+	grid-row-gap: 2rem;
+}
+@media (min-width: $lg) {
+	.grid{
+		grid-template-columns: repeat(2, 1fr);
 	}
+}
 </style>
