@@ -25,7 +25,7 @@
 						<img src="@app/assets/images/home/slide-2.png" class="d-block w-100" alt="">
 					</div>
 					<div class="carousel-item" data-ride="2000">
-						<img src="@app/assets/images/home/slide-3.png" class="d-block w-100" alt="">
+						<img src="@app/assets/images/home/slide-5.png" class="d-block w-100" alt="">
 					</div>
 					<div class="carousel-item" data-ride="2000">
 						<img src="@app/assets/images/home/slide-4.png" class="d-block w-100" alt="">
