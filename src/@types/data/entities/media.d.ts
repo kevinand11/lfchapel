@@ -10,7 +10,6 @@ declare interface MediaWithPreview extends Media{
 }
 
 declare interface AudioI extends Media {}
-declare interface PhotoI extends Media {}
 declare interface VideoI extends MediaWithPreview {
     trimmedDescription?: string
 }
