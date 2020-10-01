@@ -1,13 +1,13 @@
 <template>
-	<div class="card rounded-xl shadow mb-5">
+	<div class="card rounded-xl shadow-sm">
 		<img :src="article.image" class="card-img-top" alt="">
 		<div class="card-body">
 			<p class="small">Published {{ formatDate(article.createdAt) }}</p>
-			<router-link :to="article.route" class="d-block mb-3 h4 black card-title text-capitalize">{{ article.title }}</router-link>
-			<p class="card-text">{{ article.trimmedDescription }}</p>
+			<router-link :to="`/articles/${article.id}`" class="d-block mb-3 h4 black card-title text-capitalize">{{ article.title }}</router-link>
+			<p class="card-text">{{ article.trimmedBody }}</p>
 			<p>
-				<img :src="article.userImage" alt="" class="mr-2 border border-dark rounded-circle" width="40" height="40">
-				<span class="bolder">by {{ article.userName }}</span>
+				<img :src="article.user.image" alt="" class="mr-2 border border-dark rounded-circle" width="40" height="40">
+				<span class="bolder">by {{ article.user.name }}</span>
 			</p>
 		</div>
 	</div>
@@ -15,12 +15,12 @@
 
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api'
-import type { PropType } from '@vue/composition-api'
 import { formatDate } from '@app/usecases/events/useEvents'
+import { ArticleEntity } from '@modules/articles/domain/entities/article'
 export default defineComponent({
 	props: {
 		article: {
-			type: Object as PropType<ArticleI>,
+			type: ArticleEntity,
 			required: true
 		}
 	},
