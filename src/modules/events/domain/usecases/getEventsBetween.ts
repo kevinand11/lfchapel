@@ -15,7 +15,6 @@ export class GetEventsBetweenUseCase {
 				field: 'dates.createdAt',
 				desc: false
 			},
-			limit: parseInt(process.env.VUE_APP_PAGINATION_LIMIT),
 			where: [
 				{ field: 'start', condition: '>=', value: start },
 				{ field: 'end', condition: '<=', value: end },
