@@ -9,17 +9,18 @@ export class GetEventsBetweenUseCase {
 		this.repository = repository
 	}
 
-	public async call (start?: Date, end?: Date) :Promise<EventEntity[]> {
+	public async call (start: Date, end: Date) :Promise<EventEntity[]> {
 		const conditions: GetClauses = {
 			order: {
 				field: 'start',
 				desc: false
 			},
-			where: [
+			/*where: [
 				{ field: 'start', condition: '>=', value: start },
 				{ field: 'end', condition: '<=', value: end },
-			]
+			]*/
 		}
+		console.log(start, end)
 		return await this.repository.get(conditions)
 	}
 

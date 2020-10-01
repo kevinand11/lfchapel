@@ -18,18 +18,18 @@
 </template>
 
 <script lang="ts">
-import { useEventsForDate } from '@app/usecases/events/useEvents'
+import { useEventsForDate } from '@app/usecases/events/calendar'
 import { defineComponent } from '@vue/composition-api'
-import type { PropType } from '@vue/composition-api'
+import { formatDate, formatRange } from '@app/usecases/events/useEvents'
 export default defineComponent({
 	props: {
 		date: {
-			type: Date as PropType<Date>,
+			type: Date,
 			required: true
 		}
 	},
 	setup(props, { root }){
-		const { loading, events, formatDate, formatRange } = useEventsForDate(props.date)
+		const { loading, events } = useEventsForDate(props.date)
 		return { loading, events, formatDate, formatRange, closeModal: root.$modal.hideAll }
 	}
 })

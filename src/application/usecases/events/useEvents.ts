@@ -1,10 +1,11 @@
-import { formatDate, formatRange, CalendarOptions, EventInput } from '@fullcalendar/core'
+import { formatDate, formatRange, CalendarOptions } from '@fullcalendar/core'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import interactionPlugin from '@fullcalendar/interaction'
 import bootstrapPlugin from '@fullcalendar/bootstrap'
 import { reactive, ref, computed } from '@vue/composition-api'
 import EventRepository from '@/data/repositories/events'
 import { useModal } from '@app/usecases/useModal'
+import { useEventsBetween } from '@app/usecases/events/calendar'
 
 const formatD = { day: '2-digit', month: 'short', year: 'numeric', separator: ' to ' }
 const formatT = { minute: '2-digit', hour: '2-digit', day: '2-digit', month: 'short', year: 'numeric', separator: ' to ' }
@@ -32,10 +33,12 @@ export const useEventList = () => {
 	options.dateClick  = ({ date }) => showDailyEventModal({ date })
 	options.eventClick = ({ event }) => showDailyEventModal({ date: event.start })
 
-	options.events = (info, success, failure) => {
+	// @ts-ignore
+	options.events = async (info, success, failure) => {
 		try{
 			const { start, end } = info
-			EventRepository.findEventsBetween(start, end).then((events) => success(events as EventInput[]))
+			const events = await useEventsBetween(start, end)
+			success(events)
 		}catch(err){ failure(err) }
 	}
 	return { options, loading }
@@ -53,20 +56,6 @@ export const useEventsForDate = (date: Date) => {
 	return {
 		loading, formatDate: dateFormat, formatRange: rangeFormat, formatDateTime: dateTimeFormat,
 		events: computed(() => state.events)
-	}
-}
-
-export const useRecentEvents = () => {
-	const loading = ref(true)
-	const state = reactive({ events: <EventI[]> [] })
-	const fetchEvents = async () => {
-		loading.value = true
-		state.events = await EventRepository.findRecentEvents()
-		loading.value = false
-	}
-	fetchEvents()
-	return {
-		loading, events: computed(() => state.events)
 	}
 }
 

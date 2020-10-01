@@ -22,6 +22,14 @@ export class EventEntity{
 	get trimmedDescription(){ return trimToLength(extractTextFromHTML(this.description), 200) }
 
 	get createdDate(){return extractDate(this.createdAt) }
+
+	isWithinDate(date: Date){
+		const { start, end } = this
+		start.setHours(0,0,0,0)
+		end.setHours(0,0,0,0)
+		date.setHours(0,0,0,0)
+		return start <= date && date <= end
+	}
 }
 
 type EventConstructorArgs = {
