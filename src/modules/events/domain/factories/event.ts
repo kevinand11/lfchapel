@@ -1,6 +1,6 @@
 import { BaseFactory } from '@modules/core/domains/factories/base'
 import {
-	isLongerThan, isRequired, isRequiredIf, isDateGreaterThan
+	isLongerThan, isRequired, isDateGreaterThan
 } from '@modules/core/validations/rules'
 import { EventToModel } from '../../data/models/event'
 import { EventEntity } from '../entities/event'
@@ -15,7 +15,7 @@ export class EventFactory extends BaseFactory<EventEntity, EventToModel> {
 		description: [isRequired,isLongerThan3],
 		allDay: [isRequired],
 		start: [isRequired],
-		end: [(d: Date) => isRequiredIf(d, !this.allDay), (d: Date) => isDateGreaterThan(d, this.start, true)],
+		end: [isRequired, (d: Date) => isDateGreaterThan(d, this.start)],
 		userId: [isRequired],
 	}
 	public values: { title: string, description: string, userId: string, allDay: boolean, start: Date, end: Date } = {
@@ -34,15 +34,6 @@ export class EventFactory extends BaseFactory<EventEntity, EventToModel> {
 	set description(value: string){ this.set('description', value) }
 	get userId(){ return this.values.userId }
 	set userId(value: string){ this.set('userId', value) }
-	get allDay(){ return this.values.allDay }
-	set allDay(value: boolean){
-		this.set('allDay', value)
-		if(!value){
-			const start = this.start ? new Date(this.start) : new Date()
-			start.setDate(start.getDate() + 1)
-			this.end = start
-		}
-	}
 	get start(){ return this.values.start }
 	set start(value: Date){ this.set('start', value) }
 	get end(){ return this.values.end }
@@ -58,7 +49,6 @@ export class EventFactory extends BaseFactory<EventEntity, EventToModel> {
 				title: this.validValues.title,
 				description: this.validValues.description,
 				userId: this.validValues.userId,
-				allDay: this.validValues.allDay,
 				start: dateToTimestamp(this.validValues.start),
 				end: dateToTimestamp(this.validValues.end),
 			}
@@ -71,7 +61,6 @@ export class EventFactory extends BaseFactory<EventEntity, EventToModel> {
 		this.title = entity.title
 		this.description = entity.description
 		this.userId = entity.userId
-		this.allDay = entity.allDay
 		this.start = entity.start
 		this.end = entity.end
 	}

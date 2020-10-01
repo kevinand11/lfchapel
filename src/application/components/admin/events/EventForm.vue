@@ -18,28 +18,23 @@
 				</div>
 				<hr>
 				<h5>Dates</h5>
-				<div class="form-group my-3">
-					<h6>Start Date & Time</h6>
-					<DatetimePicker v-model="factory.startStr" placeholder="Select start date"
-						:dayStr="['Su','Mo','Tu','We','Th','Fr','Sa']" :timeStr="['Hr','Min','Sec']"
-		                timeType="minute" btnStr="Select"
-					/>
-					<span class="small text-danger" v-if="factory.errors.start">{{ factory.errors.start }}</span>
-				</div>
-				<div class="form-check">
-					<input class="form-check-input" type="checkbox" v-model="factory.allDay" id="hasVideo">
-					<label class="form-check-label" for="hasVideo">
-						Event lasts all-day?
-					</label>
-					<span class="small text-danger" v-if="factory.errors.allDay">{{ factory.errors.allDay }}</span>
-				</div>
-				<div class="form-group my-3" v-if="!factory.allDay">
-					<h6>End Date & Time</h6>
-					<DatetimePicker v-model="factory.endStr" placeholder="Select end date"
-		                :dayStr="['Su','Mo','Tu','We','Th','Fr','Sa']" :timeStr="['Hr','Min','Sec']"
-		                timeType="minute" btnStr="Select" :min="factory.startStr"
-					/>
-					<span class="small text-danger" v-if="factory.errors.end">{{ factory.errors.end }}</span>
+				<div class="grid">
+					<div class="form-group my-3">
+						<h6>Start</h6>
+						<DatetimePicker v-model="factory.startStr" placeholder="Select start date"
+			                :dayStr="['Su','Mo','Tu','We','Th','Fr','Sa']" :timeStr="['Hr','Min','Sec']"
+			                timeType="minute" btnStr="Select"
+						/>
+						<span class="small text-danger" v-if="factory.errors.start">{{ factory.errors.start }}</span>
+					</div>
+					<div class="form-group my-3">
+						<h6>End</h6>
+						<DatetimePicker v-model="factory.endStr" placeholder="Select end date"
+			                :dayStr="['Su','Mo','Tu','We','Th','Fr','Sa']" :timeStr="['Hr','Min','Sec']"
+			                timeType="minute" btnStr="Select" :min="factory.startStr"
+						/>
+						<span class="small text-danger" v-if="factory.errors.end">{{ factory.errors.end }}</span>
+					</div>
 				</div>
 				<hr>
 				<div class="d-flex justify-content-end my-3">
@@ -81,4 +76,15 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 @import '~@livelybone/vue-datepicker/lib/css/index.css';
+.datetime-picker{ cursor: pointer; }
+.grid{
+	display: grid;
+	grid-template-columns: repeat(1, 1fr);
+	grid-column-gap: 1rem;
+}
+@media (min-width: 480px) {
+	.grid{
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
 </style>

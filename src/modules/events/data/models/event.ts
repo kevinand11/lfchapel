@@ -6,7 +6,6 @@ export interface EventFromModel {
 	description: string
 	start: firebase.firestore.Timestamp
 	end: firebase.firestore.Timestamp
-	allDay: boolean
 	userId: string
 	dates: {
 		createdAt: firebase.firestore.Timestamp
@@ -18,6 +17,5 @@ export interface EventToModel {
 	description: string
 	start: firebase.firestore.Timestamp
 	end: firebase.firestore.Timestamp
-	allDay: boolean
 	userId: string
 }

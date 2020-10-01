@@ -4,10 +4,10 @@ import { dateToTimestamp, timestampToDate } from '@modules/core/data/transformer
 
 export class EventTransformer {
 	public fromJSON(model: EventFromModel) {
-		const { id, title, description, start, end, allDay, dates: { createdAt }, userId } = model
+		const { id, title, description, start, end, dates: { createdAt }, userId } = model
 		return new EventEntity({
 			id,
-			title, description, userId, allDay,
+			title, description, userId,
 			start: timestampToDate(start)!,
 			end: timestampToDate(end)!,
 			createdAt: timestampToDate(createdAt)!
@@ -20,7 +20,6 @@ export class EventTransformer {
 			description: entity.description,
 			start: dateToTimestamp(entity.start),
 			end: dateToTimestamp(entity.end),
-			allDay: entity.allDay,
 			userId: entity.userId
 		}
 	}
