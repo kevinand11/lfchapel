@@ -12,8 +12,8 @@ import { CalendarOptions } from '@fullcalendar/core'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import interactionPlugin from '@fullcalendar/interaction'
 import bootstrapPlugin from '@fullcalendar/bootstrap'
-import { useModal } from '@app/usecases/useModal'
-import { useEventsBetween } from '@app/usecases/events/calendar'
+import { setCurrentViewingDate, useEventsBetween } from '@app/usecases/events/calendar'
+import { useEventModal } from '@app/usecases/modals'
 
 const options: CalendarOptions = {
 	plugins: [ dayGridPlugin, interactionPlugin, bootstrapPlugin ],
@@ -27,12 +27,15 @@ export default defineComponent({
 		FullCalendar
 	},
 	setup(){
-		const { showDailyEventModal } = useModal()
 		const loading = ref(true)
+		const openDateModal = (date: Date) => {
+			setCurrentViewingDate(date)
+			useEventModal().setEventModalDaily()
+		}
 
 		options.loading = (isLoading) => loading.value = isLoading
-		options.dateClick  = ({ date }) => showDailyEventModal({ date })
-		options.eventClick = ({ event }) => showDailyEventModal({ date: event.start })
+		options.dateClick  = ({ date }) => openDateModal(date)
+		options.eventClick = ({ event }) => openDateModal(event.start)
 
 		// @ts-ignore
 		options.events = async (info, success, failure) => {

@@ -1,16 +1,14 @@
 <template>
-	<div class="">
-		<article-form :submit="editArticle" :loading="loading" :factory="factory">
-			<template slot="title">
-				<div class="d-flex align-items-baseline justify-content-between my-3">
-					<i></i>
-					<h4>Edit Article</h4>
-					<a @click.prevent="closeEditModal"><i class="fas fa-times text-danger"></i></a>
-				</div>
-			</template>
-			<template slot="buttonText">Save Article</template>
-		</article-form>
-	</div>
+	<article-form :submit="editArticle" :loading="loading" :factory="factory">
+		<template slot="title">
+			<div class="d-flex align-items-baseline justify-content-between my-3">
+				<i></i>
+				<h4>Edit Article</h4>
+				<a @click.prevent="closeEditModal"><i class="fas fa-times text-danger"></i></a>
+			</div>
+		</template>
+		<template slot="buttonText">Save Article</template>
+	</article-form>
 </template>
 
 <script lang="ts">

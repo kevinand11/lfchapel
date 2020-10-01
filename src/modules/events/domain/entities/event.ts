@@ -24,11 +24,13 @@ export class EventEntity{
 	get createdDate(){return extractDate(this.createdAt) }
 
 	isWithinDate(date: Date){
-		const { start, end } = this
+		const start = new Date(this.start),
+			end = new Date(this.end), 
+			d = new Date(date)
 		start.setHours(0,0,0,0)
 		end.setHours(0,0,0,0)
-		date.setHours(0,0,0,0)
-		return start <= date && date <= end
+		d.setHours(0,0,0,0)
+		return start <= d && d <= end
 	}
 }
 

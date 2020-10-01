@@ -1,16 +1,14 @@
 <template>
-	<div class="">
-		<audio-form :submit="createAudio" :loading="loading" :factory="factory">
-			<template slot="title">
-				<div class="d-flex align-items-baseline justify-content-between my-3">
-					<i></i>
-					<h4>Create Audio</h4>
-					<a @click.prevent="closeCreateModal"><i class="fas fa-times text-danger"></i></a>
-				</div>
-			</template>
-			<template slot="buttonText">Create Audio</template>
-		</audio-form>
-	</div>
+	<audio-form :submit="createAudio" :loading="loading" :factory="factory">
+		<template slot="title">
+			<div class="d-flex align-items-baseline justify-content-between my-3">
+				<i></i>
+				<h4>Create Audio</h4>
+				<a @click.prevent="closeCreateModal"><i class="fas fa-times text-danger"></i></a>
+			</div>
+		</template>
+		<template slot="buttonText">Create Audio</template>
+	</audio-form>
 </template>
 
 <script lang="ts">

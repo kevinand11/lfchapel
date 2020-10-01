@@ -1,16 +1,14 @@
 <template>
-	<div class="">
-		<picture-form :submit="createPicture" :loading="loading" :factory="factory">
-			<template slot="title">
-				<div class="d-flex align-items-baseline justify-content-between my-3">
-					<i></i>
-					<h4>Create Picture</h4>
-					<a @click.prevent="closeCreateModal"><i class="fas fa-times text-danger"></i></a>
-				</div>
-			</template>
-			<template slot="buttonText">Create Picture</template>
-		</picture-form>
-	</div>
+	<picture-form :submit="createPicture" :loading="loading" :factory="factory">
+		<template slot="title">
+			<div class="d-flex align-items-baseline justify-content-between my-3">
+				<i></i>
+				<h4>Create Picture</h4>
+				<a @click.prevent="closeCreateModal"><i class="fas fa-times text-danger"></i></a>
+			</div>
+		</template>
+		<template slot="buttonText">Create Picture</template>
+	</picture-form>
 </template>
 
 <script lang="ts">

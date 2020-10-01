@@ -13,15 +13,20 @@ export const useEventsBetween = async (start: Date, end: Date) => {
 	return globalEvents
 }
 
-export const useEventsForDate = (date: Date) => {
+let currentDate = new Date()
+
+export const setCurrentViewingDate = (date: Date) => currentDate = date
+
+export const useEventsForDate = () => {
 	const state = reactive({ loading: false, events: [] as EventEntity[] })
 	const fetchEvents = async () => {
 		state.loading = true
-		state.events = globalEvents.filter((event) => event.isWithinDate(date))
+		state.events = globalEvents.filter((event) => event.isWithinDate(currentDate))
 		state.loading = false
 	}
 	fetchEvents()
 	return {
+		date: computed(() => currentDate),
 		loading: computed(() => state.loading),
 		events: computed(() => state.events)
 	}

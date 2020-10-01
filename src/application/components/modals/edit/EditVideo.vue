@@ -1,16 +1,14 @@
 <template>
-	<div class="">
-		<video-form :submit="editVideo" :loading="loading" :factory="factory">
-			<template slot="title">
-				<div class="d-flex align-items-baseline justify-content-between my-3">
-					<i></i>
-					<h4>Edit Video</h4>
-					<a @click.prevent="closeEditModal"><i class="fas fa-times text-danger"></i></a>
-				</div>
-			</template>
-			<template slot="buttonText">Save Video</template>
-		</video-form>
-	</div>
+	<video-form :submit="editVideo" :loading="loading" :factory="factory">
+		<template slot="title">
+			<div class="d-flex align-items-baseline justify-content-between my-3">
+				<i></i>
+				<h4>Edit Video</h4>
+				<a @click.prevent="closeEditModal"><i class="fas fa-times text-danger"></i></a>
+			</div>
+		</template>
+		<template slot="buttonText">Save Video</template>
+	</video-form>
 </template>
 
 <script lang="ts">

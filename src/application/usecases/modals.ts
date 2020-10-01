@@ -3,6 +3,7 @@ import { computed, ref } from '@vue/composition-api'
 const createModal = ref(null as string | null)
 const editModal = ref(null as string | null)
 const mediaModal = ref(null as string | null)
+const eventModal = ref(null as string | null)
 
 export const useCreateModal = () => {
 	return {
@@ -46,5 +47,14 @@ export const useMediaModal = () => {
 		setMediaModalGallery: () => mediaModal.value = 'gallery',
 		setMediaModalVideo: () => mediaModal.value = 'video',
 		closeMediaModal: () => mediaModal.value = null
+	}
+}
+
+export const useEventModal = () => {
+	return {
+		isEventModalDaily: computed(() => eventModal.value === 'daily'),
+
+		setEventModalDaily: () => eventModal.value = 'daily',
+		closeEventModal: () => eventModal.value = null
 	}
 }
