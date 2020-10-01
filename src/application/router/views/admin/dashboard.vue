@@ -45,6 +45,19 @@
 					</router-link>
 				</li>
 			</ul>
+			<hr class="mb-5">
+			<h2>Events</h2>
+			<ul class="list-group">
+				<li class="list-group-item list-group-item-action mb-3">
+					<router-link to="/admin/events" class="d-flex justify-content-between align-items-center">
+						<div>
+							<h4>Events</h4>
+							<p>Create, modify and delete events</p>
+						</div>
+						<i class="fas fa-2x fa-angle-right"></i>
+					</router-link>
+				</li>
+			</ul>
 		</div>
 	</Admin>
 </template>

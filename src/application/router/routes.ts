@@ -159,6 +159,12 @@ export default [
 				meta: { requiresAuth: true, requiresAdmin: true }
 			},
 			{
+				path: '/admin/events/',
+				name: 'Admin Events',
+				component: () => import(/* webpackChunkName: 'admin-events' */ './views/admin/events/index.vue'),
+				meta: { requiresAuth: true, requiresAdmin: true }
+			},
+			{
 				path: '/admin/*',
 				name: 'Admin Not Found',
 				redirect: '/admin/'

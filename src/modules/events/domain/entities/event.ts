@@ -28,7 +28,7 @@ export class EventEntity{
 		}
 	}
 
-	get trimmedBody(){ return trimToLength(extractTextFromHTML(this.description), 200) }
+	get trimmedDescription(){ return trimToLength(extractTextFromHTML(this.description), 200) }
 
 	get createdDate(){return extractDate(this.createdAt) }
 }
