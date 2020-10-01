@@ -2,7 +2,7 @@
 	<header class="bg-dark">
 		<nav class="navbar navbar-expand-md navbar-dark container d-flex align-content-center justify-content-between">
 			<router-link class="navbar-brand" to="/admin/">
-				<img src="@app/assets/images/logo.png" alt="LFChapel" height="40">
+				<img src="@/application/assets/images/logo.png" alt="LFChapel" height="40">
 			</router-link>
 			<button class="navbar-toggler border border-white" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>

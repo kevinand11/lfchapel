@@ -3,26 +3,21 @@
 		<Banner />
 		<QuickActions />
 		<Mission />
-		<UpcomingEvents class="d-none" />
-		<RecentArticles class="d-none" />
 		<VisitUs />
 	</Default>
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent } from '@vue/composition-api'
 import Banner from '@app/components/home/Banner.vue'
 import QuickActions from '@app/components/home/QuickActions.vue'
-import UpcomingEvents from '@app/components/home/UpcomingEvents.vue'
-import RecentArticles from '@app/components/home/RecentArticles.vue'
 import Mission from '@app/components/home/Mission.vue'
 import VisitUs from '@app/components/home/VisitUs.vue'
-export default {
+export default defineComponent({
 	name: 'Home',
 	components: {
 		Banner,
 		QuickActions,
-		UpcomingEvents,
-		RecentArticles,
 		VisitUs,
 		Mission
 	},
@@ -35,5 +30,5 @@ export default {
 			]
 		}
 	}
-}
+})
 </script>

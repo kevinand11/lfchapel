@@ -1,12 +1,12 @@
 import Vue from 'vue'
 import Default from '@app/layouts/Default.vue'
 import Admin from '@app/layouts/Admin.vue'
-import Modal from '@app/components/application/Modal.vue'
-import RouteName from '@app/components/application/RouteName.vue'
-import Loading from '@app/components/application/Loading.vue'
-import AudioPlayer from '@app/components/application/AudioPlayer.vue'
-import SideNavigation from '@app/components/application/SideNavigation.vue'
-import Editor from '@app/components/application/Editor.vue'
+import Modal from '@app/components/general/Modal.vue'
+import RouteName from '@app/components/general/RouteName.vue'
+import Loading from '@app/components/general/Loading.vue'
+import AudioPlayer from '@app/components/general/AudioPlayer.vue'
+import SideNavigation from '@app/components/general/SideNavigation.vue'
+import Editor from '@app/components/general/Editor.vue'
 
 Vue.component('Default', Default)
 Vue.component('Admin', Admin)

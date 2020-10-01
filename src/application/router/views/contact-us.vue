@@ -15,11 +15,12 @@
 	</Default>
 </template>
 
-<script>
-import GoogleMap from '@app/components/application/GoogleMap.vue'
+<script lang="ts">
+import { defineComponent } from '@vue/composition-api'
+import GoogleMap from '@app/components/general/GoogleMap.vue'
 import ContactForm from '@app/components/contact/ContactForm.vue'
 import ContactInfo from '@app/components/contact/ContactInfo.vue'
-export default {
+export default defineComponent({
 	components: {
 		GoogleMap,
 		ContactForm,
@@ -34,5 +35,5 @@ export default {
 			]
 		}
 	}
-}
+})
 </script>

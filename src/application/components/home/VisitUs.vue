@@ -9,8 +9,8 @@
 	</section>
 </template>
 
-<script>
-import GoogleMap from '@app/components/application/GoogleMap'
+<script lang="ts">
+import GoogleMap from '@app/components/general/GoogleMap.vue'
 import { defineComponent } from '@vue/composition-api'
 export default defineComponent({
 	components: {
