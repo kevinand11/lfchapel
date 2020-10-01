@@ -17,7 +17,7 @@ module.exports = {
 	pwa: {
 		workboxPluginMode: 'InjectManifest',
 		workboxOptions: {
-			swSrc: './src/application/config/service_worker.js',
+			swSrc: './src/application/config/service-worker.js',
 			importWorkboxFrom: 'local'
 		},
 		msTileColor: '#FFFFFF',

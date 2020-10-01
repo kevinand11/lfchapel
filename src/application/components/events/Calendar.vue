@@ -35,7 +35,7 @@ export default defineComponent({
 
 		options.loading = (isLoading) => loading.value = isLoading
 		options.dateClick  = ({ date }) => openDateModal(date)
-		options.eventClick = ({ event }) => openDateModal(event.start)
+		options.eventClick = ({ event }) => openDateModal(event.start!)
 
 		// @ts-ignore
 		options.events = async (info, success, failure) => {
