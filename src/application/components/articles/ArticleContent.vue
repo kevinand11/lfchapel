@@ -1,6 +1,6 @@
 <template>
 	<div class="container">
-		<p class="lead">{{ article.description }}</p>
+		<div class="lead editor-container" v-html="article.body"></div>
 		<div class="foot">
 			<p>
 				Tags:
@@ -12,11 +12,11 @@
 
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api'
-import type { PropType } from '@vue/composition-api'
+import { ArticleEntity } from '@modules/articles/domain/entities/article'
 export default defineComponent({
 	props: {
 		article: {
-			type: Object as PropType<ArticleI>,
+			type: ArticleEntity,
 			required: true
 		}
 	}

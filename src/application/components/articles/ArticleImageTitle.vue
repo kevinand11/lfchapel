@@ -4,8 +4,8 @@
 			<div class="container text-center">
 				<h1 class="title">{{ article.title }}</h1>
 				<p>{{ formatDate(article.createdAt) }}</p>
-				<img :src="article.userImage" alt="" width="50" height="50" class="rounded-circle border border-secondary">
-				<h6>{{ article.userName }}</h6>
+				<img :src="article.user.image" alt="" width="50" height="50" class="rounded-circle border border-secondary">
+				<h6>{{ article.user.name }}</h6>
 			</div>
 		</div>
 	</div>
@@ -13,12 +13,12 @@
 
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api'
-import type { PropType } from '@vue/composition-api'
 import { formatDate} from '@app/usecases/events/useEvents'
+import { ArticleEntity } from '@modules/articles/domain/entities/article'
 export default defineComponent({
 	props: {
 		article: {
-			type: Object as PropType<ArticleI>,
+			type: ArticleEntity,
 			required: true
 		}
 	},

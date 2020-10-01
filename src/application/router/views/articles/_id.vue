@@ -1,6 +1,6 @@
 <template>
 	<Default>
-		<Loading v-if="loading" />
+		<loading v-if="loading"/>
 		<div v-else>
 			<ArticleImageTitle :article="article" />
 			<ArticleContent :article="article" />
@@ -8,29 +8,39 @@
 	</Default>
 </template>
 
-<script>
-import { useArticle } from '@app/usecases/articles/useArticles'
-import ArticleImageTitle from '@app/components/articles/ArticleImageTitle'
-import ArticleContent from '@app/components/articles/ArticleContent'
+<script lang="ts">
+import { defineComponent } from '@vue/composition-api'
+import { useSingleArticle } from '@app/usecases/articles/articles'
+import ArticleImageTitle from '@app/components/articles/ArticleImageTitle.vue'
+import ArticleContent from '@app/components/articles/ArticleContent.vue'
 import router from '@app/router'
-export default {
+export default defineComponent({
+	name: 'Article',
+	setup(){
+		const { id } = router.currentRoute.params
+		const { loading, article, error } = useSingleArticle(id)
+		return { loading, article, error }
+	},
 	components: {
 		ArticleImageTitle,
 		ArticleContent
 	},
-	setup(){
-		const { id } = router.currentRoute.params
-		const { article, loading } = useArticle(id)
-		return { article, loading }
-	},
 	meta(){
 		return {
-			title: this.article.name,
+			title: (this.article as any)?.title || 'Title',
 			meta: [
-				{ vmid: 'description', name: 'description', content: this.article.description },
-				{ vmid: 'keywords', name: 'keywords', content: this.article.tags },
+				{
+					vmid: 'description',
+					name: 'description',
+					content: ''
+				},
+				{
+					vmid: 'keywords',
+					name: 'keywords',
+					content: [].join(', ')
+				}
 			]
 		}
 	}
-}
+})
 </script>

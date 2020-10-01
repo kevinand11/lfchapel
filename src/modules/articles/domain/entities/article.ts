@@ -9,6 +9,10 @@ export class ArticleEntity{
 	public readonly tags: string[]
 	public readonly userId: string
 	public readonly createdAt: Date
+	public readonly user = {
+		name: 'The Writer\'s Block',
+		image: '/img/user_profile.png'
+	}
 
 	constructor({ id, title, body, imageData, tags, createdAt, userId }: ArticleConstructorArgs) {
 		this.id = id
