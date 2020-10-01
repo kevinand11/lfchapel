@@ -75,7 +75,6 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import '~@livelybone/vue-datepicker/lib/css/index.css';
 .datetime-picker{ cursor: pointer; }
 .grid{
 	display: grid;

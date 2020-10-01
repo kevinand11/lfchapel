@@ -19,10 +19,10 @@ export class EventFactory extends BaseFactory<EventEntity, EventToModel> {
 		userId: [isRequired],
 	}
 	public values: { title: string, description: string, userId: string, allDay: boolean, start: Date, end: Date } = {
-		title: '', description: '', userId: '', allDay: true, start: new Date(), end: new Date()
+		title: '', description: '', userId: '', allDay: true, start: new Date(), end: new Date(Date.now() + 7200000)
 	}
 	public validValues: { title: string, description: string, userId: string, allDay: boolean, start: Date, end: Date } = {
-		title: '', description: '', userId: '', allDay: true, start: new Date(), end: new Date()
+		title: '', description: '', userId: '', allDay: true, start: new Date(), end: new Date(Date.now() + 7200000)
 	}
 	public errors = {
 		title: undefined, description: undefined, userId: undefined, allDay: undefined, start: undefined, end: undefined
@@ -35,7 +35,10 @@ export class EventFactory extends BaseFactory<EventEntity, EventToModel> {
 	get userId(){ return this.values.userId }
 	set userId(value: string){ this.set('userId', value) }
 	get start(){ return this.values.start }
-	set start(value: Date){ this.set('start', value) }
+	set start(value: Date){
+		this.set('start', value)
+		this.set('end', new Date(new Date(value).getTime() + 7200000))
+	}
 	get end(){ return this.values.end }
 	set end(value: Date){ this.set('end', value) }
 	get startStr(){ return parseDate(this.start) }
