@@ -9,6 +9,10 @@ service cloud.firestore {
 			allow read: if true;
 			allow write: if isAdmin();
 		}
+		match /events/{id} {
+			allow read: if true;
+			allow write: if isAdmin();
+		}
 		match /pictures/{id} {
 			allow read: if true;
 			allow write: if isAdmin();
