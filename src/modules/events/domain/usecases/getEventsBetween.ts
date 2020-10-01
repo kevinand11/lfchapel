@@ -12,7 +12,7 @@ export class GetEventsBetweenUseCase {
 	public async call (start?: Date, end?: Date) :Promise<EventEntity[]> {
 		const conditions: GetClauses = {
 			order: {
-				field: 'dates.createdAt',
+				field: 'start',
 				desc: false
 			},
 			where: [

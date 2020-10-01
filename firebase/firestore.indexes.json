@@ -11,10 +11,6 @@
         {
           "fieldPath": "end",
           "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "dates.createdAt",
-          "order": "ASCENDING"
         }
       ]
     }

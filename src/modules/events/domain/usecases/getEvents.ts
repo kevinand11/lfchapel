@@ -12,7 +12,7 @@ export class GetEventsUseCase {
 	public async call (date?: Date) :Promise<EventEntity[]> {
 		const conditions: GetClauses = {
 			order: {
-				field: 'dates.createdAt',
+				field: 'start',
 				desc: true
 			},
 			limit: parseInt(process.env.VUE_APP_PAGINATION_LIMIT) + 1
@@ -20,7 +20,7 @@ export class GetEventsUseCase {
 		if(date){
 			conditions.where = [
 				{
-					field: 'dates.createdAt',
+					field: 'start',
 					condition: '<',
 					value: date
 				}
