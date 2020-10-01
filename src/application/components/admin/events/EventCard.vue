@@ -18,7 +18,7 @@ import { defineComponent } from '@vue/composition-api'
 import { EventEntity } from '@modules/events/domain/entities/event'
 import { setCurrentEditingEvent, useDeleteEvent } from '@app/usecases/events/events'
 import { useEditModal } from '@app/usecases/modals'
-import { formatRange } from '@app/usecases/events/useEvents'
+import { formatRange } from '@app/usecases/events/calendar'
 export default defineComponent({
 	props: {
 		event: {

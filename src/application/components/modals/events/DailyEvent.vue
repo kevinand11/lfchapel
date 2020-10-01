@@ -20,7 +20,7 @@
 <script lang="ts">
 import { useEventsForDate } from '@app/usecases/events/calendar'
 import { defineComponent } from '@vue/composition-api'
-import { formatDate, formatRange } from '@app/usecases/events/useEvents'
+import { formatDate, formatRange } from '@app/usecases/events/calendar'
 export default defineComponent({
 	props: {
 		date: {
