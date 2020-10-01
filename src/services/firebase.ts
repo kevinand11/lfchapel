@@ -7,7 +7,7 @@ import 'firebase/storage'
 
 const config = {
 	apiKey: 'AIzaSyB4E7US2jAjjNq649qLp7kM-c8O7eo4WyQ',
-	authDomain: 'lfchapel-2bae2.firebaseapp.com',
+	authDomain: 'lfchapel.com',
 	databaseURL: 'https://lfchapel-2bae2.firebaseio.com',
 	projectId: 'lfchapel-2bae2',
 	storageBucket: 'lfchapel-2bae2.appspot.com',
