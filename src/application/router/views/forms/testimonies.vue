@@ -31,11 +31,11 @@
 	</div>
 </template>
 
-<script>
-import { ref, reactive } from '@vue/composition-api'
+<script lang="ts">
+import { defineComponent, ref, reactive } from '@vue/composition-api'
 import { createTestimony } from '@app/usecases/useFunctions'
 import { Notify } from '@app/config/notifications'
-export default {
+export default defineComponent({
 	setup(){
 		const loading = ref(false)
 		const testimony = reactive({ name: '', email: '', message: '', public: true })
@@ -63,5 +63,5 @@ export default {
 			]
 		}
 	}
-}
+})
 </script>

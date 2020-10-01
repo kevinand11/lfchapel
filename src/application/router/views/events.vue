@@ -7,9 +7,11 @@
 	</Default>
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent } from '@vue/composition-api'
 import Calendar from '@app/components/events/Calendar.vue'
-export default {
+export default defineComponent({
+	name: 'Events',
 	components: {
 		Calendar,
 	},
@@ -22,5 +24,5 @@ export default {
 			]
 		}
 	}
-}
+})
 </script>

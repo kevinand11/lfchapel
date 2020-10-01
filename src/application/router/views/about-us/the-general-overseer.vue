@@ -56,8 +56,9 @@
 	}
 </style>
 
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from '@vue/composition-api'
+export default defineComponent({
 	meta(){
 		return {
 			title: 'The General Overseer - Living Faith Chapel',
@@ -67,5 +68,5 @@ export default {
 			]
 		}
 	}
-}
+})
 </script>

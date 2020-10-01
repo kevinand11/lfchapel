@@ -47,11 +47,6 @@ export default [
 		component: () => import(/* webpackChunkName: 'contact-us' */ './views/contact-us.vue'),
 	},
 	{
-		path: '/give',
-		name: 'Give',
-		component: () => import(/* webpackChunkName: 'give' */ './views/give.vue'),
-	},
-	{
 		path: '/articles',
 		name: 'Articles',
 		component: () => import(/* webpackChunkName: 'articles' */ './views/articles/index.vue'),
