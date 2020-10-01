@@ -18,6 +18,29 @@
 				</div>
 				<hr>
 				<h5>Dates</h5>
+				<div class="form-group my-3">
+					<h6>Start Date & Time</h6>
+					<DatetimePicker v-model="factory.startStr" placeholder="Select start date"
+						:dayStr="['Su','Mo','Tu','We','Th','Fr','Sa']" :timeStr="['Hr','Min','Sec']"
+		                timeType="minute" btnStr="Select"
+					/>
+					<span class="small text-danger" v-if="factory.errors.start">{{ factory.errors.start }}</span>
+				</div>
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" v-model="factory.allDay" id="hasVideo">
+					<label class="form-check-label" for="hasVideo">
+						Event lasts all-day?
+					</label>
+					<span class="small text-danger" v-if="factory.errors.allDay">{{ factory.errors.allDay }}</span>
+				</div>
+				<div class="form-group my-3" v-if="!factory.allDay">
+					<h6>End Date & Time</h6>
+					<DatetimePicker v-model="factory.endStr" placeholder="Select end date"
+		                :dayStr="['Su','Mo','Tu','We','Th','Fr','Sa']" :timeStr="['Hr','Min','Sec']"
+		                timeType="minute" btnStr="Select" :min="factory.startStr"
+					/>
+					<span class="small text-danger" v-if="factory.errors.end">{{ factory.errors.end }}</span>
+				</div>
 				<hr>
 				<div class="d-flex justify-content-end my-3">
 					<button class="btn btn-gold text-white" type="submit" :disabled="loading || !factory.valid">
@@ -33,6 +56,7 @@
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api'
 import { EventFactory } from '@modules/events/domain/factories/event'
+import { DatetimePicker } from '@livelybone/vue-datepicker'
 export default defineComponent({
 	name: 'EventForm',
 	props: {
@@ -48,6 +72,13 @@ export default defineComponent({
 			type: Function,
 			required: true
 		}
+	},
+	components: {
+		DatetimePicker
 	}
 })
 </script>
+
+<style lang="scss" scoped>
+@import '~@livelybone/vue-datepicker/lib/css/index.css';
+</style>

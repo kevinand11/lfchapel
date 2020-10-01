@@ -87,3 +87,9 @@ export const isMoreThan = (value: any, compare: any) => {
 	if(value > compare) return { valid: true, error: undefined }
 	return { valid: false, error: `must be greater than ${compare}` }
 }
+
+export const isDateGreaterThan = (value: Date, compare: any, nullable?: boolean) => {
+	if(nullable && !value) return { valid: true, error: undefined }
+	if(value > compare) return { valid: true, error: undefined }
+	return { valid: false, error: `must be pass ${Intl.DateTimeFormat('en-US').format(compare)}` }
+}

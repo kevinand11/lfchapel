@@ -1,10 +1,11 @@
 import { BaseFactory } from '@modules/core/domains/factories/base'
 import {
-	isLongerThan, isRequired, isRequiredIf
+	isLongerThan, isRequired, isRequiredIf, isDateGreaterThan
 } from '@modules/core/validations/rules'
 import { EventToModel } from '../../data/models/event'
 import { EventEntity } from '../entities/event'
 import { dateToTimestamp } from '@modules/core/data/transformers/converters/getFirestoreDate'
+import { getDateParts } from '@modules/core/validations/sanitizers'
 
 const isLongerThan3 = (value: string) => isLongerThan(3, value)
 
@@ -14,14 +15,14 @@ export class EventFactory extends BaseFactory<EventEntity, EventToModel> {
 		description: [isRequired,isLongerThan3],
 		allDay: [isRequired],
 		start: [isRequired],
-		end: [(date: Date) => isRequiredIf(date, !this.allDay)],
+		end: [(d: Date) => isRequiredIf(d, !this.allDay), (d: Date) => isDateGreaterThan(d, this.start, true)],
 		userId: [isRequired],
 	}
 	public values: { title: string, description: string, userId: string, allDay: boolean, start: Date, end: Date } = {
-		title: '', description: '', userId: '', allDay: false, start: new Date(), end: new Date()
+		title: '', description: '', userId: '', allDay: true, start: new Date(), end: new Date()
 	}
 	public validValues: { title: string, description: string, userId: string, allDay: boolean, start: Date, end: Date } = {
-		title: '', description: '', userId: '', allDay: false, start: new Date(), end: new Date()
+		title: '', description: '', userId: '', allDay: true, start: new Date(), end: new Date()
 	}
 	public errors = {
 		title: undefined, description: undefined, userId: undefined, allDay: undefined, start: undefined, end: undefined
@@ -37,7 +38,7 @@ export class EventFactory extends BaseFactory<EventEntity, EventToModel> {
 	set allDay(value: boolean){
 		this.set('allDay', value)
 		if(!value){
-			const start = this.start ?? new Date
+			const start = this.start ? new Date(this.start) : new Date()
 			start.setDate(start.getDate() + 1)
 			this.end = start
 		}
@@ -46,6 +47,10 @@ export class EventFactory extends BaseFactory<EventEntity, EventToModel> {
 	set start(value: Date){ this.set('start', value) }
 	get end(){ return this.values.end }
 	set end(value: Date){ this.set('end', value) }
+	get startStr(){ return parseDate(this.start) }
+	set startStr(value: string){ this.start = new Date(value) }
+	get endStr(){ return parseDate(this.end) }
+	set endStr(value: string){ this.end = new Date(value) }
 
 	public toModel = async () => {
 		if(this.valid){
@@ -71,4 +76,9 @@ export class EventFactory extends BaseFactory<EventEntity, EventToModel> {
 		this.end = entity.end
 	}
 
+}
+
+const parseDate = (d: Date) => {
+	const { year, month, day, hour, minute } = getDateParts(d)
+	return `${year}-${month}-${day} ${hour}:${minute}`
 }

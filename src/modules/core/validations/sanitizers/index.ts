@@ -20,3 +20,14 @@ export const extractDate = (date: Date) => {
 		return `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear().toString().slice(2)}`
 	}
 }
+
+export const getDateParts = (d: Date) => {
+	const formatter = Intl.DateTimeFormat('pt-BR',{
+		year:'numeric', month:'numeric',day:'numeric',
+		hour: 'numeric', minute:'numeric',second:'numeric',
+	}).formatToParts(d)
+	return formatter.reduce((acc, { type, value })=> {
+		acc[type] = value
+		return acc
+	}, {} as { [key: string]: string })
+}

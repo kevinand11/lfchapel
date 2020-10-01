@@ -21,6 +21,7 @@
     "@fullcalendar/daygrid": "^5.1.0",
     "@fullcalendar/interaction": "^5.1.0",
     "@fullcalendar/vue": "^5.1.0",
+    "@livelybone/vue-datepicker": "^4.0.2",
     "@vue/composition-api": "^1.0.0-beta.3",
     "bootstrap": "^4.4.1",
     "core-js": "^3.6.5",
