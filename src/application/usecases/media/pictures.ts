@@ -5,7 +5,6 @@ import {
 	GetPictureFactory, AddPicture, UpdatePicture
 } from '@modules/media'
 import { Alert, Notify } from '@app/config/notifications'
-import router from '@app/router'
 import { useStore } from '@app/usecases/store'
 import { useCreateModal, useEditModal } from '@app/usecases/modals'
 
@@ -79,8 +78,6 @@ export const useDeletePicture = (picture: PictureEntity) => {
 				state.loading = true
 				await DeletePicture.call(picture.id)
 				globalState.pictures = globalState.pictures.filter((a) => a.id !== picture.id)
-				const { id } = router.currentRoute.params
-				if(id) await router.replace('/blog')
 				state.loading = false
 				await Notify({ icon: 'success', title: 'Picture deleted successfully' })
 			}
@@ -114,13 +111,7 @@ export const useSinglePicture = (id: string) => {
 	const findPicture = async () => {
 		state.loading = true
 		const picture = await fetchPicture(id)
-		if(picture){
-			state.picture = picture
-		}
-		else{
-			await router.replace('/blog')
-			await Notify({ title: 'No such picture found', icon: 'error' })
-		}
+		if(picture) state.picture = picture
 		state.loading = false
 	}
 	findPicture().catch(() => state.error = 'Failed to fetch picture')

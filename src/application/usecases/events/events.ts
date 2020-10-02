@@ -5,7 +5,6 @@ import {
 	GetEventFactory, AddEvent, UpdateEvent
 } from '@modules/events'
 import { Alert, Notify } from '@app/config/notifications'
-import router from '@app/router'
 import { useStore } from '@app/usecases/store'
 import { useCreateModal, useEditModal } from '@app/usecases/modals'
 
@@ -112,10 +111,6 @@ export const useSingleEvent = (id: string) => {
 		state.loading = true
 		const event = await fetchEvent(id)
 		if(event) state.event = event
-		else{
-			await router.replace('/events')
-			await Notify({ title: 'No such event found', icon: 'error' })
-		}
 		state.loading = false
 	}
 	findEvent().catch(() => state.error = 'Failed to fetch event')
