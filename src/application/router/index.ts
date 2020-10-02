@@ -4,7 +4,6 @@ import VueMeta from 'vue-meta'
 import routes from './routes'
 import { addToCachedScrolls, getCachedScroll, saveIntendedRoute } from '@app/usecases/core/router'
 import { useStore } from '@app/usecases/store'
-import { Notify } from '@app/config/notifications'
 
 Vue.use(VueRouter)
 Vue.use(VueMeta, { keyName: 'meta', refreshOnceOnNavigation: true })
@@ -27,7 +26,6 @@ router.beforeEach(async (to, from, next) => {
 	const isAdmin = useStore().auth.isAdmin.value
 	if (requiresAuth && !isLoggedIn) {
 		saveIntendedRoute(to.fullPath)
-		await Notify({ icon: 'error', 'title': 'Login to continue' })
 		return next('/admin/signin')
 	}
 	if(requiresNoAuth && isLoggedIn) return next('/admin/')
