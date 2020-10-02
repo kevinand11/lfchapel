@@ -21,6 +21,10 @@ service cloud.firestore {
             allow read: if true;
             allow write: if isAdmin();
         }
+        match /testimonies/{id} {
+            allow read, create: if true;
+            allow update, delete: if isAdmin();
+        }
         match /users/{id} {
             allow read, create: if isAuthenticated();
             allow update: if isMine(id);

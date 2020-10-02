@@ -4,10 +4,6 @@ export const createContactMessage = async (message: {name: string, email: string
 	return await FunctionsService.call('createContactMessage', { message })
 }
 
-export const createTestimony = async (testimony: {name: string, email: string, message: string, public: boolean}) => {
-	return await FunctionsService.call('createTestimony', { testimony })
-}
-
 export const createPrayerRequest = async (request: {name: string, email: string, message: string, public: boolean}) => {
 	return await FunctionsService.call('createPrayerRequest', { request })
 }
