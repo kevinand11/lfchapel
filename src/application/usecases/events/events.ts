@@ -21,13 +21,13 @@ const globalState = reactive({
 
 const setEvent = (event: EventEntity) => {
 	const index = globalState.events.findIndex((p) => p.id === event.id)
-	if(index !== -1) globalState.events[index] = event
+	if(index !== -1) globalState.events.splice(index, 1, event)
 	else globalState.events.push(event)
 	globalState.error = ''
 }
 const unshiftEvent = (event: EventEntity) => {
 	const index = globalState.events.findIndex((p) => p.id === event.id)
-	if(index !== -1) globalState.events[index] = event
+	if(index !== -1) globalState.events.splice(index, 1, event)
 	else globalState.events.unshift(event)
 	globalState.error = ''
 }

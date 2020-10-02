@@ -21,13 +21,13 @@ const globalState = reactive({
 
 const setAudio = (audio: AudioEntity) => {
 	const index = globalState.audios.findIndex((p) => p.id === audio.id)
-	if(index !== -1) globalState.audios[index] = audio
+	if(index !== -1) globalState.audios.splice(index, 1, audio)
 	else globalState.audios.push(audio)
 	globalState.error = ''
 }
 const unshiftAudio = (audio: AudioEntity) => {
 	const index = globalState.audios.findIndex((p) => p.id === audio.id)
-	if(index !== -1) globalState.audios[index] = audio
+	if(index !== -1) globalState.audios.splice(index, 1, audio)
 	else globalState.audios.unshift(audio)
 	globalState.error = ''
 }

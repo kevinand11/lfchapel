@@ -21,13 +21,13 @@ const globalState = reactive({
 
 const setPicture = (picture: PictureEntity) => {
 	const index = globalState.pictures.findIndex((p) => p.id === picture.id)
-	if(index !== -1) globalState.pictures[index] = picture
+	if(index !== -1) globalState.pictures.splice(index, 1, picture)
 	else globalState.pictures.push(picture)
 	globalState.error = ''
 }
 const unshiftPicture = (picture: PictureEntity) => {
 	const index = globalState.pictures.findIndex((p) => p.id === picture.id)
-	if(index !== -1) globalState.pictures[index] = picture
+	if(index !== -1) globalState.pictures.splice(index, 1, picture)
 	else globalState.pictures.unshift(picture)
 	globalState.error = ''
 }

@@ -2,6 +2,6 @@ export class BaseEntity {
 	public hash: string
 
 	constructor(){
-		this.hash = Date.now().toString()
+		this.hash = Math.random().toString(36).substr(2, 12)
 	}
 }

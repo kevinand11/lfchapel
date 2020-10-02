@@ -4,7 +4,7 @@
 		<div class="container">
 			<Loading v-if="loading" />
 			<div class="grid" v-else>
-				<ArticleCard v-for="article in articles" :article="article" :key="article.id" />
+				<ArticleCard v-for="article in articles" :article="article" :key="article.hash" />
 			</div>
 			<div class="d-flex justify-content-end my-3" v-if="hasMore">
 				<button class="btn-success" @click="fetchOlderArticles" :disabled="olderArticlesLoading">

@@ -4,7 +4,7 @@
 		<div class="container px-3">
 			<Loading v-if="loading"/>
 			<div class="grid" v-else>
-				<TestimonyCard v-for="testimony in testimonies" :key="testimony.id" :testimony="testimony" />
+				<TestimonyCard v-for="testimony in testimonies" :key="testimony.hash" :testimony="testimony" />
 			</div>
 			<div class="d-flex justify-content-end my-3" v-if="hasMore">
 				<button class="btn-success" @click="fetchOlderTestimonies" :disabled="olderTestimoniesLoading">

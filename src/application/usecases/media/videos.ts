@@ -21,13 +21,13 @@ const globalState = reactive({
 
 const setVideo = (video: VideoEntity) => {
 	const index = globalState.videos.findIndex((p) => p.id === video.id)
-	if(index !== -1) globalState.videos[index] = video
+	if(index !== -1) globalState.videos.splice(index, 1, video)
 	else globalState.videos.push(video)
 	globalState.error = ''
 }
 const unshiftVideo = (video: VideoEntity) => {
 	const index = globalState.videos.findIndex((p) => p.id === video.id)
-	if(index !== -1) globalState.videos[index] = video
+	if(index !== -1) globalState.videos.splice(index, 1, video)
 	else globalState.videos.unshift(video)
 	globalState.error = ''
 }

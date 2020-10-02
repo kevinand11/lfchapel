@@ -6,8 +6,10 @@
 					<i class="fas fa-2x mr-1 fa-quote-left text-muted"></i>
 					<span class="lead">{{ testimony.message }}</span>
 				</p>
-				<h5 class="card-title mb-1">- {{ testimony.name }}</h5>
-				<p class="card-subtitle small text-muted mb-2">{{ testimony.email }}</p>
+				<div class="d-flex flex-column align-items-end ">
+					<h5 class="card-title mb-1">- {{ testimony.name }}</h5>
+					<p class="card-subtitle small text-muted mb-2">{{ testimony.email }}</p>
+				</div>
 				<p class="card-text">
 					<i class="fas mr-1" :class="testimony.public ? 'fa-eye text-success' : 'fa-eye-slash text-danger'"></i>
 					<span class="small text-muted" v-if="testimony.public">This testimony is marked public, which means the owner gives consent to share openly</span>
@@ -15,7 +17,10 @@
 				</p>
 				<i class="fas fa-3x marked shadow-sm" :class="testimony.attendedTo ? 'fa-check-circle text-success' : 'fa-exclamation-circle text-warning'"></i>
 				<div>
-					<a class="card-link text-warning" @click.prevent="toggleAttendedTo">{{ testimony.attendedTo ? 'Unmark' : 'Mark' }} attended to</a>
+					<a class="card-link" @click.prevent="toggleAttendedTo"
+					   :class="testimony.attendedTo ? 'text-warning' : 'text-success'">
+						{{ testimony.attendedTo ? 'Unmark' : 'Mark' }} attended to
+					</a>
 					<a class="card-link text-danger" v-if="testimony.attendedTo" @click.prevent="deleteTestimony">Delete</a>
 				</div>
 			</div>
@@ -49,6 +54,7 @@ export default defineComponent({
 					confirmButtonText: props.testimony.attendedTo ? 'Unmark' : 'Mark'
 				})
 				if(result.value){
+					factory.loadEntity(props.testimony)
 					setCurrentEditingTestimony(props.testimony)
 					factory.attendedTo = !factory.attendedTo
 					await editTestimony()

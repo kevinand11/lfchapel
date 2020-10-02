@@ -8,7 +8,7 @@
 			<hr>
 			<Loading v-if="loading"/>
 			<div class="grid" v-else>
-				<AudioCard v-for="audio in audios" :key="audio.id" :audio="audio" />
+				<AudioCard v-for="audio in audios" :key="audio.hash" :audio="audio" />
 			</div>
 			<div class="d-flex justify-content-end my-3" v-if="hasMore">
 				<button class="btn-success" @click="fetchOlderAudios" :disabled="olderAudiosLoading">

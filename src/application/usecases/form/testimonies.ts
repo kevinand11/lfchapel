@@ -20,13 +20,13 @@ const globalState = reactive({
 
 const setTestimony = (testimony: TestimonyEntity) => {
 	const index = globalState.testimonies.findIndex((p) => p.id === testimony.id)
-	if(index !== -1) globalState.testimonies[index] = testimony
+	if(index !== -1) globalState.testimonies.splice(index, 1, testimony)
 	else globalState.testimonies.push(testimony)
 	globalState.error = ''
 }
 const unshiftTestimony = (testimony: TestimonyEntity) => {
 	const index = globalState.testimonies.findIndex((p) => p.id === testimony.id)
-	if(index !== -1) globalState.testimonies[index] = testimony
+	if(index !== -1) globalState.testimonies.splice(index, 1, testimony)
 	else globalState.testimonies.unshift(testimony)
 	globalState.error = ''
 }
@@ -69,7 +69,7 @@ export const useDeleteTestimony = (testimony: TestimonyEntity) => {
 		try {
 			const result = await Alert({
 				title: 'Delete testimony',
-				text: 'Are you sure you want to delete thia testimony? This cannot be undone',
+				text: 'Are you sure you want to delete this testimony? This cannot be undone',
 				icon: 'info',
 				confirmButtonText: 'Delete'
 			})

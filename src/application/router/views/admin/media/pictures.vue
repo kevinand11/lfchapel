@@ -8,7 +8,7 @@
 			<hr>
 			<Loading v-if="loading"/>
 			<div class="grid" v-else>
-				<PictureCard v-for="picture in pictures" :key="picture.id" :picture="picture" />
+				<PictureCard v-for="picture in pictures" :key="picture.hash" :picture="picture" />
 			</div>
 			<div class="d-flex justify-content-end my-3" v-if="hasMore">
 				<button class="btn-success" @click="fetchOlderPictures" :disabled="olderPicturesLoading">

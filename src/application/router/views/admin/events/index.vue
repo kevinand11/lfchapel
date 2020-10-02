@@ -8,7 +8,7 @@
 			<hr>
 			<Loading v-if="loading"/>
 			<div class="grid" v-else>
-				<EventCard v-for="event in events" :key="event.id" :event="event" />
+				<EventCard v-for="event in events" :key="event.hash" :event="event" />
 			</div>
 			<div class="d-flex justify-content-end my-3" v-if="hasMore">
 				<button class="btn-success" @click="fetchOlderEvents" :disabled="olderEventsLoading">

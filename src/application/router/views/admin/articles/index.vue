@@ -8,7 +8,7 @@
 			<hr>
 			<Loading v-if="loading"/>
 			<div class="grid" v-else>
-				<ArticleCard v-for="article in articles" :key="article.id" :article="article" />
+				<ArticleCard v-for="article in articles" :key="article.hash" :article="article" />
 			</div>
 			<div class="d-flex justify-content-end my-3" v-if="hasMore">
 				<button class="btn-success" @click="fetchOlderArticles" :disabled="olderArticlesLoading">
