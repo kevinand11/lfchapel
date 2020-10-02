@@ -5,7 +5,7 @@ import {
 	GetTestimonyFactory, AddTestimony, UpdateTestimony
 } from '@modules/form'
 import { Alert, Notify } from '@app/config/notifications'
-import { useCreateModal, useEditModal } from '@app/usecases/modals'
+import router from '@app/router'
 
 const PAGINATION_LIMIT = parseInt(process.env.VUE_APP_PAGINATION_LIMIT)
 
@@ -131,10 +131,9 @@ export const useCreateTestimony = () => {
 		if(state.factory.valid && !state.loading){
 			state.loading = true
 			try{
-				const id = await AddTestimony.call(state.factory)
-				await fetchTestimony(id)
+				await AddTestimony.call(state.factory)
 				state.factory.reset()
-				useCreateModal().closeCreateModal()
+				await router.push('/')
 				await Notify({ icon: 'success', title: 'Testimony created successfully' })
 			}catch(error){ await Notify({ icon: 'error', title: error.message }) }
 			state.loading = false
@@ -142,7 +141,7 @@ export const useCreateTestimony = () => {
 	}
 
 	return {
-		factory: state.factory,
+		factory: computed(() => state.factory),
 		loading: computed(() => state.loading),
 		createTestimony,
 	}
@@ -168,14 +167,13 @@ export const useEditTestimony = () => {
 				const testimony = await FindTestimony.call(newId)
 				if(testimony) unshiftTestimony(testimony)
 				state.factory.reset()
-				useEditModal().closeEditModal()
 			}catch(error){ await Notify({ icon: 'error', title: error.message }) }
 			state.loading = false
 		}else state.factory.validateAll()
 	}
 
 	return {
-		factory: state.factory,
+		factory: computed(() => state.factory),
 		loading: computed(() => state.loading),
 		editTestimony,
 	}

@@ -165,6 +165,12 @@ export default [
 				meta: { requiresAuth: true, requiresAdmin: true }
 			},
 			{
+				path: '/admin/forms/testimonies/',
+				name: 'Admin Testimonies',
+				component: () => import(/* webpackChunkName: 'admin-testimonies' */ './views/admin/forms/testimonies.vue'),
+				meta: { requiresAuth: true, requiresAdmin: true }
+			},
+			{
 				path: '/admin/*',
 				name: 'Admin Not Found',
 				redirect: '/admin/'

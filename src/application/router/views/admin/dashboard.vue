@@ -33,13 +33,13 @@
 				</li>
 			</ul>
 			<hr class="mb-5">
-			<h2>Articles</h2>
+			<h2>Forms</h2>
 			<ul class="list-group">
 				<li class="list-group-item list-group-item-action mb-3">
-					<router-link to="/admin/articles" class="d-flex justify-content-between align-items-center">
+					<router-link to="/admin/forms/testimonies" class="d-flex justify-content-between align-items-center">
 						<div>
-							<h4>Blog Articles</h4>
-							<p>Create, modify and delete articles for the blog</p>
+							<h4>Testimonies</h4>
+							<p>View and modify testimonies</p>
 						</div>
 						<i class="fas fa-2x fa-angle-right"></i>
 					</router-link>
@@ -53,6 +53,19 @@
 						<div>
 							<h4>Events</h4>
 							<p>Create, modify and delete events</p>
+						</div>
+						<i class="fas fa-2x fa-angle-right"></i>
+					</router-link>
+				</li>
+			</ul>
+			<hr class="mb-5">
+			<h2>Articles</h2>
+			<ul class="list-group">
+				<li class="list-group-item list-group-item-action mb-3">
+					<router-link to="/admin/articles" class="d-flex justify-content-between align-items-center">
+						<div>
+							<h4>Blog Articles</h4>
+							<p>Create, modify and delete articles for the blog</p>
 						</div>
 						<i class="fas fa-2x fa-angle-right"></i>
 					</router-link>
