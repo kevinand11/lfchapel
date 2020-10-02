@@ -40,7 +40,7 @@
 
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api'
-import { TestimonyFactory } from '@modules/form/domain/factories/testimony'
+import { TestimonyFactory } from '@modules/forms/domain/factories/testimony'
 export default defineComponent({
 	name: 'TestimonyForm',
 	props: {

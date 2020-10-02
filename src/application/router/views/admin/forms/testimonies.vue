@@ -19,7 +19,7 @@
 
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api'
-import { useTestimoniesList } from '@app/usecases/form/testimonies'
+import { useTestimoniesList } from '@app/usecases/forms/testimonies'
 import TestimonyCard from '@app/components/admin/form/TestimonyCard.vue'
 export default defineComponent({
 	name: 'Testimonies',

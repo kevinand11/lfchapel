@@ -1,9 +1,9 @@
 import { computed, reactive } from '@vue/composition-api'
-import { TestimonyEntity } from '@modules/form/domain/entities/testimony'
+import { TestimonyEntity } from '@modules/forms/domain/entities/testimony'
 import {
 	DeleteTestimony, GetTestimonies, FindTestimony,
 	GetTestimonyFactory, AddTestimony, UpdateTestimony
-} from '@modules/form'
+} from '@modules/forms'
 import { Alert, Notify } from '@app/config/notifications'
 import router from '@app/router'
 

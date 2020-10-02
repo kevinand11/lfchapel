@@ -10,7 +10,7 @@
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api'
 import TestimonyForm from '@app/components/admin/form/TestimonyForm.vue'
-import { useCreateTestimony } from '@app/usecases/form/testimonies'
+import { useCreateTestimony } from '@app/usecases/forms/testimonies'
 export default defineComponent({
 	components: {
 		TestimonyForm

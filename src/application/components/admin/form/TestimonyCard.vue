@@ -31,8 +31,8 @@
 
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api'
-import { TestimonyEntity } from '@modules/form/domain/entities/testimony'
-import { setCurrentEditingTestimony, useDeleteTestimony, useEditTestimony } from '@app/usecases/form/testimonies'
+import { TestimonyEntity } from '@modules/forms/domain/entities/testimony'
+import { setCurrentEditingTestimony, useDeleteTestimony, useEditTestimony } from '@app/usecases/forms/testimonies'
 import { Alert } from '@app/config/notifications'
 export default defineComponent({
 	props: {
