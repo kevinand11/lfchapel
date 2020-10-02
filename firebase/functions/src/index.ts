@@ -9,9 +9,8 @@ export { authUserCreated, authUserDeleted }
 //On call
 import { createContactMessage } from './onCall/createContactMessage'
 import { createFeedback } from './onCall/createFeedback'
-import { createPrayerRequest } from './onCall/createPrayerRequest'
 import { subscribeToMailingList } from './onCall/subscribeToMailingList'
 export {
 	createContactMessage, createFeedback,
-	createPrayerRequest, subscribeToMailingList
+	subscribeToMailingList
 }
