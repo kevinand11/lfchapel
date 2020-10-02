@@ -69,7 +69,7 @@ export const useDeleteRequest = (request: RequestEntity) => {
 		try {
 			const result = await Alert({
 				title: 'Delete request',
-				text: 'Are you sure you want to delete this request? This cannot be undone',
+				text: 'Are you sure you want to delete this prayer request? This cannot be undone',
 				icon: 'info',
 				confirmButtonText: 'Delete'
 			})
@@ -78,7 +78,7 @@ export const useDeleteRequest = (request: RequestEntity) => {
 				await DeleteRequest.call(request.id)
 				globalState.requests = globalState.requests.filter((a) => a.id !== request.id)
 				state.loading = false
-				await Notify({ icon: 'success', title: 'Request deleted successfully' })
+				await Notify({ icon: 'success', title: 'Prayer request deleted successfully' })
 			}
 			return result.value as boolean
 		} catch(error) {

@@ -12,8 +12,8 @@
 				</div>
 				<p class="card-text">
 					<i class="fas mr-1" :class="request.public ? 'fa-eye text-success' : 'fa-eye-slash text-danger'"></i>
-					<span class="small text-muted" v-if="request.public">This request is marked public, which means the owner gives consent to share openly</span>
-					<span class="small text-muted" v-else>This request is marked private, which means the owner will like to keep it between themselves, the pastor and God.</span>
+					<span class="small text-muted" v-if="request.public">This prayer request is marked public, which means the owner gives consent to share openly</span>
+					<span class="small text-muted" v-else>This prayer request is marked private, which means the owner will like to keep it between themselves, the pastor and God.</span>
 				</p>
 				<i class="fas fa-3x marked shadow-sm" :class="request.attendedTo ? 'fa-check-circle text-success' : 'fa-exclamation-circle text-warning'"></i>
 				<div>
@@ -49,7 +49,7 @@ export default defineComponent({
 			toggleAttendedTo: async () => {
 				const result = await Alert({
 					title: `Mark ${props.request.attendedTo ? 'un' : ''}attended to`,
-					text: `Are you sure you want to ${props.request.attendedTo ? 'un' : ''}mark this request attended to?`,
+					text: `Are you sure you want to ${props.request.attendedTo ? 'un' : ''}mark this prayer request attended to?`,
 					icon: 'info',
 					confirmButtonText: props.request.attendedTo ? 'Unmark' : 'Mark'
 				})
