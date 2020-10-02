@@ -173,7 +173,7 @@ export const useEditTestimony = () => {
 	}
 
 	return {
-		factory: computed(() => state.factory),
+		factory: state.factory,
 		loading: computed(() => state.loading),
 		editTestimony,
 	}
