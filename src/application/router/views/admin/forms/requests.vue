@@ -4,11 +4,11 @@
 		<div class="container px-3">
 			<Loading v-if="loading"/>
 			<div class="grid" v-else>
-				<TestimonyCard v-for="testimony in testimonies" :key="testimony.hash" :testimony="testimony" />
+				<RequestCard v-for="request in requests" :key="request.hash" :request="request" />
 			</div>
 			<div class="d-flex justify-content-end my-3" v-if="hasMore">
-				<button class="btn-success" @click="fetchOlderTestimonies" :disabled="olderTestimoniesLoading">
-					<i class="fas fa-spinner fa-spin mr-2" v-if="olderTestimoniesLoading"></i>
+				<button class="btn-success" @click="fetchOlderRequests" :disabled="olderRequestsLoading">
+					<i class="fas fa-spinner fa-spin mr-2" v-if="olderRequestsLoading"></i>
 					<span>Fetch More</span>
 				</button>
 			</div>
@@ -19,22 +19,22 @@
 
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api'
-import { useTestimoniesList } from '@app/usecases/forms/testimonies'
-import TestimonyCard from '@app/components/admin/forms/TestimonyCard.vue'
+import { useRequestsList } from '@app/usecases/forms/requests'
+import RequestCard from '@app/components/admin/forms/RequestCard.vue'
 export default defineComponent({
-	name: 'Testimonies',
+	name: 'Requests',
 	components: {
-		TestimonyCard
+		RequestCard
 	},
 	setup(){
-		const { loading, olderTestimoniesLoading, hasMore, error, testimonies, fetchOlderTestimonies } = useTestimoniesList()
+		const { loading, olderRequestsLoading, hasMore, error, requests, fetchOlderRequests } = useRequestsList()
 		return {
-			loading, olderTestimoniesLoading, hasMore, error, testimonies, fetchOlderTestimonies
+			loading, olderRequestsLoading, hasMore, error, requests, fetchOlderRequests
 		}
 	},
 	meta(){
 		return {
-			title: 'Testimonies',
+			title: 'Prayer Requests',
 			meta: [
 				{
 					vmid: 'robots',

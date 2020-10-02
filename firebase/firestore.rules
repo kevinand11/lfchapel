@@ -17,9 +17,9 @@ service cloud.firestore {
 			allow read: if true;
 			allow write: if isAdmin();
 		}
-		match /videos/{id} {
-            allow read: if true;
-            allow write: if isAdmin();
+        match /requests/{id} {
+            allow read, create: if true;
+            allow update, delete: if isAdmin();
         }
         match /testimonies/{id} {
             allow read, create: if true;
@@ -29,6 +29,10 @@ service cloud.firestore {
             allow read, create: if isAuthenticated();
             allow update: if isMine(id);
             allow delete: if isAdmin();
+        }
+		match /videos/{id} {
+            allow read: if true;
+            allow write: if isAdmin();
         }
 
 		match /{document=**} {

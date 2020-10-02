@@ -44,6 +44,15 @@
 						<i class="fas fa-2x fa-angle-right"></i>
 					</router-link>
 				</li>
+				<li class="list-group-item list-group-item-action mb-3">
+					<router-link to="/admin/forms/requests" class="d-flex justify-content-between align-items-center">
+						<div>
+							<h4>Prayer Requests</h4>
+							<p>View and modify prayer requests</p>
+						</div>
+						<i class="fas fa-2x fa-angle-right"></i>
+					</router-link>
+				</li>
 			</ul>
 			<hr class="mb-5">
 			<h2>Events</h2>
