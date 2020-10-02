@@ -1,7 +1,8 @@
 import { trimToLength, extractTextFromHTML, extractDate } from '@modules/core/validations/sanitizers'
 import { Media } from '@modules/core/data/models/base'
+import { BaseEntity } from '@modules/core/domains/entities/BaseEntity'
 
-export class VideoEntity{
+export class VideoEntity extends BaseEntity {
 	public readonly id: string
 	public readonly title: string
 	public readonly description: string
@@ -11,6 +12,7 @@ export class VideoEntity{
 	public readonly createdAt: Date
 
 	constructor({ id, title, description, previewData, videoData, createdAt, userId }: VideoConstructorArgs) {
+		super()
 		this.id = id
 		this.title = title
 		this.description = description

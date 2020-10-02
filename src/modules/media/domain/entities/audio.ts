@@ -1,7 +1,8 @@
 import { trimToLength, extractTextFromHTML, extractDate } from '@modules/core/validations/sanitizers'
 import { Media } from '@modules/core/data/models/base'
+import { BaseEntity } from '@modules/core/domains/entities/BaseEntity'
 
-export class AudioEntity{
+export class AudioEntity extends BaseEntity {
 	public readonly id: string
 	public readonly title: string
 	public readonly description: string
@@ -10,6 +11,7 @@ export class AudioEntity{
 	public readonly createdAt: Date
 
 	constructor({ id, title, description, audioData, createdAt, userId }: AudioConstructorArgs) {
+		super()
 		this.id = id
 		this.title = title
 		this.description = description

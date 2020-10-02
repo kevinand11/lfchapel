@@ -1,6 +1,7 @@
 import { extractDate } from '@modules/core/validations/sanitizers'
+import { BaseEntity } from '@modules/core/domains/entities/BaseEntity'
 
-export class TestimonyEntity{
+export class TestimonyEntity extends BaseEntity {
 	public readonly id: string
 	public readonly name: string
 	public readonly email: string
@@ -10,6 +11,7 @@ export class TestimonyEntity{
 	public readonly createdAt: Date
 
 	constructor({ id, name, email, message, createdAt, public: p, attendedTo }: TestimonyConstructorArgs) {
+		super()
 		this.id = id
 		this.name = name
 		this.email = email
