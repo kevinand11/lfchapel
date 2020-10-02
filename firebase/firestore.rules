@@ -21,14 +21,27 @@ service cloud.firestore {
             allow read: if true;
             allow write: if isAdmin();
         }
+        match /users/{id} {
+            allow read, create: if isAuthenticated();
+            allow update: if isMine(id);
+            allow delete: if isAdmin();
+        }
 
 		match /{document=**} {
 			allow read: if true;
 			allow write: if false;
 		}
 
+		function isAuthenticated() {
+            return request.auth != null;
+        }
+
 		function isAdmin() {
 			return request.auth.token.isAdmin == true;
 		}
+
+        function isMine(id) {
+            return request.auth.uid == id;
+        }
 	}
 }
