@@ -134,7 +134,7 @@ export const useCreateTestimony = () => {
 				await AddTestimony.call(state.factory)
 				state.factory.reset()
 				await router.push('/')
-				await Notify({ icon: 'success', title: 'Testimony created successfully' })
+				await Notify({ icon: 'success', title: 'Testimony sent successfully' })
 			}catch(error){ await Notify({ icon: 'error', title: error.message }) }
 			state.loading = false
 		}else state.factory.validateAll()

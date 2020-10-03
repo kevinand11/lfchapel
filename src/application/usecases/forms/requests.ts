@@ -134,7 +134,7 @@ export const useCreateRequest = () => {
 				await AddRequest.call(state.factory)
 				state.factory.reset()
 				await router.push('/')
-				await Notify({ icon: 'success', title: 'Request created successfully' })
+				await Notify({ icon: 'success', title: 'Request sent successfully' })
 			}catch(error){ await Notify({ icon: 'error', title: error.message }) }
 			state.loading = false
 		}else state.factory.validateAll()

@@ -1,48 +1,24 @@
 <template>
 	<div>
-		<form @submit.prevent="() => {}">
-			<h3 class="mb-4 red">Your Message</h3>
-			<div class="form-group">
-				<label for="name">Your Name</label>
-				<input type="text" id="name" class="form-control" placeholder="Eg. John Doe" v-model="feedback.name">
-			</div>
-			<div class="form-group">
-				<label for="email">Your Email</label>
-				<input type="email" id="email" class="form-control" placeholder="Eg. johndoe@gmail.com" v-model="feedback.email">
-			</div>
-			<div class="form-group">
-				<label for="message">Your Message</label>
-				<textarea id="message" rows="6" class="form-control" v-model="feedback.message"
-				          placeholder="Eg I would recommend the pastor on his empowering message last sunday."></textarea>
-			</div>
-			<button class="btn btn-outline-gold" @click="submit" :disabled="loading">
-				<i class="fas fa-spinner fa-spin mr-2" v-if="loading"></i>
-				<span>Submit</span>
-			</button>
-		</form>
+		<MessageForm :factory="factory" :loading="loading" :submit="createMessage">
+			<template slot="title"><h4 class="mb-3 red">Your Message</h4></template>
+		</MessageForm>
+		<Loading v-if="loading" />
 	</div>
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, reactive } from '@vue/composition-api'
-import { createFeedback } from '@app/usecases/useFunctions'
-import { Notify } from '@app/config/notifications'
+import { defineComponent } from '@vue/composition-api'
+import MessageForm from '@app/components/admin/forms/MessageForm.vue'
+import { useCreateMessage } from '@app/usecases/forms/messages'
 export default defineComponent({
+	components: {
+		MessageForm
+	},
 	setup(){
-		const loading = ref(false)
-		const feedback = reactive({ name: '', email: '', message: '' })
-		const submit = async () => {
-			if(!feedback.name || !feedback.email || !feedback.message){
-				return await Notify({ title: 'Please fill in all fields', icon: 'error' })
-			}
-			loading.value = true
-			await createFeedback({ name: feedback.name, email: feedback.email, message: feedback.message })
-			feedback.name = feedback.email = feedback.message = ''
-			loading.value = false
-			await Notify({ title: 'Feedback sent successfully', icon: 'success' })
-		}
+		const { loading, factory, createMessage } = useCreateMessage()
 		return {
-			feedback, submit, loading
+			factory, createMessage , loading
 		}
 	},
 	meta(){
