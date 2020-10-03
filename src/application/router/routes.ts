@@ -117,6 +117,12 @@ export default [
 				meta: { requiresAuth: true, requiresAdmin: true }
 			},
 			{
+				path: '/admin/unauthorized',
+				name: 'Unauthorized',
+				component: () => import(/* webpackChunkName: 'admin-unauthorized' */ './views/admin/unauthorized.vue'),
+				meta: { requiresAuth: true, requiresAdmin: false }
+			},
+			{
 				path: '/admin/signin',
 				name: 'Sign In',
 				component: () => import(/* webpackChunkName: 'sign-in' */ './views/admin/auth/signin.vue'),

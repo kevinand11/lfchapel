@@ -29,7 +29,7 @@ router.beforeEach(async (to, from, next) => {
 		return next('/admin/signin')
 	}
 	if(requiresNoAuth && isLoggedIn) return next('/admin/')
-	if(requiresAdmin && !isAdmin) return next('/')
+	if(requiresAdmin && !isAdmin) return next('/admin/unauthorized')
 
 	return next()
 })

@@ -6,9 +6,12 @@ import {
 } from '@modules/users'
 import { computed, reactive } from '@vue/composition-api'
 import { useStore } from '@app/usecases/store'
+import { getIntendedRoute } from '@app/usecases/core/router'
 
 const afterAuthHook = async () => {
-	await router.push('/admin/')
+	const route = getIntendedRoute()
+	if(route) await router.push(route).catch((e) => e)
+	else await router.push('/admin/').catch((e) => e)
 }
 
 export const useRegisterForm = () => {
@@ -44,7 +47,7 @@ export const useLogout = () => {
 	const logout = async () => {
 		state.loading = true
 		await useStore().auth.setId(null)
-		if(router.currentRoute.meta.requiresAuth) await router.push('/admin/signin')
+		await router.push('/admin/signin')
 		await Logout.call()
 		state.loading = false
 	}

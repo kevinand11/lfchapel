@@ -7,11 +7,12 @@
 		</div>
 		<button class="btn mx-0 px-3 btn-primary my-3" @click="getUsersByEmail" :disabled="!email">
 			<i class="fas fa-spinner fa-spin mr-2" v-if="loading"></i>
+			<Loading v-if="loading" />
 			<span>Find User</span>
 		</button>
 		<div class="mt-2" v-if="fetched && !loading">
 			<p class="text-danger opacity-75" v-if="users.length === 0">No user with such email exists</p>
-			<div class="my-3" v-for="user in users" :key="user.id">
+			<div class="my-3" v-for="user in users" :key="user.hash">
 				<div class="d-flex flex-wrap justify-content-between align-items-center">
 					<div class="text-truncate">
 						<p class="lead mb-1 text-wrap">{{ user.name }}</p>
@@ -26,6 +27,7 @@
 							<i class="fas fa-spinner mr-1 fa-spin" v-if="upgrading"></i>
 							<span>Make admin</span>
 						</button>
+						<Loading v-if="upgrading" />
 					</template>
 					<template v-else>
 						<p class="small text-danger text-wrap">You cannot change your own role.</p>
