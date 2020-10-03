@@ -17,14 +17,19 @@
 						<p class="lead mb-1 text-wrap">{{ user.name }}</p>
 						<p class="small mb-0 text-wrap">{{ user.email }}</p>
 					</div>
-					<button class="btn-sm mx-0 text-nowrap btn-danger" v-if="user.roles.isAdmin" @click="deAdminUser(user)" :disabled="upgrading">
-						<i class="fas fa-spinner mr-1 fa-spin" v-if="upgrading"></i>
-						<span>Remove admin</span>
-					</button>
-					<button class="btn-sm mx-0 text-nowrap btn-success" v-else @click="adminUser(user)" :disabled="upgrading">
-						<i class="fas fa-spinner mr-1 fa-spin" v-if="upgrading"></i>
-						<span>Make admin</span>
-					</button>
+					<template v-if="authUser.email !== user.email">
+						<button class="btn-sm mx-0 text-nowrap btn-danger" v-if="user.roles.isAdmin" @click="deAdminUser(user)" :disabled="upgrading">
+							<i class="fas fa-spinner mr-1 fa-spin" v-if="upgrading"></i>
+							<span>Remove admin</span>
+						</button>
+						<button class="btn-sm mx-0 text-nowrap btn-success" v-else @click="adminUser(user)" :disabled="upgrading">
+							<i class="fas fa-spinner mr-1 fa-spin" v-if="upgrading"></i>
+							<span>Make admin</span>
+						</button>
+					</template>
+					<template v-else>
+						<p class="small text-danger text-wrap">You cannot change your own role.</p>
+					</template>
 				</div>
 				<hr class="mt-2">
 			</div>
@@ -35,10 +40,14 @@
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api'
 import { useAdminRoles } from '@app/usecases/users/users'
+import { useStore } from '@app/usecases/store'
 export default defineComponent({
 	setup(){
 		const { loading, fetched, upgrading, email, users, getUsersByEmail, adminUser, deAdminUser, reset } = useAdminRoles()
-		return { loading, fetched, upgrading, email, users, getUsersByEmail, adminUser, deAdminUser, reset }
+		return {
+			loading, fetched, upgrading, email, users, getUsersByEmail, adminUser, deAdminUser, reset,
+			authUser: useStore().auth.getUser
+		}
 	}
 })
 </script>

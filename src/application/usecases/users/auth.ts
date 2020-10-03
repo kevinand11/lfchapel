@@ -101,7 +101,7 @@ export const useGoogleLogin = () => {
 }
 
 export const useDevLogin = () => {
-	const devs = ['kevin11']
+	const devs = ['kevin11','frank']
 	const state = reactive({
 		loading: false,
 		id: ''

@@ -9,6 +9,9 @@ export const removeAdmin = functions.https.onCall(async ({ id }, context) => {
 	if (isProduction() && !context.auth?.token.isAdmin) {
 		throw new functions.https.HttpsError('failed-precondition', 'Only admins can manage user accounts')
 	}
+	if (isProduction() && context.auth?.uid === id) {
+		throw new functions.https.HttpsError('failed-precondition', 'You cannot change your own role')
+	}
 	try{
 		if (isProduction()) await admin.auth().setCustomUserClaims(id, { isAdmin: false })
 
