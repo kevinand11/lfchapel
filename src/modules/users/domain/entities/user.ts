@@ -12,6 +12,10 @@ export class UserEntity extends BaseEntity {
 		this.userBio = bio
 		this.roles = roles
 	}
+
+	get name(){ return this.userBio.name }
+	get email(){ return this.userBio.email }
+
 }
 
 type UserConstructorArgs = {

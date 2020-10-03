@@ -177,6 +177,12 @@ export default [
 				meta: { requiresAuth: true, requiresAdmin: true }
 			},
 			{
+				path: '/admin/users/',
+				name: 'Manage Users',
+				component: () => import(/* webpackChunkName: 'admin-users' */ './views/admin/users/index.vue'),
+				meta: { requiresAuth: true, requiresAdmin: true }
+			},
+			{
 				path: '/admin/*',
 				name: 'Admin Not Found',
 				redirect: '/admin/'
