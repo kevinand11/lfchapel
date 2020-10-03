@@ -6,7 +6,7 @@
 					<i class="fas fa-2x mr-1 fa-quote-left text-muted"></i>
 					<span class="lead">{{ testimony.message }}</span>
 				</p>
-				<div class="d-flex flex-column align-items-end ">
+				<div class="d-flex flex-column">
 					<h5 class="card-title mb-1">- {{ testimony.name }}</h5>
 					<p class="card-subtitle small text-muted mb-2">{{ testimony.email }}</p>
 				</div>

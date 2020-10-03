@@ -53,6 +53,15 @@
 						<i class="fas fa-2x fa-angle-right"></i>
 					</router-link>
 				</li>
+				<li class="list-group-item list-group-item-action mb-3">
+					<router-link to="/admin/forms/messages" class="d-flex justify-content-between align-items-center">
+						<div>
+							<h4>Messages</h4>
+							<p>View and modify messages</p>
+						</div>
+						<i class="fas fa-2x fa-angle-right"></i>
+					</router-link>
+				</li>
 			</ul>
 			<hr class="mb-5">
 			<h2>Events</h2>
@@ -75,6 +84,19 @@
 						<div>
 							<h4>Blog Articles</h4>
 							<p>Create, modify and delete articles for the blog</p>
+						</div>
+						<i class="fas fa-2x fa-angle-right"></i>
+					</router-link>
+				</li>
+			</ul>
+			<hr class="mb-5">
+			<h2>Users</h2>
+			<ul class="list-group">
+				<li class="list-group-item list-group-item-action mb-3">
+					<router-link to="/admin/users" class="d-flex justify-content-between align-items-center">
+						<div>
+							<h4>Users</h4>
+							<p>Manage user roles</p>
 						</div>
 						<i class="fas fa-2x fa-angle-right"></i>
 					</router-link>

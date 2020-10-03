@@ -183,6 +183,12 @@ export default [
 				meta: { requiresAuth: true, requiresAdmin: true }
 			},
 			{
+				path: '/admin/forms/messages/',
+				name: 'Manage Messages',
+				component: () => import(/* webpackChunkName: 'admin-messages' */ './views/admin/forms/messages.vue'),
+				meta: { requiresAuth: true, requiresAdmin: true }
+			},
+			{
 				path: '/admin/users/',
 				name: 'Manage Users',
 				component: () => import(/* webpackChunkName: 'admin-users' */ './views/admin/users/index.vue'),
