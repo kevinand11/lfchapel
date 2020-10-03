@@ -1,6 +1,8 @@
 import { IUserRepository } from '../../domain/irepositories/iuser'
 import { UserBaseDataSource } from '../datasources/user-base'
 import { UserTransformer } from '../transformers/user'
+import { GetClauses } from '@modules/core/data/datasources/base'
+import { UserFromModel } from '@modules/users/data/models/user'
 
 export class UserRepository implements IUserRepository{
 	private dataSource: UserBaseDataSource
@@ -15,6 +17,11 @@ export class UserRepository implements IUserRepository{
 		const model = await this.dataSource.find(id)
 		if(model) return this.transformer.fromJSON(model)
 		else return undefined
+	}
+
+	public async get(conditions?: GetClauses) {
+		const models = await this.dataSource.get(conditions)
+		return models.map((model: UserFromModel) => this.transformer.fromJSON(model))
 	}
 
 	public async subscribeToMailingList(email: string): Promise<void> {

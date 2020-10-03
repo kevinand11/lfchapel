@@ -17,6 +17,7 @@ import { SubscribeToMailingListUsecase } from './domain/usecases/subscribeToMail
 import { GetLoginFactoryUseCase } from './domain/usecases/getLoginFactory'
 import { MakeAdminUsecase } from '@modules/users/domain/usecases/makeAdmin'
 import { RemoveAdminUsecase } from '@modules/users/domain/usecases/removeAdmin'
+import { FindUsersByEmailUseCase } from '@modules/users/domain/usecases/findUsersByEmail'
 
 const userDataSource = new UserFirebaseDataSource()
 const authDataSource = new AuthFirebaseDataSource()
@@ -27,6 +28,7 @@ const userRepository = new UserRepository(userDataSource, userTransformer)
 const authRepository = new AuthRepository(authDataSource)
 
 export const FindUser = new FindUserUseCase(userRepository)
+export const FindUsersByEmail = new FindUsersByEmailUseCase(userRepository)
 export const MakeAdmin = new MakeAdminUsecase(userRepository)
 export const RemoveAdmin = new RemoveAdminUsecase(userRepository)
 export const SubscribeToMailingList = new SubscribeToMailingListUsecase(userRepository)
