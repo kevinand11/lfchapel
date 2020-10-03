@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<MessageForm :factory="factory" :loading="loading" :submit="createMessage">
-			<template slot="title"><h4 class="mb-3 red">Your Message</h4></template>
+			<template slot="title"><h4 class="mb-4 red">Your Message</h4></template>
 		</MessageForm>
 		<Loading v-if="loading" />
 	</div>
