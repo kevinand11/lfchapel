@@ -12,4 +12,12 @@ export class UserFirebaseDataSource implements UserBaseDataSource{
 		return await FunctionsService.call('subscribeToMailingList', data)
 	}
 
+	public async makeAdmin(data: { id: string }) {
+		return await FunctionsService.call('makeAdmin', data)
+	}
+
+	public async removeAdmin(data: { id: string }) {
+		return await FunctionsService.call('removeAdmin', data)
+	}
+
 }

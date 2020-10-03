@@ -21,4 +21,12 @@ export class UserRepository implements IUserRepository{
 		return await this.dataSource.subscribeToMailingList({ email })
 	}
 
+	public async makeAdmin(id: string) {
+		return await this.dataSource.makeAdmin({ id })
+	}
+
+	public async removeAdmin(id: string) {
+		return await this.dataSource.removeAdmin({ id })
+	}
+
 }
