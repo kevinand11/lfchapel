@@ -8,14 +8,10 @@ export { authUserCreated, authUserDeleted }
 
 
 //On call
-import { createContactMessage } from './onCall/createContactMessage'
-import { createFeedback } from './onCall/createFeedback'
-import { subscribeToMailingList } from './onCall/subscribeToMailingList'
-export { createContactMessage, createFeedback, subscribeToMailingList }
-
 import { makeAdmin } from './onCall/users/makeAdmin'
 import { removeAdmin } from './onCall/users/removeAdmin'
-export { makeAdmin, removeAdmin }
+import { subscribeToMailingList } from './onCall/users/subscribeToMailingList'
+export { makeAdmin, removeAdmin, subscribeToMailingList }
 
 
 // Request Triggers
