@@ -117,6 +117,12 @@ export default [
 				meta: { requiresAuth: true, requiresAdmin: true }
 			},
 			{
+				path: '/admin/unauthorized',
+				name: 'Unauthorized',
+				component: () => import(/* webpackChunkName: 'admin-unauthorized' */ './views/admin/unauthorized.vue'),
+				meta: { requiresAuth: true, requiresAdmin: false }
+			},
+			{
 				path: '/admin/signin',
 				name: 'Sign In',
 				component: () => import(/* webpackChunkName: 'sign-in' */ './views/admin/auth/signin.vue'),
@@ -136,32 +142,56 @@ export default [
 			},
 			{
 				path: '/admin/media/pictures/',
-				name: 'Admin Pictures',
+				name: 'Manage Pictures',
 				component: () => import(/* webpackChunkName: 'admin-pictures' */ './views/admin/media/pictures.vue'),
 				meta: { requiresAuth: true, requiresAdmin: true }
 			},
 			{
 				path: '/admin/media/audios/',
-				name: 'Admin Audios',
+				name: 'Manage Audios',
 				component: () => import(/* webpackChunkName: 'admin-audios' */ './views/admin/media/audios.vue'),
 				meta: { requiresAuth: true, requiresAdmin: true }
 			},
 			{
 				path: '/admin/media/videos/',
-				name: 'Admin Videos',
+				name: 'Manage Videos',
 				component: () => import(/* webpackChunkName: 'admin-videos' */ './views/admin/media/videos.vue'),
 				meta: { requiresAuth: true, requiresAdmin: true }
 			},
 			{
 				path: '/admin/articles/',
-				name: 'Admin Articles',
+				name: 'Manage Articles',
 				component: () => import(/* webpackChunkName: 'admin-articles' */ './views/admin/articles/index.vue'),
 				meta: { requiresAuth: true, requiresAdmin: true }
 			},
 			{
 				path: '/admin/events/',
-				name: 'Admin Events',
+				name: 'Manage Events',
 				component: () => import(/* webpackChunkName: 'admin-events' */ './views/admin/events/index.vue'),
+				meta: { requiresAuth: true, requiresAdmin: true }
+			},
+			{
+				path: '/admin/forms/testimonies/',
+				name: 'Manage Testimonies',
+				component: () => import(/* webpackChunkName: 'admin-testimonies' */ './views/admin/forms/testimonies.vue'),
+				meta: { requiresAuth: true, requiresAdmin: true }
+			},
+			{
+				path: '/admin/forms/requests/',
+				name: 'Manage Prayer Requests',
+				component: () => import(/* webpackChunkName: 'admin-requests' */ './views/admin/forms/requests.vue'),
+				meta: { requiresAuth: true, requiresAdmin: true }
+			},
+			{
+				path: '/admin/forms/messages/',
+				name: 'Manage Messages',
+				component: () => import(/* webpackChunkName: 'admin-messages' */ './views/admin/forms/messages.vue'),
+				meta: { requiresAuth: true, requiresAdmin: true }
+			},
+			{
+				path: '/admin/users/',
+				name: 'Manage Users',
+				component: () => import(/* webpackChunkName: 'admin-users' */ './views/admin/users/index.vue'),
 				meta: { requiresAuth: true, requiresAdmin: true }
 			},
 			{

@@ -8,7 +8,7 @@
 			<hr>
 			<Loading v-if="loading"/>
 			<div class="grid" v-else>
-				<VideoCard v-for="video in videos" :key="video.id" :video="video" />
+				<VideoCard v-for="video in videos" :key="video.hash" :video="video" />
 			</div>
 			<div class="d-flex justify-content-end my-3" v-if="hasMore">
 				<button class="btn-success" @click="fetchOlderVideos" :disabled="olderVideosLoading">

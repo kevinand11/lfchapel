@@ -91,12 +91,15 @@
 					<h4>NEWSLETTER</h4>
 					<form @submit.prevent="() => {}">
 						<ul class="list-group">
-							<li class="list-group-item">
-								<input type="email" class="form-control" placeholder="Enter email" v-model="email">
+							<li class="form-group">
+								<input type="email" class="form-control" v-model="factory.email" placeholder="Email Address"
+								       :class="{'is-invalid': factory.errors.email, 'is-valid': factory.isValid('email') }">
+								<span class="small text-danger" v-if="factory.errors.email">{{ factory.errors.email }}</span>
 							</li>
 							<li class="list-group-item">
-								<button class="btn btn-outline-light" type="submit" :disabled="loading" @click="submit">
+								<button class="btn btn-outline-light" type="submit" :disabled="loading" @click="subscribeToMailingList">
 									<i class="fas fa-spinner fa-spin mr-2" v-if="loading"></i>
+									<Loading v-if="loading" />
 									<span>Submit</span>
 								</button>
 							</li>
@@ -196,25 +199,13 @@
 </style>
 
 <script lang="ts">
-import { defineComponent, ref } from '@vue/composition-api'
-import { Notify } from '@app/config/notifications'
-import { subscribeToMailingList } from '@app/usecases/useFunctions'
+import { defineComponent } from '@vue/composition-api'
+import { useMailingList } from '@app/usecases/users/users'
 export default defineComponent({
 	setup(){
-		const loading = ref(false)
-		const email = ref('')
-		const submit = async () => {
-			if(!email.value){
-				return await Notify({ title: 'Please fill in the email field', icon: 'error' })
-			}
-			loading.value = true
-			await subscribeToMailingList(email.value)
-			email.value = ''
-			loading.value = false
-			await Notify({ title: 'Subscription successful', icon: 'success' })
-		}
+		const { loading, factory, subscribeToMailingList } = useMailingList()
 	    return {
-			submit, email, loading,
+		    loading, factory, subscribeToMailingList,
 	        address: process.env.VUE_APP_CHURCH_ADDRESS,
 		    email_1: process.env.VUE_APP_CHURCH_EMAIL_1,
 		    email_2: process.env.VUE_APP_CHURCH_EMAIL_2,

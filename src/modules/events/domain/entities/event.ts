@@ -1,6 +1,7 @@
 import { trimToLength, extractTextFromHTML, extractDate } from '@modules/core/validations/sanitizers'
+import { BaseEntity } from '@modules/core/domains/entities/BaseEntity'
 
-export class EventEntity{
+export class EventEntity extends BaseEntity {
 	public readonly id: string
 	public readonly title: string
 	public readonly description: string
@@ -10,6 +11,7 @@ export class EventEntity{
 	public readonly createdAt: Date
 
 	constructor({ id, title, description, start, end, userId, createdAt }: EventConstructorArgs) {
+		super()
 		this.id = id
 		this.title = title
 		this.description = description
@@ -25,7 +27,7 @@ export class EventEntity{
 
 	isWithinDate(date: Date){
 		const start = new Date(this.start),
-			end = new Date(this.end), 
+			end = new Date(this.end),
 			d = new Date(date)
 		start.setHours(0,0,0,0)
 		end.setHours(0,0,0,0)

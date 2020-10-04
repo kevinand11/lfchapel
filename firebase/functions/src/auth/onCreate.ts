@@ -3,10 +3,9 @@ import * as admin from 'firebase-admin'
 
 export const authUserCreated = functions.auth.user().onCreate(async (user) => {
 	const data: any = {
-		bio: { email: user.email, image: {} },
-		roles: { isStudent: true },
-		dates:{ registeredAt: admin.firestore.FieldValue.serverTimestamp() },
-		account: { questions: 5 }
+		bio: { email: user.email, image: {}, name: '' },
+		roles: { isAdmin: false },
+		dates:{ registeredAt: admin.firestore.FieldValue.serverTimestamp() }
 	}
 
 	if(user.displayName) data.bio.name = user.displayName

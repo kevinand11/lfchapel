@@ -5,7 +5,6 @@ import {
 	GetAudioFactory, AddAudio, UpdateAudio
 } from '@modules/media'
 import { Alert, Notify } from '@app/config/notifications'
-import router from '@app/router'
 import { useStore } from '@app/usecases/store'
 import { useCreateModal, useEditModal } from '@app/usecases/modals'
 
@@ -22,13 +21,13 @@ const globalState = reactive({
 
 const setAudio = (audio: AudioEntity) => {
 	const index = globalState.audios.findIndex((p) => p.id === audio.id)
-	if(index !== -1) globalState.audios[index] = audio
+	if(index !== -1) globalState.audios.splice(index, 1, audio)
 	else globalState.audios.push(audio)
 	globalState.error = ''
 }
 const unshiftAudio = (audio: AudioEntity) => {
 	const index = globalState.audios.findIndex((p) => p.id === audio.id)
-	if(index !== -1) globalState.audios[index] = audio
+	if(index !== -1) globalState.audios.splice(index, 1, audio)
 	else globalState.audios.unshift(audio)
 	globalState.error = ''
 }
@@ -79,8 +78,6 @@ export const useDeleteAudio = (audio: AudioEntity) => {
 				state.loading = true
 				await DeleteAudio.call(audio.id)
 				globalState.audios = globalState.audios.filter((a) => a.id !== audio.id)
-				const { id } = router.currentRoute.params
-				if(id) await router.replace('/blog')
 				state.loading = false
 				await Notify({ icon: 'success', title: 'Audio deleted successfully' })
 			}
@@ -114,13 +111,7 @@ export const useSingleAudio = (id: string) => {
 	const findAudio = async () => {
 		state.loading = true
 		const audio = await fetchAudio(id)
-		if(audio){
-			state.audio = audio
-		}
-		else{
-			await router.replace('/blog')
-			await Notify({ title: 'No such audio found', icon: 'error' })
-		}
+		if(audio) state.audio = audio
 		state.loading = false
 	}
 	findAudio().catch(() => state.error = 'Failed to fetch audio')

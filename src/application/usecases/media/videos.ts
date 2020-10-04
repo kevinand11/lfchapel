@@ -5,7 +5,6 @@ import {
 	GetVideoFactory, AddVideo, UpdateVideo
 } from '@modules/media'
 import { Alert, Notify } from '@app/config/notifications'
-import router from '@app/router'
 import { useStore } from '@app/usecases/store'
 import { useCreateModal, useEditModal } from '@app/usecases/modals'
 
@@ -22,13 +21,13 @@ const globalState = reactive({
 
 const setVideo = (video: VideoEntity) => {
 	const index = globalState.videos.findIndex((p) => p.id === video.id)
-	if(index !== -1) globalState.videos[index] = video
+	if(index !== -1) globalState.videos.splice(index, 1, video)
 	else globalState.videos.push(video)
 	globalState.error = ''
 }
 const unshiftVideo = (video: VideoEntity) => {
 	const index = globalState.videos.findIndex((p) => p.id === video.id)
-	if(index !== -1) globalState.videos[index] = video
+	if(index !== -1) globalState.videos.splice(index, 1, video)
 	else globalState.videos.unshift(video)
 	globalState.error = ''
 }
@@ -79,8 +78,6 @@ export const useDeleteVideo = (video: VideoEntity) => {
 				state.loading = true
 				await DeleteVideo.call(video.id)
 				globalState.videos = globalState.videos.filter((a) => a.id !== video.id)
-				const { id } = router.currentRoute.params
-				if(id) await router.replace('/blog')
 				state.loading = false
 				await Notify({ icon: 'success', title: 'Video deleted successfully' })
 			}
@@ -114,13 +111,7 @@ export const useSingleVideo = (id: string) => {
 	const findVideo = async () => {
 		state.loading = true
 		const video = await fetchVideo(id)
-		if(video){
-			state.video = video
-		}
-		else{
-			await router.replace('/blog')
-			await Notify({ title: 'No such video found', icon: 'error' })
-		}
+		if(video) state.video = video
 		state.loading = false
 	}
 	findVideo().catch(() => state.error = 'Failed to fetch video')

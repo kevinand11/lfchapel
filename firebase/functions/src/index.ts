@@ -6,13 +6,14 @@ import { authUserCreated } from './auth/onCreate'
 import { authUserDeleted } from './auth/onDelete'
 export { authUserCreated, authUserDeleted }
 
+
 //On call
-import { createContactMessage } from './onCall/createContactMessage'
-import { createFeedback } from './onCall/createFeedback'
-import { createTestimony } from './onCall/createTestimony'
-import { createPrayerRequest } from './onCall/createPrayerRequest'
-import { subscribeToMailingList } from './onCall/subscribeToMailingList'
-export {
-	createContactMessage, createFeedback, createTestimony,
-	createPrayerRequest, subscribeToMailingList
-}
+import { makeAdmin } from './onCall/users/makeAdmin'
+import { removeAdmin } from './onCall/users/removeAdmin'
+import { subscribeToMailingList } from './onCall/users/subscribeToMailingList'
+export { makeAdmin, removeAdmin, subscribeToMailingList }
+
+
+// Request Triggers
+import { requestMakeAdmin } from './requests/makeAdmin'
+export { requestMakeAdmin }

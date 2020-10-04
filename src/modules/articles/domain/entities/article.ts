@@ -1,7 +1,8 @@
 import { trimToLength, extractTextFromHTML, extractDate } from '@modules/core/validations/sanitizers'
 import { Media } from '@modules/core/data/models/base'
+import { BaseEntity } from '@modules/core/domains/entities/BaseEntity'
 
-export class ArticleEntity{
+export class ArticleEntity extends BaseEntity {
 	public readonly id: string
 	public readonly title: string
 	public readonly body: string
@@ -15,6 +16,7 @@ export class ArticleEntity{
 	}
 
 	constructor({ id, title, body, imageData, tags, createdAt, userId }: ArticleConstructorArgs) {
+		super()
 		this.id = id
 		this.title = title
 		this.body = body

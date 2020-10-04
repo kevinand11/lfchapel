@@ -5,7 +5,10 @@
 		<div class="container">
 			<div class="row py-4 align-items-center flex-column-reverse flex-lg-row">
 				<div class="col-lg-6 mb-3">
-					<ContactForm />
+					<MessageForm :factory="factory" :loading="loading" :submit="createMessage">
+						<template slot="title"><h4 class="mb-4 red">Leave us a message</h4></template>
+					</MessageForm>
+					<Loading v-if="loading" />
 				</div>
 				<div class="col-lg-6 mb-3">
 					<ContactInfo />
@@ -18,13 +21,20 @@
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api'
 import GoogleMap from '@app/components/general/GoogleMap.vue'
-import ContactForm from '@app/components/contact/ContactForm.vue'
 import ContactInfo from '@app/components/contact/ContactInfo.vue'
+import MessageForm from '@app/components/admin/forms/MessageForm.vue'
+import { useCreateMessage } from '@app/usecases/forms/messages'
 export default defineComponent({
 	components: {
 		GoogleMap,
-		ContactForm,
+		MessageForm,
 		ContactInfo
+	},
+	setup(){
+		const { loading, factory, createMessage } = useCreateMessage()
+		return {
+			factory, createMessage , loading
+		}
 	},
 	meta(){
 		return {
