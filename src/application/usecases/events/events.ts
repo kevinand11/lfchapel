@@ -81,7 +81,7 @@ export const useDeleteEvent = (event: EventEntity) => {
 				state.loading = false
 				await Notify({ icon: 'success', title: 'Event deleted successfully' })
 			}
-			return result.value
+			return !!result.value
 		} catch(error) {
 			await Notify({ icon: 'error', title: error.message })
 			return false
