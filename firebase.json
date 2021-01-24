@@ -43,6 +43,9 @@
     "hosting": {
       "port": 7000
     },
+    "auth": {
+      "port": 7004
+    },
     "ui": {
       "port": 7500,
       "enabled": true

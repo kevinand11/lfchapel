@@ -69,3 +69,7 @@ button[class*="btn-outline"]{
 .rounded-xl{
 	border-radius: 0.75rem;
 }
+
+.firebase-emulator-warning {
+	display: none !important;
+}
