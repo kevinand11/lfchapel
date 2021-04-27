@@ -1,7 +1,7 @@
 import { EventEntity } from '@modules/events/domain/entities/event'
 import { GetEventsBetween } from '@modules/events'
 import { computed, reactive } from '@vue/composition-api'
-import { formatDate as dateFormat, formatRange as rangeFormat } from '@fullcalendar/core'
+import { formatDate as dateFormat, FormatDateOptions, formatRange as rangeFormat } from '@fullcalendar/core'
 
 const globalEvents= reactive([]) as EventEntity[]
 
@@ -19,7 +19,7 @@ export const setCurrentViewingDate = (date: Date) => currentDate = date
 
 export const useEventsForDate = () => {
 	const state = reactive({ loading: false, events: [] as EventEntity[] })
-	const fetchEvents = async () => {
+	const fetchEvents = () => {
 		state.loading = true
 		state.events = globalEvents.filter((event) => event.isWithinDate(currentDate))
 		state.loading = false
@@ -32,8 +32,8 @@ export const useEventsForDate = () => {
 	}
 }
 
-const formatD = { day: '2-digit', month: 'short', year: 'numeric', separator: ' to ' }
-const formatT = { minute: '2-digit', hour: '2-digit', day: '2-digit', month: 'short', year: 'numeric', separator: ' to ' }
+const formatD = { day: '2-digit', month: 'short', year: 'numeric', separator: ' to ' } as FormatDateOptions
+const formatT = { minute: '2-digit', hour: '2-digit', day: '2-digit', month: 'short', year: 'numeric', separator: ' to ' } as FormatDateOptions
 
 const formatDate = (date: Date) => dateFormat(date, formatD)
 const formatDateTime = (date: Date) => dateFormat(date, formatT)

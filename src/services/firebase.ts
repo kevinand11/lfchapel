@@ -20,11 +20,11 @@ if(firebase.apps.length === 0) firebase.initializeApp(config)
 
 if(process.env.NODE_ENV === 'development'){
 	firebase.firestore().settings({
-		host: 'localhost:7002',
+		host: 'localhost:5002',
 		ssl: false
 	})
-	firebase.auth().useEmulator('http://localhost:7004')
-	firebase.functions().useEmulator('localhost', 7001)
+	firebase.auth().useEmulator('http://localhost:5004')
+	firebase.functions().useEmulator('localhost', 5001)
 }
 
 firebase.firestore().enablePersistence({ synchronizeTabs: true }).catch(() => {

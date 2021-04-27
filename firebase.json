@@ -35,19 +35,19 @@
   },
   "emulators": {
     "functions": {
-      "port": 7001
+      "port": 5001
     },
     "firestore": {
-      "port": 7002
+      "port": 5002
     },
     "hosting": {
-      "port": 7000
+      "port": 5000
     },
     "auth": {
-      "port": 7004
+      "port": 5004
     },
     "ui": {
-      "port": 7500,
+      "port": 4000,
       "enabled": true
     }
   }
